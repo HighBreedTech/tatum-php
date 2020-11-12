@@ -1,0 +1,42 @@
+{
+    "name": "tatumio/tatum-php",
+    "description": "SDK provides Tatum API client, examples and unit tests",
+    "type": "library",
+    "require": {
+        "php": "^7.3",
+        "ext-json": "*",
+        "ext-curl": "*",
+        "symfony/validator": "^5.1",
+        "symfony/dotenv": "^5.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tatum\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tatum\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+	"documentation": "php phpDocumentor.phar project:run -t documentation -d src",
+        "test": "phpunit"
+	
+    },
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Juraj Puchký - Scenario s.r.o.",
+            "email": "puchky@scenario.cz"
+        },
+        {
+            "name": "Tomáš Jirků - Scenario s.r.o.",
+            "email": "jirku@scenario.cz"
+        }
+    ],
+    "minimum-stability": "stable"
+}
