@@ -41,12 +41,12 @@ class TransferCustomErc20 extends Model
     public $contractAddress;
 
 
-@Type(() => Fee)
+
 
     public $fee;
 
 @Assert\GreaterThanOrEqual(1)
-    @Max(30)
+    @Assert\LessThanOrEqual(30)
     public digits: number;
 
     @Assert\GreaterThanOrEqual(0)

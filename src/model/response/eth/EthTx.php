@@ -1,3 +1,9 @@
+<?php
+
+namespace Tatum\model\response\eth;
+
+
+use Tatum\model\Model;
 /**
  *
  * @export

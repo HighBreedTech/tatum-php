@@ -60,7 +60,7 @@ class TransferEthErc20 extends Model
     public currency: Currency;
 
 
-    @Type(() => Fee)
+
 
     public $fee;
 

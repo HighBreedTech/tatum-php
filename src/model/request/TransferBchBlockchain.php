@@ -32,11 +32,11 @@ class TransferBchBlockchain extends Model
 
 @Assert\NotBlank()
 
-@Type(() => FromUTXOBcash)
+
     public fromUTXO: FromUTXOBcash[];
 
     @ArrayNotEmpty()
 
-    @Type(() => To)
+
     public to: To[];
 }

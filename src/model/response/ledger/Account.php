@@ -1,3 +1,9 @@
+<?php
+
+namespace Tatum\model\response\ledger;
+
+
+use Tatum\model\Model;
 /**
  *
  * @export

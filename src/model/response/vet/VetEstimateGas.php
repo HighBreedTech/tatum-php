@@ -1,3 +1,10 @@
+<?php
+
+namespace Tatum\model\response\vet;
+
+
+use Tatum\model\Model;
+
 /**
  *
  * @export

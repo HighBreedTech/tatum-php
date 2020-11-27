@@ -1,9 +1,12 @@
 <?php
 
-/**
- * @export
- * @enum {string}
- */
+namespace Tatum\model\response\ledger;
+
+
+use Tatum\model\Model;
+
+
+
 interface TransactionType
 {
     const     FAILED = 'FAILED';

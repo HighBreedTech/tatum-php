@@ -1,3 +1,9 @@
+<?php
+
+namespace Tatum\model\response\kms;
+
+
+use Tatum\model\Model;
 import {Currency} from '../../request';
 import {WithdrawalResponseData} from '../offchain/WithdrawalResponse';
 

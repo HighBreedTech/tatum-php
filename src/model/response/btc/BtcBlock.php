@@ -1,3 +1,9 @@
+<?php
+
+namespace Tatum\model\response\btc;
+
+
+use Tatum\model\Model;
 import {BtcTx} from './BtcTx';
 
 /**

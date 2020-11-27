@@ -1,3 +1,10 @@
+<?php
+
+namespace Tatum\model\response\ltc;
+
+
+use Tatum\model\Model;
+
 /**
  *
  * @export

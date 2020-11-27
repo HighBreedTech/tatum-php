@@ -1,3 +1,11 @@
+<?php
+
+namespace Tatum\model\response\common;
+
+
+use Tatum\model\Model;
+
+
 import {Currency} from '../../request';
 import {Fiat} from '../ledger/Fiat';
 

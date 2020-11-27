@@ -1,3 +1,9 @@
+<?php
+
+namespace Tatum\model\response\bch;
+
+
+use Tatum\model\Model;
 /**
  *
  * @export

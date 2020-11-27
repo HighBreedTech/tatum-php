@@ -1,5 +1,9 @@
 <?php
 
+namespace Tatum\model\response\ledger;
+
+
+
 interface Fiat
 {
     const     AED = 'AED';

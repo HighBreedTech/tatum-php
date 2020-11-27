@@ -40,7 +40,7 @@ class FromUTXO extends Model
 
 @Assert\NotBlank()
 @Assert\GreaterThanOrEqual(0)
-    @Max(4294967295)
+    @Assert\LessThanOrEqual(4294967295)
     public index: number;
 
     @Assert\NotBlank()
@@ -65,17 +65,17 @@ class TransferBtcBasedBlockchain extends Model
 
 @Assert\NotBlank()
 
-@Type(() => FromAddress)
+
     public $fromAddress;
 
 
 @Assert\NotBlank()
 
-@Type(() => FromUTXO)
+
     public $fromUTXO;
 
     @ArrayNotEmpty()
 
-@Type(() => To)
+
     public to: To[];
 }

@@ -1,3 +1,12 @@
+<?php
+
+namespace Tatum\model\response\validation;
+
+
+use Tatum\model\Model;
+
+
+
 import {ValidationArguments, ValidatorConstraint, ValidatorConstraintInterface} from 'class-validator';
 import {TransferBtcBasedOffchain} from '../index';
 

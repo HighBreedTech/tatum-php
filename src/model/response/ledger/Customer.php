@@ -1,3 +1,10 @@
+<?php
+
+namespace Tatum\model\response\ledger;
+
+
+use Tatum\model\Model;
+
 import {Country} from '../../request/Country';
 import {Fiat} from './Fiat';
 

@@ -49,7 +49,7 @@ class TransferBtcBasedOffchain extends CreateWithdrawal extends Model {
 
 
 @Assert\NotBlank()
-    @Type(() => KeyPair)
+
 
     public $keyPair;
 }

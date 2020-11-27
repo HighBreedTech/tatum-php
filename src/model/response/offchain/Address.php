@@ -1,3 +1,10 @@
+<?php
+
+namespace Tatum\model\response\offchain;
+
+
+use Tatum\model\Model;
+
 class Address extends Model {
     /**
      * Blockchain address.
