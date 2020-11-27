@@ -1,40 +1,43 @@
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
-use Symfony\Component\Validator\Constraints as Assert; {IsInt, IsNotEmpty, IsNumberString, IsOptional, Length, Matches, Min} from 'class-validator';
+{
+    IsInt, IsNotEmpty, IsNumberString, IsOptional, Length, Matches, Min}
+from 'class-validator';
 
-class TransferXrp {
+class TransferXrp extends Model
+{
 
-    @IsNotEmpty()
-    @Length(33, 34)
-    public fromAccount: string;
+@Assert\NotBlank()
+@Assert\Length(min = 33, max = 34, maxmessage = "maximal length is 34", minmessage = "minimal length is 33")
+    public $fromAccount;
 
-    @IsNotEmpty()
-    @Length(29, 29)
-    public fromSecret: string;
+@Assert\NotBlank()
+@Assert\Length(min = 29, max = 29, maxmessage = "maximal length is 29", minmessage = "minimal length is 29")
+    public $fromSecret;
 
-    @IsNotEmpty()
-    @Length(33, 34)
-    public to: string;
+@Assert\NotBlank()
+@Assert\Length(min = 33, max = 34, maxmessage = "maximal length is 34", minmessage = "minimal length is 33")
+    public $to;
 
-    @IsNotEmpty()
-    @IsNumberString()
-    @Matches(/^[+]?((\d+(\.\d*)?)|(\.\d+))$/)
-    public amount: string;
+@Assert\NotBlank()
+@Assert\Type(type = "numeric")
+@Assert\Regex(pattern = "/^[+]?((\d+(\.\d*)?)|(\.\d+))$/")
+    public $amount;
 
-    @IsNumberString()
-    @IsOptional()
-    @Matches(/^[+]?((\d+(\.\d*)?)|(\.\d+))$/)
-    public fee?: string;
+@Assert\Type(type = "numeric")
 
-    @Min(0)
-    @IsOptional()
-    @IsInt()
-    public sourceTag?: number;
+@Assert\Regex(pattern = "/^[+]?((\d+(\.\d*)?)|(\.\d+))$/")
+    public $fee;
 
-    @Min(0)
-    @IsOptional()
-    @IsInt()
-    public destinationTag?: number;
+@Assert\GreaterThanOrEqual(0)
+
+@Assert\Type(type = "integer")
+    public $sourceTag;
+
+@Assert\GreaterThanOrEqual(0)
+
+@Assert\Type(type = "integer")
+    public $destinationTag;
 }

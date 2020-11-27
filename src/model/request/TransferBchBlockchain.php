@@ -1,35 +1,42 @@
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
-use Symfony\Component\Validator\Constraints as Assert; {Type} from 'class-transformer';
+{
+    Type}
+from 'class-transformer';
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
-use Symfony\Component\Validator\Constraints as Assert; {ArrayNotEmpty, IsNotEmpty, IsNumberString, Min, ValidateNested} from 'class-validator';
+{
+    ArrayNotEmpty, IsNotEmpty, IsNumberString, Min, ValidateNested}
+from 'class-validator';
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
-use Symfony\Component\Validator\Constraints as Assert; {FromUTXO, To} from './TransferBtcBasedBlockchain';
+{
+    FromUTXO, To}
+from './TransferBtcBasedBlockchain';
 
-class FromUTXOBcash extends FromUTXO {
-    @IsNotEmpty()
-    @IsNumberString()
-    @Min(0)
-    public value: string;
+class FromUTXOBcash extends FromUTXO extends Model {
+    @Assert\NotBlank()
+@Assert\Type(type = "numeric")
+@Assert\GreaterThanOrEqual(0)
+    public $value;
 }
 
-class TransferBchBlockchain {
+class TransferBchBlockchain extends Model
+{
 
-    @IsNotEmpty()
-    @ValidateNested({each: true})
-    @Type(() => FromUTXOBcash)
+@Assert\NotBlank()
+
+@Type(() => FromUTXOBcash)
     public fromUTXO: FromUTXOBcash[];
 
     @ArrayNotEmpty()
-    @ValidateNested({each: true})
+
     @Type(() => To)
     public to: To[];
 }

@@ -3,28 +3,28 @@
  * @export
  * @interface BchInfo
  */
-export interface BchInfo {
+class BchInfo extends Model {
     /**
      * Chain of the blockchain, main or test.
-     * @type {string}
+* @var string
      * @memberof BchInfo
      */
     chain: string;
     /**
      * Last block.
-     * @type {number}
+* @var number
      * @memberof BchInfo
      */
     blocks: number;
     /**
      * Hash of the last block.
-     * @type {string}
+* @var string
      * @memberof BchInfo
      */
     bestblockhash: string;
     /**
      * Difficulty of the PoW algorithm.
-     * @type {number}
+* @var number
      * @memberof BchInfo
      */
     difficulty: number;

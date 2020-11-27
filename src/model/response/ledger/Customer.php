@@ -1,17 +1,17 @@
 import {Country} from '../../request/Country';
 import {Fiat} from './Fiat';
 
-export class Customer {
+export class Customer extends Model {
 
-    public id: string;
+public $id;
 
-    public externalId: string;
+public $externalId;
 
-    public customerCountry?: Country;
+public $customerCountry;
 
-    public accountingCurrency?: Fiat;
+public $accountingCurrency;
 
-    public providerCountry?: Country;
+public $providerCountry;
 
     public active: boolean;
 

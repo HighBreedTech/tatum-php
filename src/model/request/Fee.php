@@ -1,6 +1,6 @@
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
 use Symfony\Component\Validator\Constraints as Assert;
 

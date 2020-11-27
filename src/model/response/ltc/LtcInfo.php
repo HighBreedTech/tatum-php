@@ -3,34 +3,34 @@
  * @export
  * @interface LtcInfo
  */
-export interface LtcInfo {
+class LtcInfo extends Model {
     /**
      * Chain of the blockchain, main or test.
-     * @type {string}
+* @var string
      * @memberof LtcInfo
      */
     chain: string;
     /**
      * Last block.
-     * @type {number}
+* @var number
      * @memberof LtcInfo
      */
     blocks: number;
     /**
      * Last headers.
-     * @type {number}
+* @var number
      * @memberof LtcInfo
      */
     headers: number;
     /**
      * Hash of the last block.
-     * @type {string}
+* @var string
      * @memberof LtcInfo
      */
     bestblockhash: string;
     /**
      * Difficulty of the PoW algorithm.
-     * @type {number}
+* @var number
      * @memberof LtcInfo
      */
     difficulty: number;

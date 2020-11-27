@@ -2,7 +2,7 @@ import {ValidationArguments, ValidatorConstraint, ValidatorConstraintInterface} 
 import {TransferBtcBasedBlockchain} from '../index';
 
 @ValidatorConstraint({name: 'fromAddressFromUTXO', async: false})
-export class TransferBtcValidator implements ValidatorConstraintInterface {
+export class TransferBtcValidator implements ValidatorConstraintInterface extends Model {
     public defaultMessage(validationArguments?: ValidationArguments) {
         return 'Either fromAddress, or fromUTXO must be present.';
     }

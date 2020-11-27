@@ -1,3 +1,3 @@
-export interface BlockHash {
+class BlockHash extends Model {
     hash: string;
 }

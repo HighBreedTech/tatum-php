@@ -5,22 +5,23 @@
  */
 import {Address} from './Address';
 
-export interface WithdrawalResponse {
+class WithdrawalResponse extends Model {
     /**
      * Transaction reference of the transaction connected to this withdrawal.
-     * @type {string}
+* @var string
      * @memberof WithdrawalResponse
      */
     reference: string;
     /**
      *
-     * @type {Array<WithdrawalResponseData>}
+* @var Array
+<WithdrawalResponseData>
      * @memberof WithdrawalResponse
      */
     data: WithdrawalResponseData[];
     /**
      * ID of withdrawal
-     * @type {string}
+    * @var string
      * @memberof WithdrawalResponse
      */
     id: string;
@@ -31,35 +32,35 @@ export interface WithdrawalResponse {
  * @export
  * @interface WithdrawalResponseData
  */
-export interface WithdrawalResponseData {
+class WithdrawalResponseData extends Model {
     /**
      *
-     * @type {Address}
+    * @var Address
      * @memberof WithdrawalResponseData
      */
     address: Address;
     /**
      * Amount of unprocessed transaction outputs, that can be used for withdrawal. Bitcoin, Litecoin, Bitcoin Cash only.
-     * @type {number}
+    * @var number
      * @memberof WithdrawalResponseData
      */
     amount: number;
     /**
      * Last used unprocessed transaction output, that can be used.
      * Bitcoin, Litecoin, Bitcoin Cash only. If -1, it indicates prepared vOut with amount to be transferred to pool address.
-     * @type {string}
+    * @var string
      * @memberof WithdrawalResponseData
      */
     vIn: string;
     /**
      * Index of last used unprocessed transaction output in raw transaction, that can be used. Bitcoin, Litecoin, Bitcoin Cash only.
-     * @type {number}
+    * @var number
      * @memberof WithdrawalResponseData
      */
     vInIndex: number;
     /**
      * Script of last unprocessed UTXO. Bitcoin SV only.
-     * @type {string}
+    * @var string
      * @memberof WithdrawalResponseData
      */
     scriptPubKey: string;

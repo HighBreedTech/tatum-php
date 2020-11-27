@@ -3,34 +3,34 @@
  * @export
  * @interface VetEstimateGas
  */
-export interface VetEstimateGas {
+class VetEstimateGas extends Model {
     /**
      * Sender
-     * @type {string}
+* @var string
      * @memberof VetEstimateGas
      */
     from: string;
     /**
      * Recipient
-     * @type {string}
+* @var string
      * @memberof VetEstimateGas
      */
     to: string;
     /**
      * Amount to send
-     * @type {string}
+* @var string
      * @memberof VetEstimateGas
      */
     value: string;
     /**
      * Data to send to Smart Contract
-     * @type {string}
+* @var string
      * @memberof VetEstimateGas
      */
     data: string;
     /**
      * Nonce
-     * @type {number}
+* @var number
      * @memberof VetEstimateGas
      */
     nonce: number;

@@ -1,13 +1,15 @@
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
-use Symfony\Component\Validator\Constraints as Assert; {Type} from 'class-transformer';
+{
+    Type}
+from 'class-transformer';
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
-use Symfony\Component\Validator\Constraints as Assert; {
+{
     IsIn,
     IsNotEmpty,
     IsNumberString,
@@ -20,44 +22,49 @@ use Symfony\Component\Validator\Constraints as Assert; {
 } from 'class-validator';
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
-use Symfony\Component\Validator\Constraints as Assert; {Currency, ETH_BASED_CURRENCIES} from './Currency';
+{
+    Currency, ETH_BASED_CURRENCIES}
+from './Currency';
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
-use Symfony\Component\Validator\Constraints as Assert; {Fee} from './Fee';
+{
+    Fee}
+from './Fee';
 
-class TransferEthErc20 {
+class TransferEthErc20 extends Model
+{
 
-    @IsNotEmpty()
-    @Length(66, 66)
-    public fromPrivateKey: string;
+@Assert\NotBlank()
+@Assert\Length(min = 66, max = 66, maxmessage = "maximal length is 66", minmessage = "minimal length is 66")
+    public $fromPrivateKey;
 
-    @IsNotEmpty()
-    @Length(42, 42)
-    public to: string;
+@Assert\NotBlank()
+@Assert\Length(min = 42, max = 42, maxmessage = "maximal length is 42", minmessage = "minimal length is 42")
+    public $to;
 
-    @IsNotEmpty()
-    @IsNumberString()
-    @Matches(/^[+]?((\d+(\.\d*)?)|(\.\d+))$/)
-    public amount: string;
+@Assert\NotBlank()
+@Assert\Type(type = "numeric")
+@Assert\Regex(pattern = "/^[+]?((\d+(\.\d*)?)|(\.\d+))$/")
+    public $amount;
 
-    @MaxLength(130000)
-    @IsOptional()
-    public data?: string;
+@Assert\Length(min = 0, max = 130000, maxmessage = "maximal length is 130000")
 
-    @IsNotEmpty()
-    @IsIn(ETH_BASED_CURRENCIES)
+    public $data;
+
+@Assert\NotBlank()
+
     public currency: Currency;
 
-    @IsOptional()
-    @Type(() => Fee)
-    @ValidateNested()
-    public fee?: Fee;
 
-    @Min(0)
-    @IsOptional()
-    public nonce?: number;
+    @Type(() => Fee)
+
+    public $fee;
+
+    @Assert\GreaterThanOrEqual(0)
+
+    public $nonce;
 }

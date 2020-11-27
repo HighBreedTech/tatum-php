@@ -2,7 +2,7 @@ import {ValidationArguments, ValidatorConstraint, ValidatorConstraintInterface} 
 import {TransferBtcBasedOffchain} from '../index';
 
 @ValidatorConstraint({name: 'mnemonicKeypair', async: false})
-export class TransferBtcOffchainValidator implements ValidatorConstraintInterface {
+export class TransferBtcOffchainValidator implements ValidatorConstraintInterface extends Model {
     public defaultMessage(validationArguments?: ValidationArguments) {
         return 'Either mnemonic, or keyPair must be present.';
     }

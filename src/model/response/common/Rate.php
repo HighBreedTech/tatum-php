@@ -1,15 +1,15 @@
 import {Currency} from '../../request';
 import {Fiat} from '../ledger/Fiat';
 
-export class Rate {
+export class Rate extends Model {
 
     public id: Fiat | Currency;
 
-    public value: string;
+public $value;
 
     public basePair: Fiat;
 
     public timestamp: number;
 
-    public source: string;
+public $source;
 }

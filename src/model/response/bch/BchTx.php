@@ -3,34 +3,36 @@
  * @export
  * @interface BchTx
  */
-export interface BchTx {
+class BchTx extends Model {
     /**
      *
-     * @type {string}
+* @var string
      * @memberof BchTx
      */
     txid: string;
     /**
      *
-     * @type {number}
+* @var number
      * @memberof BchTx
      */
     version: number;
     /**
      *
-     * @type {number}
+* @var number
      * @memberof BchTx
      */
     locktime: number;
     /**
      *
-     * @type {Array<BchTxVin>}
+* @var Array
+<BchTxVin>
      * @memberof BchTx
      */
     vin: BchTxVin[];
     /**
      *
-     * @type {Array<BchTxVout>}
+    * @var Array
+    <BchTxVout>
      * @memberof BchTx
      */
     vout: BchTxVout[];
@@ -41,28 +43,29 @@ export interface BchTx {
  * @export
  * @interface BchTxScriptPubKey
  */
-export interface BchTxScriptPubKey {
+class BchTxScriptPubKey extends Model {
     /**
      *
-     * @type {string}
+        * @var string
      * @memberof BchTxScriptPubKey
      */
     hex: string;
     /**
      *
-     * @type {string}
+        * @var string
      * @memberof BchTxScriptPubKey
      */
     asm: string;
     /**
      *
-     * @type {Array<string>}
+        * @var Array
+        <string>
      * @memberof BchTxScriptPubKey
      */
     addresses: string[];
     /**
      *
-     * @type {string}
+            * @var string
      * @memberof BchTxScriptPubKey
      */
     type: string;
@@ -73,16 +76,16 @@ export interface BchTxScriptPubKey {
  * @export
  * @interface BchTxScriptSig
  */
-export interface BchTxScriptSig {
+class BchTxScriptSig extends Model {
     /**
      *
-     * @type {string}
+            * @var string
      * @memberof BchTxScriptSig
      */
     hex: string;
     /**
      *
-     * @type {string}
+            * @var string
      * @memberof BchTxScriptSig
      */
     asm: string;
@@ -93,34 +96,34 @@ export interface BchTxScriptSig {
  * @export
  * @interface BchTxVin
  */
-export interface BchTxVin {
+class BchTxVin extends Model {
     /**
      *
-     * @type {string}
+            * @var string
      * @memberof BchTxVin
      */
     txid: string;
     /**
      *
-     * @type {number}
+            * @var number
      * @memberof BchTxVin
      */
     vout: number;
     /**
      *
-     * @type {BchTxScriptSig}
+            * @var BchTxScriptSig
      * @memberof BchTxVin
      */
     scriptSig: BchTxScriptSig;
     /**
      *
-     * @type {string}
+            * @var string
      * @memberof BchTxVin
      */
     coinbase: string;
     /**
      *
-     * @type {number}
+            * @var number
      * @memberof BchTxVin
      */
     sequence: number;
@@ -131,22 +134,22 @@ export interface BchTxVin {
  * @export
  * @interface BchTxVout
  */
-export interface BchTxVout {
+class BchTxVout extends Model {
     /**
      *
-     * @type {string}
+            * @var string
      * @memberof BchTxVout
      */
     value: string;
     /**
      *
-     * @type {number}
+            * @var number
      * @memberof BchTxVout
      */
     n: number;
     /**
      *
-     * @type {BchTxScriptPubKey}
+            * @var BchTxScriptPubKey
      * @memberof BchTxVout
      */
     scriptPubKey: BchTxScriptPubKey;

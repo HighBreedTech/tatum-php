@@ -1,10 +1,10 @@
 <?php
 
-namespace Tatum\Model\Request;
+namespace Tatum\model\request;
 
 /**
  * Interface Country
- * @package Tatum\Model\Request
+ * @package Tatum\model\request
  */
 interface Country
 {

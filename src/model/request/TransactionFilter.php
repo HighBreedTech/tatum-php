@@ -1,70 +1,73 @@
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
-use Symfony\Component\Validator\Constraints as Assert; {TransactionType} from '../response/ledger/TransactionType';
+{
+    TransactionType}
+from '../response/ledger/TransactionType';
 
-class TransactionFilter {
+class TransactionFilter extends Model
+{
 
-    @Length(1, 50)
+@Assert\Length(min = 1, max = 50, maxmessage = "maximal length is 50", minmessage = "minimal length is 1")
     @IsString()
-    @IsOptional()
-    public id?: string;
 
-    @Min(0)
-    @IsNumber()
-    @IsOptional()
-    public from?: number;
+    public $id;
 
-    @Min(0)
-    @IsNumber()
-    @IsOptional()
-    public to?: number;
+@Assert\GreaterThanOrEqual(0)
+    @Assert\Type(type="numeric")
 
-    @Length(1, 50)
+    public $from;
+
+@Assert\GreaterThanOrEqual(0)
+    @Assert\Type(type="numeric")
+
+    public $to;
+
+@Assert\Length(min = 1, max = 50, maxmessage = "maximal length is 50", minmessage = "minimal length is 1")
     @IsString()
-    @IsOptional()
-    public account?: string;
 
-    @Length(1, 50)
-    @IsString()
-    @IsOptional()
-    public counterAccount?: string;
+    public $account;
 
-    @Length(1, 50)
+@Assert\Length(min = 1, max = 50, maxmessage = "maximal length is 50", minmessage = "minimal length is 1")
     @IsString()
-    @IsOptional()
-    public currency?: string;
 
-    @Length(1, 100)
-    @IsString()
-    @IsOptional()
-    public paymentId?: string;
+    public $counterAccount;
 
-    @Length(1, 100)
+@Assert\Length(min = 1, max = 50, maxmessage = "maximal length is 50", minmessage = "minimal length is 1")
     @IsString()
-    @IsOptional()
-    public transactionCode?: string;
 
-    @Length(1, 500)
-    @IsString()
-    @IsOptional()
-    public senderNote?: string;
+    public $currency;
 
-    @Length(1, 500)
+@Assert\Length(min = 1, max = 100, maxmessage = "maximal length is 100", minmessage = "minimal length is 1")
     @IsString()
-    @IsOptional()
-    public recipientNote?: string;
+
+    public $paymentId;
+
+@Assert\Length(min = 1, max = 100, maxmessage = "maximal length is 100", minmessage = "minimal length is 1")
+    @IsString()
+
+    public $transactionCode;
+
+@Assert\Length(min = 1, max = 500, maxmessage = "maximal length is 500", minmessage = "minimal length is 1")
+    @IsString()
+
+    public $senderNote;
+
+@Assert\Length(min = 1, max = 500, maxmessage = "maximal length is 500", minmessage = "minimal length is 1")
+    @IsString()
+
+    public $recipientNote;
 
     @IsString()
-    @Length(4, 22)
-    @IsOptional()
-    @IsIn(Object.keys(OperationType))
-    public opType?: OperationType;
+@Assert\Length(min = 4, max = 22, maxmessage = "maximal length is 22", minmessage = "minimal length is 4")
 
-    @IsOptional()
-    @Length(6, 23)
-    @IsIn(Object.keys(TransactionType))
-    @IsString()
-    public transactionType?: TransactionType;
+
+    public $opType;
+
+
+@Assert\Length(min = 6, max = 23, maxmessage = "maximal length is 23", minmessage = "minimal length is 6")
+
+@IsString()
+    public $transactionType;
 }

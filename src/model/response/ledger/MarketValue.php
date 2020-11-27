@@ -5,28 +5,28 @@
  */
 import {Fiat} from './Fiat';
 
-export interface MarketValue {
+class MarketValue extends Model {
     /**
      * Value of transaction in given base pair.
-     * @type {string}
+* @var string
      * @memberof MarketValue
      */
     amount?: string;
     /**
      * Base pair.
-     * @type {string}
+* @var string
      * @memberof MarketValue
      */
     currency?: Fiat;
     /**
      * Date of validity of rate in UTC.
-     * @type {number}
+* @var number
      * @memberof MarketValue
      */
     sourceDate?: number;
     /**
      * Source of base pair.
-     * @type {string}
+* @var string
      * @memberof MarketValue
      */
     source?: string;

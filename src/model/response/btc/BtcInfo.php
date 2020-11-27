@@ -3,34 +3,34 @@
  * @export
  * @interface BtcInfo
  */
-export interface BtcInfo {
+class BtcInfo extends Model {
     /**
      * Chain of the blockchain, main or test.
-     * @type {string}
+* @var string
      * @memberof BtcInfo
      */
     chain: string;
     /**
      * Last block.
-     * @type {number}
+* @var number
      * @memberof BtcInfo
      */
     blocks: number;
     /**
      * Last headers.
-     * @type {number}
+* @var number
      * @memberof BtcInfo
      */
     headers: number;
     /**
      * Hash of the last block.
-     * @type {string}
+* @var string
      * @memberof BtcInfo
      */
     bestblockhash: string;
     /**
      * Difficulty of the algorithm.
-     * @type {number}
+* @var number
      * @memberof BtcInfo
      */
     difficulty: number;

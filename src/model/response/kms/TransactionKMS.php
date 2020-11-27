@@ -1,20 +1,20 @@
 import {Currency} from '../../request';
 import {WithdrawalResponseData} from '../offchain/WithdrawalResponse';
 
-export class TransactionKMS {
-    public id: string;
+export class TransactionKMS extends Model {
+public $id;
 
     public chain: Currency;
 
-    public serializedTransaction: string;
+public $serializedTransaction;
 
     public hashes: string[];
 
-    public txId?: string;
+public $txId;
 
-    public withdrawalId?: string;
+public $withdrawalId;
 
-    public index?: number;
+public $index;
 
-    public withdrawalResponses?: WithdrawalResponseData[];
+public $withdrawalResponses;
 }

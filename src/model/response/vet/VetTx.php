@@ -3,76 +3,77 @@
  * @export
  * @interface VetTx
  */
-export interface VetTx {
+class VetTx extends Model {
     /**
      *
-     * @type {string}
+* @var string
      * @memberof VetTx
      */
     id: string;
     /**
      *
-     * @type {string}
+* @var string
      * @memberof VetTx
      */
     chainTag: string;
     /**
      *
-     * @type {string}
+* @var string
      * @memberof VetTx
      */
     blockRef: string;
     /**
      *
-     * @type {number}
+* @var number
      * @memberof VetTx
      */
     expiration: number;
     /**
      *
-     * @type {Array<VetTxClauses>}
+* @var Array
+<VetTxClauses>
      * @memberof VetTx
      */
     clauses: VetTxClauses[];
     /**
      *
-     * @type {number}
+    * @var number
      * @memberof VetTx
      */
     gasPriceCoef: number;
     /**
      *
-     * @type {number}
+    * @var number
      * @memberof VetTx
      */
     gas: number;
     /**
      *
-     * @type {string}
+    * @var string
      * @memberof VetTx
      */
     origin: string;
     /**
      *
-     * @type {string}
+    * @var string
      * @memberof VetTx
      */
     nonce: string;
     /**
      *
-     * @type {number}
+    * @var number
      * @memberof VetTx
      */
     size: number;
     /**
      *
-     * @type {VetTxMeta}
+    * @var VetTxMeta
      * @memberof VetTx
      */
     meta: VetTxMeta;
     /**
      *
-     * @type {number}
+    * @var number
      * @memberof VetTx
      */
     blockNumber: number;
@@ -83,22 +84,22 @@ export interface VetTx {
  * @export
  * @interface VetTxClauses
  */
-export interface VetTxClauses {
+class VetTxClauses extends Model {
     /**
      *
-     * @type {string}
+    * @var string
      * @memberof VetTxClauses
      */
     to: string;
     /**
      *
-     * @type {string}
+    * @var string
      * @memberof VetTxClauses
      */
     value: string;
     /**
      *
-     * @type {string}
+    * @var string
      * @memberof VetTxClauses
      */
     data: string;
@@ -109,22 +110,22 @@ export interface VetTxClauses {
  * @export
  * @interface VetTxMeta
  */
-export interface VetTxMeta {
+class VetTxMeta extends Model {
     /**
      *
-     * @type {string}
+    * @var string
      * @memberof VetTxMeta
      */
     blockID: string;
     /**
      *
-     * @type {number}
+    * @var number
      * @memberof VetTxMeta
      */
     blockNumber: number;
     /**
      *
-     * @type {number}
+    * @var number
      * @memberof VetTxMeta
      */
     blockTimestamp: number;

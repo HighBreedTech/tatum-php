@@ -1,29 +1,28 @@
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
-use Symfony\Component\Validator\Constraints as Assert;
+class TransferXlm extends Model
+{
 
-class TransferXlm {
+@Assert\NotBlank()
+@Assert\Length(min = 56, max = 56, maxmessage = "maximal length is 56", minmessage = "minimal length is 56")
+    public $fromSecret;
 
-    @IsNotEmpty()
-    @Length(56, 56)
-    public fromSecret: string;
+@Assert\NotBlank()
+@Assert\Length(min = 56, max = 56, maxmessage = "maximal length is 56", minmessage = "minimal length is 56")
+    public $to;
 
-    @IsNotEmpty()
-    @Length(56, 56)
-    public to: string;
+@Assert\NotBlank()
+@Assert\Type(type = "numeric")
+@Assert\Regex(pattern = "/^[+]?((\d+(\.\d*)?)|(\.\d+))$/")
+    public $amount;
 
-    @IsNotEmpty()
-    @IsNumberString()
-    @Matches(/^[+]?((\d+(\.\d*)?)|(\.\d+))$/)
-    public amount: string;
 
-    @IsOptional()
     public initialize: boolean;
 
-    @MaxLength(64)
-    @Matches(/^[ -~]{0,64}$/)
-    @IsOptional()
-    public message?: string;
+    @Assert\Length(min=0, max=64,maxmessage="maximal length is 64")
+    @Assert\Regex(pattern="/^[ -~]{0,64}$/")
+
+    public $message;
 }

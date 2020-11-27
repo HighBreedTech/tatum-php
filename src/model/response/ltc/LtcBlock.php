@@ -5,58 +5,59 @@
  */
 import {LtcTx} from './LtcTx';
 
-export interface LtcBlock {
+class LtcBlock extends Model {
     /**
      * Hash of block.
-     * @type {string}
+* @var string
      * @memberof LtcBlock
      */
     hash: string;
     /**
      * The number of blocks preceding a particular block on a block chain.
-     * @type {number}
+* @var number
      * @memberof LtcBlock
      */
     height: number;
     /**
      * Block version.
-     * @type {number}
+* @var number
      * @memberof LtcBlock
      */
     version: number;
     /**
      * Hash of the previous block.
-     * @type {string}
+* @var string
      * @memberof LtcBlock
      */
     prevBlock: string;
     /**
      * The root node of a merkle tree, a descendant of all the hashed pairs in the tree.
-     * @type {string}
+* @var string
      * @memberof LtcBlock
      */
     merkleRoot: string;
     /**
      * Time of the block.
-     * @type {number}
+* @var number
      * @memberof LtcBlock
      */
     ts: number;
     /**
      *
-     * @type {number}
+* @var number
      * @memberof LtcBlock
      */
     bits: number;
     /**
      * Arbitrary number that is used in Litecoin's proof of work consensus algorithm.
-     * @type {number}
+* @var number
      * @memberof LtcBlock
      */
     nonce: number;
     /**
      *
-     * @type {Array<LtcTx>}
+* @var Array
+<LtcTx>
      * @memberof LtcBlock
      */
     txs: LtcTx[];

@@ -3,70 +3,71 @@
  * @export
  * @interface VetTxReceipt
  */
-export interface VetTxReceipt {
+class VetTxReceipt extends Model {
     /**
      *
-     * @type {number}
+* @var number
      * @memberof VetTxReceipt
      */
     gasUsed: number;
     /**
      *
-     * @type {string}
+* @var string
      * @memberof VetTxReceipt
      */
     gasPayer: string;
     /**
      *
-     * @type {string}
+* @var string
      * @memberof VetTxReceipt
      */
     paid: string;
     /**
      *
-     * @type {string}
+* @var string
      * @memberof VetTxReceipt
      */
     reward: string;
     /**
      *
-     * @type {boolean}
+* @var boolean
      * @memberof VetTxReceipt
      */
     reverted: boolean;
     /**
      *
-     * @type {VetTxReceiptMeta}
+* @var VetTxReceiptMeta
      * @memberof VetTxReceipt
      */
     meta: VetTxReceiptMeta;
     /**
      *
-     * @type {Array<VetTxReceiptOutputs>}
+* @var Array
+<VetTxReceiptOutputs>
      * @memberof VetTxReceipt
      */
     outputs: VetTxReceiptOutputs[];
     /**
      *
-     * @type {number}
+    * @var number
      * @memberof VetTxReceipt
      */
     blockNumber: number;
     /**
      *
-     * @type {string}
+    * @var string
      * @memberof VetTxReceipt
      */
     blockHash: string;
     /**
      *
-     * @type {string}
+    * @var string
      * @memberof VetTxReceipt
      */
     transactionHash: string;
     /**
      *
-     * @type {string}
+    * @var string
      * @memberof VetTxReceipt
      */
     status: string;
@@ -77,34 +78,34 @@ export interface VetTxReceipt {
  * @export
  * @interface VetTxReceiptMeta
  */
-export interface VetTxReceiptMeta {
+class VetTxReceiptMeta extends Model {
     /**
      *
-     * @type {string}
+    * @var string
      * @memberof VetTxReceiptMeta
      */
     blockID: string;
     /**
      *
-     * @type {number}
+    * @var number
      * @memberof VetTxReceiptMeta
      */
     blockNumber: number;
     /**
      *
-     * @type {number}
+    * @var number
      * @memberof VetTxReceiptMeta
      */
     blockTimestamp: number;
     /**
      *
-     * @type {string}
+    * @var string
      * @memberof VetTxReceiptMeta
      */
     txID: string;
     /**
      *
-     * @type {string}
+    * @var string
      * @memberof VetTxReceiptMeta
      */
     txOrigin: string;
@@ -115,16 +116,18 @@ export interface VetTxReceiptMeta {
  * @export
  * @interface VetTxReceiptOutputs
  */
-export interface VetTxReceiptOutputs {
+class VetTxReceiptOutputs extends Model {
     /**
      *
-     * @type {Array<any>}
+    * @var Array
+    <any>
      * @memberof VetTxReceiptOutputs
      */
     events: any[];
     /**
      *
-     * @type {Array<VetTxReceiptTransfers>}
+        * @var Array
+        <VetTxReceiptTransfers>
      * @memberof VetTxReceiptOutputs
      */
     transfers: VetTxReceiptTransfers[];
@@ -135,22 +138,22 @@ export interface VetTxReceiptOutputs {
  * @export
  * @interface VetTxReceiptTransfers
  */
-export interface VetTxReceiptTransfers {
+class VetTxReceiptTransfers extends Model {
     /**
      *
-     * @type {string}
+            * @var string
      * @memberof VetTxReceiptTransfers
      */
     sender: string;
     /**
      *
-     * @type {string}
+            * @var string
      * @memberof VetTxReceiptTransfers
      */
     recipient: string;
     /**
      *
-     * @type {string}
+            * @var string
      * @memberof VetTxReceiptTransfers
      */
     amount: string;

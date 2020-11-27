@@ -1,39 +1,32 @@
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
-use Symfony\Component\Validator\Constraints as Assert; {Type} from 'class-transformer';
-<?php
 
-namespace Tatum\Model;
+use Tatum\model\Model;
 
-use Symfony\Component\Validator\Constraints as Assert; {IsNotEmpty, IsOptional, Length, Min, ValidateNested} from 'class-validator';
-<?php
+class CreateRecord extends Model
+{
 
-namespace Tatum\Model;
+    /**
+     * @Assert\NotBlank()
+     * @Assert\Length(min = 1, max = 130000, maxmessage = "maximal length is 130000", minmessage = "minimal length is 1")
+     */
+    public $data;
+    /**
+     * @Assert\NotBlank()
+     * @Assert\Length(min = 32, max = 66, maxmessage = "maximal length is 66", minmessage = "minimal length is 32")
+     */
+    public $fromPrivateKey;
 
-use Symfony\Component\Validator\Constraints as Assert; {Fee} from './Fee';
+    /**
+     * @Assert\GreaterThanOrEqual(0)
+     */
+    public $nonce;
 
-class CreateRecord {
 
-    @IsNotEmpty()
-    @Length(1, 130000)
-    public data: string;
-
-    @IsNotEmpty()
-    @Length(32, 66)
-    public fromPrivateKey: string;
-
-    @IsOptional()
-    @Length(42, 42)
-    public to?: string;
-
-    @Min(0)
-    @IsOptional()
-    public nonce?: number;
-
-    @IsOptional()
-    @Type(() => Fee)
-    @ValidateNested()
-    public ethFee?: Fee;
+    /**
+     * @var Fee
+     */
+    public $ethFee;
 }

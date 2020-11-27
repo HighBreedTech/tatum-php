@@ -1,46 +1,51 @@
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
-use Symfony\Component\Validator\Constraints as Assert; {IsIn, IsNotEmpty, IsNumberString, IsString, Length, Matches, MaxLength, MinLength} from 'class-validator';
+{
+    IsIn, IsNotEmpty, IsNumberString, IsString, Length, Matches, MaxLength, MinLength}
+from 'class-validator';
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
-use Symfony\Component\Validator\Constraints as Assert; {TradeType} from './TradeType';
+{
+    TradeType}
+from './TradeType';
 
-class OrderBookRequest {
+class OrderBookRequest extends Model
+{
 
-    @IsNotEmpty()
-    @IsIn(Object.keys(TradeType))
+@Assert\NotBlank()
+
     public type: TradeType;
 
-    @IsNotEmpty()
-    @IsNumberString()
-    @Matches(/^[+]?((\d+(\.\d*)?)|(\.\d+))$/)
-    @MaxLength(38)
-    public price: string;
+    @Assert\NotBlank()
+    @Assert\Type(type="numeric")
+    @Assert\Regex(pattern="/^[+]?((\d+(\.\d*)?)|(\.\d+))$/")
+    @Assert\Length(min=0, max=38,maxmessage="maximal length is 38")
+    public $price;
 
-    @IsNotEmpty()
-    @IsNumberString()
-    @Matches(/^[+]?((\d+(\.\d*)?)|(\.\d+))$/)
-    @MaxLength(38)
-    public amount: string;
+    @Assert\NotBlank()
+    @Assert\Type(type="numeric")
+    @Assert\Regex(pattern="/^[+]?((\d+(\.\d*)?)|(\.\d+))$/")
+    @Assert\Length(min=0, max=38,maxmessage="maximal length is 38")
+    public $amount;
 
-    @IsNotEmpty()
+    @Assert\NotBlank()
     @IsString()
-    @Matches(/^[A-a-zZ0-9_\-]+\/[A-Za-z0-9_\-]+$/)
+    @Assert\Regex(pattern="/^[A-a-zZ0-9_\-]+\/[A-Za-z0-9_\-]+$/")
     @MinLength(3)
-    @MaxLength(30)
-    public pair: string;
+    @Assert\Length(min=0, max=30,maxmessage="maximal length is 30")
+    public $pair;
 
-    @IsNotEmpty()
+    @Assert\NotBlank()
     @IsString()
-    @Length(24, 24)
-    public currency1AccountId: string;
+    @Assert\Length(min=24, max=24,maxmessage="maximal length is 24",minmessage="minimal length is 24")
+    public $currency1AccountId;
 
-    @IsNotEmpty()
+    @Assert\NotBlank()
     @IsString()
-    @Length(24, 24)
-    public currency2AccountId: string;
+    @Assert\Length(min=24, max=24,maxmessage="maximal length is 24",minmessage="minimal length is 24")
+    public $currency2AccountId;
 }

@@ -1,7 +1,7 @@
 import {ValidationArguments, ValidatorConstraint, ValidatorConstraintInterface} from 'class-validator';
 
 @ValidatorConstraint({name: 'mnemonicIndexPrivateKey', async: false})
-export class TransferEthOffchainValidator implements ValidatorConstraintInterface {
+export class TransferEthOffchainValidator implements ValidatorConstraintInterface extends Model {
     public defaultMessage(validationArguments?: ValidationArguments) {
         return 'Either mnemonic and index, or privateKey a must be present.';
     }

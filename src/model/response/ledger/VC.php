@@ -3,70 +3,70 @@
  * @export
  * @interface VC
  */
-export interface VC {
+class VC extends Model {
     /**
      * Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate*1 basePair.
-     * @type {number}
+* @var number
      * @memberof VC
      */
     baseRate: number;
     /**
      * Base pair for virtual currency. Transaction value will be calculated according to this base pair. e.g. 1 VC_VIRTUAL is equal to 1 BTC, if basePair is set to BTC.
-     * @type {string}
+* @var string
      * @memberof VC
      */
     basePair: BasePairEnum;
     /**
      * ID of customer associated with virtual currency.
-     * @type {string}
+* @var string
      * @memberof VC
      */
     customerId?: string;
     /**
      * Used as a description within Tatum system.
-     * @type {string}
+* @var string
      * @memberof VC
      */
     description: string;
     /**
      * Virtual currency name. Must be prefixed with 'VC_'.
-     * @type {string}
+* @var string
      * @memberof VC
      */
     name: string;
     /**
      * Supply of virtual currency.
-     * @type {string}
+* @var string
      * @memberof VC
      */
     supply: string;
     /**
      * Virtual currency account.
-     * @type {string}
+* @var string
      * @memberof VC
      */
     accountId: string;
     /**
      * Address of ERC20 token.
-     * @type {string}
+* @var string
      * @memberof VC
      */
     erc20Address?: string;
     /**
      * Virtual currency account, on which initial supply was minted.
-     * @type {string}
+* @var string
      * @memberof VC
      */
     issuerAccount?: string;
     /**
      * Blockchain, on which this virtual currency is paired on. Not present, when Tatum's private ledger is used as a base ledger.
-     * @type {string}
+* @var string
      * @memberof VC
      */
     chain?: string;
     /**
      * Ethereum address, where initial supply was minted.
-     * @type {string}
+* @var string
      * @memberof VC
      */
     initialAddress?: string;

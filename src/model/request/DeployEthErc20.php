@@ -1,13 +1,15 @@
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
-use Symfony\Component\Validator\Constraints as Assert; {Type} from 'class-transformer';
+{
+    Type}
+from 'class-transformer';
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
-use Symfony\Component\Validator\Constraints as Assert; {
+{
     IsNotEmpty,
     IsNumberString,
     IsOptional,
@@ -20,45 +22,48 @@ use Symfony\Component\Validator\Constraints as Assert; {
 } from 'class-validator';
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
-use Symfony\Component\Validator\Constraints as Assert; {Fee} from './Fee';
+{
+    Fee}
+from './Fee';
 
-class DeployEthErc20 {
+class DeployEthErc20 extends Model
+{
 
-    @IsNotEmpty()
-    @Length(1, 100)
-    @Matches(/^[a-zA-Z0-9_]+$/)
-    public name: string;
+@Assert\NotBlank()
+@Assert\Length(min = 1, max = 100, maxmessage = "maximal length is 100", minmessage = "minimal length is 1")
+@Assert\Regex(pattern = "/^[a-zA-Z0-9_]+$/")
+    public $name;
 
-    @IsNotEmpty()
-    @Length(1, 30)
-    public symbol: string;
+@Assert\NotBlank()
+@Assert\Length(min = 1, max = 30, maxmessage = "maximal length is 30", minmessage = "minimal length is 1")
+    public $symbol;
 
-    @IsNotEmpty()
-    @Length(42, 42)
-    public address: string;
+@Assert\NotBlank()
+@Assert\Length(min = 42, max = 42, maxmessage = "maximal length is 42", minmessage = "minimal length is 42")
+    public $address;
 
-    @IsNotEmpty()
-    @IsNumberString()
-    @MaxLength(38)
-    @Matches(/^[+]?((\d+(\.\d*)?)|(\.\d+))$/)
-    public supply: string;
+@Assert\NotBlank()
+@Assert\Type(type = "numeric")
+@Assert\Length(min = 0, max = 38, maxmessage = "maximal length is 38")
+@Assert\Regex(pattern = "/^[+]?((\d+(\.\d*)?)|(\.\d+))$/")
+    public $supply;
 
-    @Min(1)
+@Assert\GreaterThanOrEqual(1)
     @Max(30)
     public digits: number;
 
-    @IsNotEmpty()
-    @Length(66, 66)
-    public fromPrivateKey: string;
+    @Assert\NotBlank()
+    @Assert\Length(min=66, max=66,maxmessage="maximal length is 66",minmessage="minimal length is 66")
+    public $fromPrivateKey;
 
-    @IsOptional()
-    @Min(0)
-    public nonce?: number;
 
-    @IsOptional()
-    @ValidateNested()
+    @Assert\GreaterThanOrEqual(0)
+    public $nonce;
+
+
+
     @Type(() => Fee)
-    public fee?: Fee;
+    public $fee;
 }

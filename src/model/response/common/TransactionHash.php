@@ -3,10 +3,10 @@
  * @export
  * @interface TransactionHash
  */
-export interface TransactionHash {
+class TransactionHash extends Model {
     /**
      * TX hash of successful transaction.
-     * @type {string}
+* @var string
      * @memberof TransactionHash
      */
     txId: string;

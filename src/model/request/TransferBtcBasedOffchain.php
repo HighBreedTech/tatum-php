@@ -1,47 +1,55 @@
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
-use Symfony\Component\Validator\Constraints as Assert; {Type} from 'class-transformer';
+{
+    Type}
+from 'class-transformer';
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
-use Symfony\Component\Validator\Constraints as Assert; {IsNotEmpty, Length, Validate, ValidateIf, ValidateNested} from 'class-validator';
+{
+    IsNotEmpty, Length, Validate, ValidateIf, ValidateNested}
+from 'class-validator';
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
-use Symfony\Component\Validator\Constraints as Assert; {TransferBtcOffchainValidator} from '../validation/TransferBtcOffchainValidator';
+{
+    TransferBtcOffchainValidator}
+from '../validation/TransferBtcOffchainValidator';
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
-use Symfony\Component\Validator\Constraints as Assert; {CreateWithdrawal} from './CreateWithdrawal';
+{
+    CreateWithdrawal}
+from './CreateWithdrawal';
 
-class KeyPair {
+class KeyPair extends Model
+{
 
-    @IsNotEmpty()
-    @Length(30, 50)
-    public address: string;
+@Assert\NotBlank()
+@Assert\Length(min = 30, max = 50, maxmessage = "maximal length is 50", minmessage = "minimal length is 30")
+    public $address;
 
-    @IsNotEmpty()
-    @Length(52, 52)
-    public privateKey: string;
+@Assert\NotBlank()
+@Assert\Length(min = 52, max = 52, maxmessage = "maximal length is 52", minmessage = "minimal length is 52")
+    public $privateKey;
 }
 
-class TransferBtcBasedOffchain extends CreateWithdrawal {
+class TransferBtcBasedOffchain extends CreateWithdrawal extends Model {
 
-    @Length(1, 500)
-    @Validate(TransferBtcOffchainValidator)
-    @ValidateIf(o => (o.mnemonic && o.keyPair) || !o.keyPair)
-    @IsNotEmpty()
-    public mnemonic?: string;
+    @Assert\Length(min = 1, max = 500, maxmessage = "maximal length is 500", minmessage = "minimal length is 1")
 
-    @ValidateIf(o => (o.mnemonic && o.keyPair) || !o.mnemonic)
-    @Validate(TransferBtcOffchainValidator)
-    @IsNotEmpty()
+
+@Assert\NotBlank()
+    public $mnemonic;
+
+
+@Assert\NotBlank()
     @Type(() => KeyPair)
-    @ValidateNested({each: true})
-    public keyPair?: KeyPair[];
+
+    public $keyPair;
 }

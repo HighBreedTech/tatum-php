@@ -1,53 +1,60 @@
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
-use Symfony\Component\Validator\Constraints as Assert; {Type} from 'class-transformer';
-<?php
+use Tatum\Model\CustomerUpdate;
+use Tatum\Model\Model;
 
-namespace Tatum\Model;
+class CreateAccount extends Model
+{
 
-use Symfony\Component\Validator\Constraints as Assert; {IsBoolean, IsIn, IsNotEmpty, IsOptional, Length, MaxLength, ValidateNested} from 'class-validator';
-<?php
+    /**
+     * @var string
+     * @Assert\NotBlank()
+     * @Assert\Length(min=2, max=40,maxmessage="maximal length is 40",minmessage="minimal length is 2")
+     */
+    public $currency;
 
-namespace Tatum\Model;
+    /**
+     * @var string|null
+     * @Assert\Length(min=0, max=150,maxmessage="maximal length is 150")
+     *
+     */
+    public $xpub;
 
-use Symfony\Component\Validator\Constraints as Assert; {Fiat} from '../response';
-<?php
+    /**
+     * @var boolean|null
+     *
+     *
+     */
+    public $compliant;
 
-namespace Tatum\Model;
+    /**
+     * @var Fiat|null
+     * @Assert\Length(min=3, max=3,maxmessage="maximal length is 3",minmessage="minimal length is 3")
+     *
+     *
+     */
+    public $accountingCurrency;
 
-use Symfony\Component\Validator\Constraints as Assert; {CustomerUpdate} from './CustomerUpdate';
+    /**
+     * @var string|null
+     * @Assert\Length(min=1, max=50,maxmessage="maximal length is 50",minmessage="minimal length is 1")
+     *
+     */
+    public $accountCode;
 
-class CreateAccount {
+    /**
+     * @var string|null
+     * @Assert\Length(min=1, max=30,maxmessage="maximal length is 30",minmessage="minimal length is 1")
+     *
+     */
+    public $accountNumber;
 
-    @IsNotEmpty()
-    @Length(2, 40)
-    public currency: string;
-
-    @MaxLength(150)
-    @IsOptional()
-    public xpub?: string;
-
-    @IsOptional()
-    @IsBoolean()
-    public compliant?: boolean;
-
-    @Length(3, 3)
-    @IsOptional()
-    @IsIn(Object.keys(Fiat))
-    public accountingCurrency?: Fiat;
-
-    @Length(1, 50)
-    @IsOptional()
-    public accountCode?: string;
-
-    @Length(1, 30)
-    @IsOptional()
-    public accountNumber?: string;
-
-    @IsOptional()
-    @ValidateNested()
-    @Type(() => CustomerUpdate)
-    public customer?: CustomerUpdate;
+    /**
+     * @var CustomerUpdate|null
+     *
+     *
+     */
+    public $customer;
 }
