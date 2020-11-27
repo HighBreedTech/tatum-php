@@ -2,41 +2,33 @@
 
 namespace Tatum\model\request;
 
+
+use Tatum\model\Model;
+
+/**
+ * Class FromUTXOBcash
+ * @package Tatum\model\request
+ */
+class FromUTXOBcash extends FromUTXO
 {
-    Type}
-from 'class-transformer';
-<?php
-
-namespace Tatum\model\request;
-
-{
-    ArrayNotEmpty, IsNotEmpty, IsNumberString, Min, ValidateNested}
-from 'class-validator';
-<?php
-
-namespace Tatum\model\request;
-
-{
-    FromUTXO, To}
-from './TransferBtcBasedBlockchain';
-
-class FromUTXOBcash extends FromUTXO extends Model {
-    @Assert\NotBlank()
-@Assert\Type(type = "numeric")
-@Assert\GreaterThanOrEqual(0)
+    /**
+     * @Assert\NotBlank()
+     * @Assert\Type(type = "numeric")
+     * @Assert\GreaterThanOrEqual(0)
+     */
     public $value;
 }
 
 class TransferBchBlockchain extends Model
 {
-
-@Assert\NotBlank()
-
-
-    public fromUTXO: FromUTXOBcash[];
-
-    @ArrayNotEmpty()
-
-
-    public to: To[];
+    /**
+     * @var FromUTXOBcash[]
+     * @Assert\NotBlank()
+     */
+    public $fromUTXO;
+    /**
+     * @var To[]
+     * @Assert\Count(min=1)
+     */
+    public $to;
 }
