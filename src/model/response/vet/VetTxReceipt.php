@@ -16,68 +16,68 @@ class VetTxReceipt extends Model {
 * @var number
      * @memberof VetTxReceipt
      */
-    gasUsed: number;
+    public $gasUsed;
     /**
      *
 * @var string
      * @memberof VetTxReceipt
      */
-    gasPayer: string;
+    public $gasPayer;
     /**
      *
 * @var string
      * @memberof VetTxReceipt
      */
-    paid: string;
+    public $paid;
     /**
      *
 * @var string
      * @memberof VetTxReceipt
      */
-    reward: string;
+    public $reward;
     /**
      *
 * @var boolean
      * @memberof VetTxReceipt
      */
-    reverted: boolean;
+public $reverted;
     /**
      *
 * @var VetTxReceiptMeta
      * @memberof VetTxReceipt
      */
-    meta: VetTxReceiptMeta;
+public $meta;
     /**
      *
 * @var Array
 <VetTxReceiptOutputs>
      * @memberof VetTxReceipt
      */
-    outputs: VetTxReceiptOutputs[];
+public $outputs;
     /**
      *
     * @var number
      * @memberof VetTxReceipt
      */
-    blockNumber: number;
+    public $blockNumber;
     /**
      *
     * @var string
      * @memberof VetTxReceipt
      */
-    blockHash: string;
+    public $blockHash;
     /**
      *
     * @var string
      * @memberof VetTxReceipt
      */
-    transactionHash: string;
+    public $transactionHash;
     /**
      *
     * @var string
      * @memberof VetTxReceipt
      */
-    status: string;
+    public $status;
 }
 
 /**
@@ -91,31 +91,31 @@ class VetTxReceiptMeta extends Model {
     * @var string
      * @memberof VetTxReceiptMeta
      */
-    blockID: string;
+    public $blockID;
     /**
      *
     * @var number
      * @memberof VetTxReceiptMeta
      */
-    blockNumber: number;
+    public $blockNumber;
     /**
      *
     * @var number
      * @memberof VetTxReceiptMeta
      */
-    blockTimestamp: number;
+    public $blockTimestamp;
     /**
      *
     * @var string
      * @memberof VetTxReceiptMeta
      */
-    txID: string;
+    public $txID;
     /**
      *
     * @var string
      * @memberof VetTxReceiptMeta
      */
-    txOrigin: string;
+    public $txOrigin;
 }
 
 /**
@@ -130,14 +130,14 @@ class VetTxReceiptOutputs extends Model {
     <any>
      * @memberof VetTxReceiptOutputs
      */
-    events: any[];
+public $events;
     /**
      *
         * @var Array
         <VetTxReceiptTransfers>
      * @memberof VetTxReceiptOutputs
      */
-    transfers: VetTxReceiptTransfers[];
+public $transfers;
 }
 
 /**
@@ -151,17 +151,17 @@ class VetTxReceiptTransfers extends Model {
             * @var string
      * @memberof VetTxReceiptTransfers
      */
-    sender: string;
+    public $sender;
     /**
      *
             * @var string
      * @memberof VetTxReceiptTransfers
      */
-    recipient: string;
+    public $recipient;
     /**
      *
             * @var string
      * @memberof VetTxReceiptTransfers
      */
-    amount: string;
+    public $amount;
 }

@@ -1,9 +1,9 @@
-import BigNumber from 'bignumber.js';
-import {validateOrReject} from 'class-validator';
-import {RippleAPI} from 'ripple-lib';
-import {xrpGetAccountInfo, xrpGetFee} from '../blockchain';
-import {Currency, TransactionKMS, TransferXrpOffchain} from '../model';
-import {offchainBroadcast, offchainCancelWithdrawal, offchainStoreWithdrawal} from './common';
+
+
+
+
+
+
 
 /**
  * Send Xrp transaction from Tatum Ledger account to the blockchain. This method broadcasts signed transaction to the blockchain.
@@ -12,7 +12,7 @@ import {offchainBroadcast, offchainCancelWithdrawal, offchainStoreWithdrawal} fr
  * @param body content of the transaction to broadcast
  * @returns transaction id of the transaction in the blockchain
  */
-export const sendXrpOffchainTransaction = async (testnet: boolean, body: TransferXrpOffchain) => {
+function sendXrpOffchainTransaction(testnet: boolean, body: TransferXrpOffchain) {
     await validateOrReject(body);
     const {
         account, secret, ...withdrawal
@@ -35,13 +35,13 @@ export const sendXrpOffchainTransaction = async (testnet: boolean, body: Transfe
         throw e;
     }
     try {
-        return {...await offchainBroadcast({txData, withdrawalId: id, currency: Currency.XRP}), id};
+        return {...await offchainBroadcast({txData, withdrawalId: id, currency: Currency.XRP}), id}
     } catch (e) {
         console.error(e);
         await offchainCancelWithdrawal(id);
         throw e;
     }
-};
+}
 
 /**
  * Sign Xrp pending transaction from Tatum KMS
@@ -49,13 +49,13 @@ export const sendXrpOffchainTransaction = async (testnet: boolean, body: Transfe
  * @param secret secret key to sign transaction with.
  * @returns transaction data to be broadcast to blockchain.
  */
-export const signXrpOffchainKMSTransaction = async (tx: TransactionKMS, secret: string) => {
+function signXrpOffchainKMSTransaction(tx: TransactionKMS, secret: string) {
     if (tx.chain !== Currency.XRP) {
         throw Error('Unsupported chain.');
     }
     const rippleAPI = new RippleAPI();
     return rippleAPI.sign(tx.serializedTransaction, secret).signedTransaction;
-};
+}
 
 /**
  * Sign Xrp transaction with private keys locally. Nothing is broadcast to the blockchain.
@@ -70,7 +70,7 @@ export const signXrpOffchainKMSTransaction = async (tx: TransactionKMS, secret: 
  * @returns transaction data to be broadcast to blockchain.
  */
 export const prepareXrpSignedOffchainTransaction =
-    async (testnet: boolean, amount: string, address: string, secret: string, account: any, fee: string, sourceTag?: number, destinationTag?: string) => {
+(testnet: boolean, $amount, $address, $secret, account: any, $fee, sourceTag?: number, destinationTag?: string) {
         const currency = 'XRP';
         const payment: any = {
             source: {
@@ -88,15 +88,15 @@ export const prepareXrpSignedOffchainTransaction =
                     value: amount,
                 },
             },
-        };
+        }
         if (destinationTag) {
             payment.destination.tag = parseInt(destinationTag);
         }
         const rippleAPI = new RippleAPI();
         const prepared = await rippleAPI.preparePayment(account.account_data.Account, payment, {
-            fee: `${fee}`,
+            fee: "${fee}",
             sequence: account.account_data.Sequence,
             maxLedgerVersion: account.ledger_current_index + 5,
         });
         return (await rippleAPI.sign(prepared.txJSON, secret)).signedTransaction;
-    };
+    }

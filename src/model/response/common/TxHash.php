@@ -16,11 +16,11 @@ class TxHash extends Model {
 * @var string
      * @memberof TxHash
      */
-    txId: string;
+    public $txId;
     /**
      * Whethet withdrawal was completed in Tatum's internal ledger. If not, it must be done manually.
 * @var boolean
      * @memberof TxHash
      */
-    completed: boolean;
+public $completed;
 }

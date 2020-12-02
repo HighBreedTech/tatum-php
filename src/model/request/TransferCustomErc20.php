@@ -47,7 +47,7 @@ class TransferCustomErc20 extends Model
 
 @Assert\GreaterThanOrEqual(1)
     @Assert\LessThanOrEqual(30)
-    public digits: number;
+    public public $digits;
 
     @Assert\GreaterThanOrEqual(0)
 

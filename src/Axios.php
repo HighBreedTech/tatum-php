@@ -19,15 +19,14 @@ class Axios
     /**
      * @param $url
      * @param array $options
+     * @param array $headers
      * @return mixed
      */
-    public static function get($url, $options = [])
+    public static function get($url, $options = [], $headers = [])
     {
         $opt = self::processOptions(self::GET_OPTIONS, $options);
 
-        foreach ($options as $k => $v) {
-            $opt[$k] = $v;
-        }
+        $opt[CURLOPT_HEADER] = $headers;
 
         return self::send($url, $opt);
     }
@@ -36,13 +35,16 @@ class Axios
      * @param $url
      * @param $data object|string
      * @param array $options
+     * @param array $headers
      * @return mixed
      */
-    public static function post($url, $data, $options = [])
+    public static function post($url, $data, $options = [], $headers = [])
     {
         $opt = self::processOptions(self::POST_OPTIONS, $options);
 
+        $opt[CURLOPT_HEADER] = $headers;
         $opt[CURLOPT_POSTFIELDS] = is_object($data) ? json_encode($data) : $data;
+
         return self::send($url, $opt);
     }
 

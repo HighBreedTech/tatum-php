@@ -1,10 +1,10 @@
-import BigNumber from 'bignumber.js';
-import {ECPair, networks, Transaction, TransactionBuilder} from 'bitcoinjs-lib';
-import {validateOrReject} from 'class-validator';
-import {LTC_NETWORK, LTC_TEST_NETWORK} from '../constants';
-import {Currency, KeyPair, TransactionKMS, TransferBtcBasedOffchain, WithdrawalResponseData} from '../model';
-import {generateAddressFromXPub, generateLtcWallet, generatePrivateKeyFromMnemonic} from '../wallet';
-import {offchainBroadcast, offchainCancelWithdrawal, offchainStoreWithdrawal} from './common';
+
+
+
+
+
+
+
 
 /**
  * Send Litecoin transaction from Tatum Ledger account to the blockchain. This method broadcasts signed transaction to the blockchain.
@@ -13,7 +13,7 @@ import {offchainBroadcast, offchainCancelWithdrawal, offchainStoreWithdrawal} fr
  * @param body content of the transaction to broadcast
  * @returns transaction id of the transaction in the blockchain
  */
-export const sendLitecoinOffchainTransaction = async (testnet: boolean, body: TransferBtcBasedOffchain) => {
+function sendLitecoinOffchainTransaction(testnet: boolean, body: TransferBtcBasedOffchain) {
     await validateOrReject(body);
     const {
         mnemonic, keyPair, attr: changeAddress, ...withdrawal
@@ -34,13 +34,13 @@ export const sendLitecoinOffchainTransaction = async (testnet: boolean, body: Tr
         throw e;
     }
     try {
-        return {...await offchainBroadcast({txData, withdrawalId: id, currency: Currency.LTC}), id};
+        return {...await offchainBroadcast({txData, withdrawalId: id, currency: Currency.LTC}), id}
     } catch (e) {
         console.error(e);
         await offchainCancelWithdrawal(id);
         throw e;
     }
-};
+}
 
 /**
  * Sign Litecoin pending transaction from Tatum KMS
@@ -49,7 +49,7 @@ export const sendLitecoinOffchainTransaction = async (testnet: boolean, body: Tr
  * @param testnet mainnet or testnet version
  * @returns transaction data to be broadcast to blockchain.
  */
-export const signLitecoinOffchainKMSTransaction = async (tx: TransactionKMS, mnemonic: string, testnet: boolean) => {
+function signLitecoinOffchainKMSTransaction(tx: TransactionKMS, $mnemonic, testnet: boolean) {
     if (tx.chain !== Currency.LTC || !tx.withdrawalResponses) {
         throw Error('Unsupported chain.');
     }
@@ -63,7 +63,7 @@ export const signLitecoinOffchainKMSTransaction = async (tx: TransactionKMS, mne
         builder.sign(i, ecPair);
     }
     return builder.build().toHex();
-};
+}
 
 /**
  * Sign Litecoin transaction with private keys locally. Nothing is broadcast to the blockchain.
@@ -77,7 +77,7 @@ export const signLitecoinOffchainKMSTransaction = async (tx: TransactionKMS, mne
  * @returns transaction data to be broadcast to blockchain.
  */
 export const prepareLitecoinSignedOffchainTransaction =
-    async (testnet: boolean, data: WithdrawalResponseData[], amount: string, address: string, mnemonic?: string, keyPair?: KeyPair[], changeAddress?: string) => {
+(testnet: boolean, data: WithdrawalResponseData[], $amount, $address, mnemonic?: string, keyPair?: KeyPair[], changeAddress?: string) {
         const network = testnet ? LTC_TEST_NETWORK : LTC_NETWORK;
         const tx = new TransactionBuilder(network);
 
@@ -116,4 +116,4 @@ export const prepareLitecoinSignedOffchainTransaction =
         }
 
         return tx.build().toHex();
-    };
+    }

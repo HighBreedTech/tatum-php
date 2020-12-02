@@ -5,7 +5,7 @@ namespace Tatum\model\response\ledger;
 
 use Tatum\model\Model;
 
-import {TradeType} from '../../request/TradeType';
+
 
 class OrderBookResponse extends Model {
 
@@ -14,7 +14,7 @@ class OrderBookResponse extends Model {
 * @var string
      * @memberof OrderBook
      */
-    id: string,
+public $id;
 
     /**
      * Type of the trade, BUY or SELL.
@@ -28,42 +28,42 @@ class OrderBookResponse extends Model {
 * @var string
      * @memberof OrderBook
      */
-    price: string,
+public $price;
 
     /**
      * Amount of the trade to be bought / sold.
 * @var string
      * @memberof OrderBook
      */
-    amount: string,
+public $amount;
 
     /**
      * Trading pair.
 * @var string
      * @memberof OrderBook
      */
-    pair: string,
+public $pair;
 
     /**
      * How much of the trade was already filled.
 * @var string
      * @memberof OrderBook
      */
-    fill: string,
+public $fill;
 
     /**
      * ID of the account of the currency 1 trade currency.
 * @var string
      * @memberof OrderBook
      */
-    currency1AccountId: string,
+public $currency1AccountId;
 
     /**
      * ID of the account of the currency 2 trade currency.
 * @var string
      * @memberof OrderBook
      */
-    currency2AccountId: string,
+public $currency2AccountId;
 
     /**
      * Creation date, UTC millis.

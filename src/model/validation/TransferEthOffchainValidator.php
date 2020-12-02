@@ -6,7 +6,7 @@ namespace Tatum\model\response\validation;
 use Tatum\model\Model;
 
 
-//import {ValidationArguments, ValidatorConstraint, ValidatorConstraintInterface} from 'class-validator';
+//
 //
 //@ValidatorConstraint({name: 'mnemonicIndexPrivateKey', async: false})
 //export class TransferEthOffchainValidator implements ValidatorConstraintInterface extends Model {

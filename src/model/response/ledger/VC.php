@@ -16,67 +16,67 @@ class VC extends Model {
 * @var number
      * @memberof VC
      */
-    baseRate: number;
+    public $baseRate;
     /**
      * Base pair for virtual currency. Transaction value will be calculated according to this base pair. e.g. 1 VC_VIRTUAL is equal to 1 BTC, if basePair is set to BTC.
 * @var string
      * @memberof VC
      */
-    basePair: BasePairEnum;
+public $basePair;
     /**
      * ID of customer associated with virtual currency.
 * @var string
      * @memberof VC
      */
-    customerId?: string;
+    public $customerId;
     /**
      * Used as a description within Tatum system.
 * @var string
      * @memberof VC
      */
-    description: string;
+    public $description;
     /**
      * Virtual currency name. Must be prefixed with 'VC_'.
 * @var string
      * @memberof VC
      */
-    name: string;
+    public $name;
     /**
      * Supply of virtual currency.
 * @var string
      * @memberof VC
      */
-    supply: string;
+    public $supply;
     /**
      * Virtual currency account.
 * @var string
      * @memberof VC
      */
-    accountId: string;
+    public $accountId;
     /**
      * Address of ERC20 token.
 * @var string
      * @memberof VC
      */
-    erc20Address?: string;
+    public $erc20Address;
     /**
      * Virtual currency account, on which initial supply was minted.
 * @var string
      * @memberof VC
      */
-    issuerAccount?: string;
+    public $issuerAccount;
     /**
      * Blockchain, on which this virtual currency is paired on. Not present, when Tatum's private ledger is used as a base ledger.
 * @var string
      * @memberof VC
      */
-    chain?: string;
+    public $chain;
     /**
      * Ethereum address, where initial supply was minted.
 * @var string
      * @memberof VC
      */
-    initialAddress?: string;
+    public $initialAddress;
 }
 
 

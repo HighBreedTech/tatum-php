@@ -10,7 +10,7 @@ use Tatum\model\Model;
  * @export
  * @interface EthBlock
  */
-import {EthTx} from './EthTx';
+
 
 class EthBlock extends Model {
     /**
@@ -18,114 +18,114 @@ class EthBlock extends Model {
 * @var string
      * @memberof EthBlock
      */
-    difficulty: string;
+    public $difficulty;
     /**
      * The 'extra data' field of this block.
 * @var string
      * @memberof EthBlock
      */
-    extraData: string;
+    public $extraData;
     /**
      * The maximum gas allowed in this block.
 * @var number
      * @memberof EthBlock
      */
-    gasLimit: number;
+    public $gasLimit;
     /**
      * The total used gas by all transactions in this block.
 * @var number
      * @memberof EthBlock
      */
-    gasUsed: number;
+    public $gasUsed;
     /**
      * Hash of the block. 'null' when its pending block.
 * @var string
      * @memberof EthBlock
      */
-    hash: string;
+    public $hash;
     /**
      * The bloom filter for the logs of the block. 'null' when its pending block.
 * @var string
      * @memberof EthBlock
      */
-    logsBloom: string;
+    public $logsBloom;
     /**
      * The address of the beneficiary to whom the mining rewards were given.
 * @var string
      * @memberof EthBlock
      */
-    miner: string;
+    public $miner;
     /**
      *
 * @var string
      * @memberof EthBlock
      */
-    mixHash: string;
+    public $mixHash;
     /**
      * Hash of the generated proof-of-work. 'null' when its pending block.
 * @var string
      * @memberof EthBlock
      */
-    nonce: string;
+    public $nonce;
     /**
      * The block number. 'null' when its pending block.
 * @var number
      * @memberof EthBlock
      */
-    number: number;
+    public $number;
     /**
      * Hash of the parent block.
 * @var string
      * @memberof EthBlock
      */
-    parentHash: string;
+    public $parentHash;
     /**
      *
 * @var string
      * @memberof EthBlock
      */
-    receiptsRoot: string;
+    public $receiptsRoot;
     /**
      * SHA3 of the uncles data in the block.
 * @var string
      * @memberof EthBlock
      */
-    sha3Uncles: string;
+    public $sha3Uncles;
     /**
      * The size of this block in bytes.
 * @var number
      * @memberof EthBlock
      */
-    size: number;
+    public $size;
     /**
      * The root of the final state trie of the block.
 * @var string
      * @memberof EthBlock
      */
-    stateRoot: string;
+    public $stateRoot;
     /**
      * The unix timestamp for when the block was collated.
 * @var number
      * @memberof EthBlock
      */
-    timestamp: number;
+    public $timestamp;
     /**
      * Total difficulty of the chain until this block.
 * @var string
      * @memberof EthBlock
      */
-    totalDifficulty: string;
+    public $totalDifficulty;
     /**
      * Array of transactions.
 * @var Array
 <EthTx>
      * @memberof EthBlock
      */
-    transactions: EthTx[];
+public $transactions;
     /**
      * The root of the transaction trie of the block.
     * @var string
      * @memberof EthBlock
      */
-    transactionsRoot: string;
+    public $transactionsRoot;
 }

@@ -16,7 +16,7 @@ class AccountBalance extends Model {
 * @var string
      * @memberof AccountBalance
      */
-    accountBalance: string;
+    public $accountBalance;
     /**
      * Available balance on the account represents account balance minus blocked amount on the account.
      * If the account is frozen or customer is disabled, the available balance will be 0.
@@ -24,5 +24,5 @@ class AccountBalance extends Model {
 * @var string
      * @memberof AccountBalance
      */
-    availableBalance: string;
+    public $availableBalance;
 }

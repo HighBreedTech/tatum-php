@@ -1,13 +1,13 @@
-import {generatePrivateKey, getAddressFromPrivateKey} from '@binance-chain/javascript-sdk/lib/crypto';
-import Neon, {wallet} from '@cityofzion/neon-js';
-import {generateMnemonic, mnemonicToSeed} from 'bip39';
-import {HDNode, Mnemonic} from 'bitbox-sdk';
-import {networks} from 'bitcoinjs-lib';
-import {hdkey as ethHdKey} from 'ethereumjs-wallet';
+
+
+
+
+
+
 // @ts-ignore
-import hdkey from 'hdkey';
-import {RippleAPI} from 'ripple-lib';
-import {Keypair} from 'stellar-sdk';
+
+
+
 import {
     BCH_DERIVATION_PATH,
     BTC_DERIVATION_PATH,
@@ -18,19 +18,19 @@ import {
     TESTNET_DERIVATION_PATH,
     VET_DERIVATION_PATH
 } from '../constants';
-import {Currency} from '../model';
+
 
 export interface Wallet {
 
     /**
      * mnemonic seed
      */
-    mnemonic: string;
+    public $mnemonic;
 
     /**
      * extended public key to derive addresses from
      */
-    xpub: string;
+    public $xpub;
 }
 
 /**
@@ -38,14 +38,14 @@ export interface Wallet {
  * @param testnet testnet or mainnet version of address
  * @returns wallet
  */
-export const generateBnbWallet = async (testnet: boolean) => {
+function generateBnbWallet(testnet: boolean) {
     const privateKey = generatePrivateKey();
     const prefix = testnet ? 'tbnb' : 'bnb';
     return {
         address: getAddressFromPrivateKey(privateKey, prefix),
         privateKey,
-    };
-};
+    }
+}
 
 /**
  * Generate VeChain wallet
@@ -53,15 +53,15 @@ export const generateBnbWallet = async (testnet: boolean) => {
  * @param mnem mnemonic seed to use
  * @returns wallet
  */
-export const generateVetWallet = async (testnet: boolean, mnem: string): Promise<Wallet> => {
+function generateVetWallet(testnet: boolean, mnem: string):Wallet {
     const path = testnet ? TESTNET_DERIVATION_PATH : VET_DERIVATION_PATH;
     const hdwallet = ethHdKey.fromMasterSeed(await mnemonicToSeed(mnem));
     const derivePath = hdwallet.derivePath(path);
     return {
         xpub: derivePath.publicExtendedKey().toString(),
         mnemonic: mnem
-    };
-};
+    }
+}
 
 /**
  * Generate Ethereum or any other ERC20 wallet
@@ -69,15 +69,15 @@ export const generateVetWallet = async (testnet: boolean, mnem: string): Promise
  * @param mnem mnemonic seed to use
  * @returns wallet
  */
-export const generateEthWallet = async (testnet: boolean, mnem: string): Promise<Wallet> => {
+function generateEthWallet(testnet: boolean, mnem: string):Wallet {
     const path = testnet ? TESTNET_DERIVATION_PATH : ETH_DERIVATION_PATH;
     const hdwallet = ethHdKey.fromMasterSeed(await mnemonicToSeed(mnem));
     const derivePath = hdwallet.derivePath(path);
     return {
         xpub: derivePath.publicExtendedKey().toString(),
         mnemonic: mnem
-    };
-};
+    }
+}
 
 /**
  * Generate Bitcoin Cash wallet
@@ -94,8 +94,8 @@ export const generateBchWallet = (testnet: boolean, mnem: string): Wallet => {
     return {
         mnemonic: mnem,
         xpub: node.toXPub(path),
-    };
-};
+    }
+}
 
 /**
  * Generate Bitcoin wallet
@@ -103,10 +103,10 @@ export const generateBchWallet = (testnet: boolean, mnem: string): Wallet => {
  * @param mnem mnemonic seed to use
  * @returns wallet
  */
-export const generateBtcWallet = async (testnet: boolean, mnem: string): Promise<Wallet> => {
+function generateBtcWallet(testnet: boolean, mnem: string):Wallet {
     const hdwallet = hdkey.fromMasterSeed(await mnemonicToSeed(mnem), testnet ? networks.testnet.bip32 : networks.bitcoin.bip32);
-    return {mnemonic: mnem, xpub: hdwallet.derive(testnet ? TESTNET_DERIVATION_PATH : BTC_DERIVATION_PATH).toJSON().xpub};
-};
+    return {mnemonic: mnem, xpub: hdwallet.derive(testnet ? TESTNET_DERIVATION_PATH : BTC_DERIVATION_PATH).toJSON().xpub}
+}
 
 /**
  * Generate Litecoin wallet
@@ -114,35 +114,35 @@ export const generateBtcWallet = async (testnet: boolean, mnem: string): Promise
  * @param mnem mnemonic seed to use
  * @returns wallet
  */
-export const generateLtcWallet = async (testnet: boolean, mnem: string): Promise<Wallet> => {
+function generateLtcWallet(testnet: boolean, mnem: string):Wallet {
     const hdwallet = hdkey.fromMasterSeed(await mnemonicToSeed(mnem), testnet ? LTC_TEST_NETWORK.bip32 : LTC_NETWORK.bip32);
-    return {mnemonic: mnem, xpub: hdwallet.derive(testnet ? TESTNET_DERIVATION_PATH : LTC_DERIVATION_PATH).toJSON().xpub};
-};
+    return {mnemonic: mnem, xpub: hdwallet.derive(testnet ? TESTNET_DERIVATION_PATH : LTC_DERIVATION_PATH).toJSON().xpub}
+}
 
 /**
  * Generate Neo address and private key.
  */
-export const generateNeoWallet = () => {
+function generateNeoWallet() {
     const privateKey = Neon.create.privateKey();
-    return {privateKey, address: new wallet.Account(privateKey).address};
-};
+    return {privateKey, address: new wallet.Account(privateKey).address}
+}
 
 /**
  * Generate Xrp address and secret.
  */
-export const generateXrpWallet = () => {
+function generateXrpWallet() {
     const {address, secret} = new RippleAPI().generateAddress();
-    return {address, secret};
-};
+    return {address, secret}
+}
 
 /**
  * Generate Stellar address and secret.
  * @param secret secret of the account to generate address
  */
-export const generateXlmWallet = (secret?: string) => {
+function generateXlmWallet(secret?: string) {
     const keypair = secret ? Keypair.fromSecret(secret) : Keypair.random();
-    return {address: keypair.publicKey(), secret: keypair.secret()};
-};
+    return {address: keypair.publicKey(), secret: keypair.secret()}
+}
 
 /**
  * Generate wallet
@@ -151,7 +151,7 @@ export const generateXlmWallet = (secret?: string) => {
  * @param mnemonic mnemonic seed to use. If not present, new one will be generated
  * @returns wallet or a combination of address and private key
  */
-export const generateWallet = (currency: Currency, testnet: boolean, mnemonic?: string) => {
+function generateWallet(currency: Currency, testnet: boolean, mnemonic?: string) {
     const mnem = mnemonic ? mnemonic : generateMnemonic(256);
     switch (currency) {
         case Currency.BTC:
@@ -189,4 +189,4 @@ export const generateWallet = (currency: Currency, testnet: boolean, mnemonic?: 
         default:
             throw new Error('Unsupported blockchain.');
     }
-};
+}

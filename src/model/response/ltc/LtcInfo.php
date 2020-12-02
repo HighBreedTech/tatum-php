@@ -16,29 +16,29 @@ class LtcInfo extends Model {
 * @var string
      * @memberof LtcInfo
      */
-    chain: string;
+    public $chain;
     /**
      * Last block.
 * @var number
      * @memberof LtcInfo
      */
-    blocks: number;
+    public $blocks;
     /**
      * Last headers.
 * @var number
      * @memberof LtcInfo
      */
-    headers: number;
+    public $headers;
     /**
      * Hash of the last block.
 * @var string
      * @memberof LtcInfo
      */
-    bestblockhash: string;
+    public $bestblockhash;
     /**
      * Difficulty of the PoW algorithm.
 * @var number
      * @memberof LtcInfo
      */
-    difficulty: number;
+    public $difficulty;
 }

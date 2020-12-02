@@ -15,23 +15,23 @@ class BchInfo extends Model {
 * @var string
      * @memberof BchInfo
      */
-    chain: string;
+    public $chain;
     /**
      * Last block.
 * @var number
      * @memberof BchInfo
      */
-    blocks: number;
+    public $blocks;
     /**
      * Hash of the last block.
 * @var string
      * @memberof BchInfo
      */
-    bestblockhash: string;
+    public $bestblockhash;
     /**
      * Difficulty of the PoW algorithm.
 * @var number
      * @memberof BchInfo
      */
-    difficulty: number;
+    public $difficulty;
 }

@@ -16,5 +16,5 @@ class TransactionHash extends Model {
 * @var string
      * @memberof TransactionHash
      */
-    txId: string;
+    public $txId;
 }

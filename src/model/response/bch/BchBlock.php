@@ -10,7 +10,7 @@ use Tatum\model\Model;
  * @export
  * @interface BchBlock
  */
-import {BchTx} from './BchTx';
+
 
 class BchBlock extends Model {
     /**
@@ -18,72 +18,72 @@ class BchBlock extends Model {
 * @var string
      * @memberof BchBlock
      */
-    hash: string;
+    public $hash;
     /**
      * Block size.
 * @var number
      * @memberof BchBlock
      */
-    size: number;
+    public $size;
     /**
      * The number of blocks preceding a particular block on a block chain.
 * @var number
      * @memberof BchBlock
      */
-    height: number;
+    public $height;
     /**
      * Block version.
 * @var number
      * @memberof BchBlock
      */
-    version: number;
+    public $version;
     /**
      * The root node of a merkle tree, a descendant of all the hashed pairs in the tree.
 * @var string
      * @memberof BchBlock
      */
-    merkleroot: string;
+    public $merkleroot;
     /**
      * List of transactions present in the block.
 * @var Array
 <BchTx>
      * @memberof BchBlock
      */
-    tx: BchTx[];
+public $tx;
     /**
      * Time of the block.
     * @var number
      * @memberof BchBlock
      */
-    time: number;
+    public $time;
     /**
      * Arbitrary number that is used in Bitcoin's proof of work consensus algorithm.
     * @var number
      * @memberof BchBlock
      */
-    nonce: number;
+    public $nonce;
     /**
      *
     * @var number
      * @memberof BchBlock
      */
-    difficulty: number;
+    public $difficulty;
     /**
      * Number of blocks mined after this block.
     * @var number
      * @memberof BchBlock
      */
-    confirmations: number;
+    public $confirmations;
     /**
      * Hash of the previous block.
     * @var string
      * @memberof BchBlock
      */
-    previousblockhash: string;
+    public $previousblockhash;
     /**
      * Hash of the next block.
     * @var string
      * @memberof BchBlock
      */
-    nextblockhash: string;
+    public $nextblockhash;
 }

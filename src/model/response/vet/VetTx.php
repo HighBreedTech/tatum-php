@@ -16,74 +16,74 @@ class VetTx extends Model {
 * @var string
      * @memberof VetTx
      */
-    id: string;
+    public $id;
     /**
      *
 * @var string
      * @memberof VetTx
      */
-    chainTag: string;
+    public $chainTag;
     /**
      *
 * @var string
      * @memberof VetTx
      */
-    blockRef: string;
+    public $blockRef;
     /**
      *
 * @var number
      * @memberof VetTx
      */
-    expiration: number;
+    public $expiration;
     /**
      *
 * @var Array
 <VetTxClauses>
      * @memberof VetTx
      */
-    clauses: VetTxClauses[];
+public $clauses;
     /**
      *
     * @var number
      * @memberof VetTx
      */
-    gasPriceCoef: number;
+    public $gasPriceCoef;
     /**
      *
     * @var number
      * @memberof VetTx
      */
-    gas: number;
+    public $gas;
     /**
      *
     * @var string
      * @memberof VetTx
      */
-    origin: string;
+    public $origin;
     /**
      *
     * @var string
      * @memberof VetTx
      */
-    nonce: string;
+    public $nonce;
     /**
      *
     * @var number
      * @memberof VetTx
      */
-    size: number;
+    public $size;
     /**
      *
     * @var VetTxMeta
      * @memberof VetTx
      */
-    meta: VetTxMeta;
+public $meta;
     /**
      *
     * @var number
      * @memberof VetTx
      */
-    blockNumber: number;
+    public $blockNumber;
 }
 
 /**
@@ -97,19 +97,19 @@ class VetTxClauses extends Model {
     * @var string
      * @memberof VetTxClauses
      */
-    to: string;
+    public $to;
     /**
      *
     * @var string
      * @memberof VetTxClauses
      */
-    value: string;
+    public $value;
     /**
      *
     * @var string
      * @memberof VetTxClauses
      */
-    data: string;
+    public $data;
 }
 
 /**
@@ -123,17 +123,17 @@ class VetTxMeta extends Model {
     * @var string
      * @memberof VetTxMeta
      */
-    blockID: string;
+    public $blockID;
     /**
      *
     * @var number
      * @memberof VetTxMeta
      */
-    blockNumber: number;
+    public $blockNumber;
     /**
      *
     * @var number
      * @memberof VetTxMeta
      */
-    blockTimestamp: number;
+    public $blockTimestamp;
 }

@@ -4,73 +4,74 @@ namespace Tatum\model\response\btc;
 
 
 use Tatum\model\Model;
-import {BtcTx} from './BtcTx';
+
 
 /**
  *
  * @export
  * @interface BtcBlock
  */
-class BtcBlock extends Model {
+class BtcBlock extends Model
+{
     /**
      * Hash of block.
-* @var string
+     * @var string
      * @memberof BtcBlock
      */
-    hash: string;
+    public $hash;
     /**
      * The number of blocks preceding a particular block on a block chain.
-* @var number
+     * @var number
      * @memberof BtcBlock
      */
-    height: number;
+    public $height;
     /**
      * The number of blocks following a particular block on a block chain, including current one.
-* @var number
+     * @var number
      * @memberof BtcBlock
      */
-    depth: number;
+    public $depth;
     /**
      * Block version.
-* @var number
+     * @var number
      * @memberof BtcBlock
      */
-    version: number;
+    public $version;
     /**
      * Hash of the previous block.
-* @var string
+     * @var string
      * @memberof BtcBlock
      */
-    prevBlock: string;
+    public $prevBlock;
     /**
      * The root node of a merkle tree, a descendant of all the hashed pairs in the tree.
-* @var string
+     * @var string
      * @memberof BtcBlock
      */
-    merkleRoot: string;
+    public $merkleRoot;
     /**
      * Time of the block.
-* @var number
+     * @var number
      * @memberof BtcBlock
      */
-    time: number;
+    public $time;
     /**
      *
-* @var number
+     * @var number
      * @memberof BtcBlock
      */
-    bits: number;
+    public $bits;
     /**
      * Arbitrary number that is used in Bitcoin's proof of work consensus algorithm.
-* @var number
+     * @var number
      * @memberof BtcBlock
      */
-    nonce: number;
+    public $nonce;
     /**
      *
-* @var Array
-<BtcTx>
+     * @var Array
+     * <BtcTx>
      * @memberof BtcBlock
      */
-    txs: BtcTx[];
+    public $txs;
 }

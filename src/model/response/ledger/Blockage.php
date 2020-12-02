@@ -16,29 +16,29 @@ class Blockage extends Model {
 * @var string
      * @memberof Blockage
      */
-    id: string;
+    public $id;
     /**
      * ID of the account this blockage is for.
 * @var string
      * @memberof Blockage
      */
-    accountId: string;
+    public $accountId;
     /**
      * Amount blocked on account.
 * @var string
      * @memberof Blockage
      */
-    amount: string;
+    public $amount;
     /**
      * Type of blockage.
 * @var string
      * @memberof Blockage
      */
-    type: string;
+    public $type;
     /**
      * Description of blockage.
 * @var string
      * @memberof Blockage
      */
-    description?: string;
+    public $description;
 }

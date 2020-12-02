@@ -4,14 +4,14 @@ import {
     TransactionBuilder as KMSTransactionBuilder
 // @ts-ignore
 } from '@bitcoin-dot-com/bitcoincashjs2-lib';
-import BigNumber from 'bignumber.js';
-import {ECPair, TransactionBuilder} from 'bitbox-sdk';
-import {validateOrReject} from 'class-validator';
+
+
+
 // @ts-ignore
-import coininfo from 'coininfo';
-import {Currency, KeyPair, TransactionKMS, TransferBtcBasedOffchain, WithdrawalResponseData} from '../model';
-import {generateAddressFromXPub, generateBchWallet, generatePrivateKeyFromMnemonic} from '../wallet';
-import {offchainBroadcast, offchainCancelWithdrawal, offchainStoreWithdrawal} from './common';
+
+
+
+
 
 /**
  * Send Bitcoin Cash transaction from Tatum Ledger account to the blockchain. This method broadcasts signed transaction to the blockchain.
@@ -20,7 +20,7 @@ import {offchainBroadcast, offchainCancelWithdrawal, offchainStoreWithdrawal} fr
  * @param body content of the transaction to broadcast
  * @returns transaction id of the transaction in the blockchain
  */
-export const sendBitcoinCashOffchainTransaction = async (testnet: boolean, body: TransferBtcBasedOffchain) => {
+function sendBitcoinCashOffchainTransaction(testnet: boolean, body: TransferBtcBasedOffchain) {
     await validateOrReject(body);
     const {
         mnemonic, keyPair, attr: changeAddress, ...withdrawal
@@ -41,13 +41,13 @@ export const sendBitcoinCashOffchainTransaction = async (testnet: boolean, body:
         throw e;
     }
     try {
-        return {...await offchainBroadcast({txData, withdrawalId: id, currency: Currency.BCH}), id};
+        return {...await offchainBroadcast({txData, withdrawalId: id, currency: Currency.BCH}), id}
     } catch (e) {
         console.error(e);
         await offchainCancelWithdrawal(id);
         throw e;
     }
-};
+}
 
 /**
  * Sign Bitcoin Cash pending transaction from Tatum KMS
@@ -56,7 +56,7 @@ export const sendBitcoinCashOffchainTransaction = async (testnet: boolean, body:
  * @param testnet mainnet or testnet version
  * @returns transaction data to be broadcast to blockchain.
  */
-export const signBitcoinCashOffchainKMSTransaction = async (tx: TransactionKMS, mnemonic: string, testnet: boolean) => {
+function signBitcoinCashOffchainKMSTransaction(tx: TransactionKMS, $mnemonic, testnet: boolean) {
     if (tx.chain !== Currency.BCH || !tx.withdrawalResponses) {
         throw Error('Unsupported chain.');
     }
@@ -73,7 +73,7 @@ export const signBitcoinCashOffchainKMSTransaction = async (tx: TransactionKMS, 
         builder.sign(i, ecPair, undefined, 0x01, amountsToSign[i], undefined, ECSignature.SCHNORR);
     }
     return builder.build().toHex();
-};
+}
 
 /**
  * Sign Bitcoin Cash transaction with private keys locally. Nothing is broadcast to the blockchain.
@@ -87,7 +87,7 @@ export const signBitcoinCashOffchainKMSTransaction = async (tx: TransactionKMS, 
  * @returns transaction data to be broadcast to blockchain.
  */
 export const prepareBitcoinCashSignedOffchainTransaction =
-    async (testnet: boolean, data: WithdrawalResponseData[], amount: string, address: string, mnemonic?: string, keyPair?: KeyPair[], changeAddress?: string) => {
+(testnet: boolean, data: WithdrawalResponseData[], $amount, $address, mnemonic?: string, keyPair?: KeyPair[], changeAddress?: string) {
         const networkType = testnet ? 'testnet' : 'mainnet';
         const tx = new TransactionBuilder(networkType);
 
@@ -129,4 +129,4 @@ export const prepareBitcoinCashSignedOffchainTransaction =
         }
 
         return tx.build().toHex();
-    };
+    }

@@ -10,7 +10,7 @@ use Tatum\model\Model;
  * @export
  * @interface LtcBlock
  */
-import {LtcTx} from './LtcTx';
+
 
 class LtcBlock extends Model {
     /**
@@ -18,54 +18,54 @@ class LtcBlock extends Model {
 * @var string
      * @memberof LtcBlock
      */
-    hash: string;
+    public $hash;
     /**
      * The number of blocks preceding a particular block on a block chain.
 * @var number
      * @memberof LtcBlock
      */
-    height: number;
+    public $height;
     /**
      * Block version.
 * @var number
      * @memberof LtcBlock
      */
-    version: number;
+    public $version;
     /**
      * Hash of the previous block.
 * @var string
      * @memberof LtcBlock
      */
-    prevBlock: string;
+    public $prevBlock;
     /**
      * The root node of a merkle tree, a descendant of all the hashed pairs in the tree.
 * @var string
      * @memberof LtcBlock
      */
-    merkleRoot: string;
+    public $merkleRoot;
     /**
      * Time of the block.
 * @var number
      * @memberof LtcBlock
      */
-    ts: number;
+    public $ts;
     /**
      *
 * @var number
      * @memberof LtcBlock
      */
-    bits: number;
+    public $bits;
     /**
      * Arbitrary number that is used in Litecoin's proof of work consensus algorithm.
 * @var number
      * @memberof LtcBlock
      */
-    nonce: number;
+    public $nonce;
     /**
      *
 * @var Array
 <LtcTx>
      * @memberof LtcBlock
      */
-    txs: LtcTx[];
+public $txs;
 }

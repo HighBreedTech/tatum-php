@@ -10,7 +10,7 @@ use Tatum\model\Model;
  * @export
  * @interface MarketValue
  */
-import {Fiat} from './Fiat';
+
 
 class MarketValue extends Model {
     /**
@@ -18,23 +18,23 @@ class MarketValue extends Model {
 * @var string
      * @memberof MarketValue
      */
-    amount?: string;
+    public $amount;
     /**
      * Base pair.
 * @var string
      * @memberof MarketValue
      */
-    currency?: Fiat;
+public $currency;
     /**
      * Date of validity of rate in UTC.
 * @var number
      * @memberof MarketValue
      */
-    sourceDate?: number;
+    public $sourceDate;
     /**
      * Source of base pair.
 * @var string
      * @memberof MarketValue
      */
-    source?: string;
+    public $source;
 }

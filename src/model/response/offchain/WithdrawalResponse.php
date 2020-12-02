@@ -10,7 +10,7 @@ use Tatum\model\Model;
  * @export
  * @interface WithdrawalResponse
  */
-import {Address} from './Address';
+
 
 class WithdrawalResponse extends Model {
     /**
@@ -18,20 +18,20 @@ class WithdrawalResponse extends Model {
 * @var string
      * @memberof WithdrawalResponse
      */
-    reference: string;
+    public $reference;
     /**
      *
 * @var Array
 <WithdrawalResponseData>
      * @memberof WithdrawalResponse
      */
-    data: WithdrawalResponseData[];
+public $data;
     /**
      * ID of withdrawal
     * @var string
      * @memberof WithdrawalResponse
      */
-    id: string;
+    public $id;
 }
 
 /**
@@ -45,30 +45,30 @@ class WithdrawalResponseData extends Model {
     * @var Address
      * @memberof WithdrawalResponseData
      */
-    address: Address;
+public $address;
     /**
      * Amount of unprocessed transaction outputs, that can be used for withdrawal. Bitcoin, Litecoin, Bitcoin Cash only.
     * @var number
      * @memberof WithdrawalResponseData
      */
-    amount: number;
+    public $amount;
     /**
      * Last used unprocessed transaction output, that can be used.
      * Bitcoin, Litecoin, Bitcoin Cash only. If -1, it indicates prepared vOut with amount to be transferred to pool address.
     * @var string
      * @memberof WithdrawalResponseData
      */
-    vIn: string;
+    public $vIn;
     /**
      * Index of last used unprocessed transaction output in raw transaction, that can be used. Bitcoin, Litecoin, Bitcoin Cash only.
     * @var number
      * @memberof WithdrawalResponseData
      */
-    vInIndex: number;
+    public $vInIndex;
     /**
      * Script of last unprocessed UTXO. Bitcoin SV only.
     * @var string
      * @memberof WithdrawalResponseData
      */
-    scriptPubKey: string;
+    public $scriptPubKey;
 }

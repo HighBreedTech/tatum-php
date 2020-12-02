@@ -7,8 +7,8 @@ use Tatum\model\Model;
 
 
 
-//import {ValidationArguments, ValidatorConstraint, ValidatorConstraintInterface} from 'class-validator';
-//import {TransferBtcBasedOffchain} from '../index';
+//
+//
 //
 //@ValidatorConstraint({name: 'mnemonicKeypair', async: false})
 //export class TransferBtcOffchainValidator implements ValidatorConstraintInterface extends Model {

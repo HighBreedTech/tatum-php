@@ -15,33 +15,33 @@ class BchTx extends Model {
 * @var string
      * @memberof BchTx
      */
-    txid: string;
+    public $txid;
     /**
      *
 * @var number
      * @memberof BchTx
      */
-    version: number;
+    public $version;
     /**
      *
 * @var number
      * @memberof BchTx
      */
-    locktime: number;
+    public $locktime;
     /**
      *
 * @var Array
 <BchTxVin>
      * @memberof BchTx
      */
-    vin: BchTxVin[];
+public $vin;
     /**
      *
     * @var Array
     <BchTxVout>
      * @memberof BchTx
      */
-    vout: BchTxVout[];
+public $vout;
 }
 
 /**
@@ -55,26 +55,26 @@ class BchTxScriptPubKey extends Model {
         * @var string
      * @memberof BchTxScriptPubKey
      */
-    hex: string;
+    public $hex;
     /**
      *
         * @var string
      * @memberof BchTxScriptPubKey
      */
-    asm: string;
+    public $asm;
     /**
      *
         * @var Array
         <string>
      * @memberof BchTxScriptPubKey
      */
-    addresses: string[];
+public $addresses;
     /**
      *
             * @var string
      * @memberof BchTxScriptPubKey
      */
-    type: string;
+    public $type;
 }
 
 /**
@@ -88,13 +88,13 @@ class BchTxScriptSig extends Model {
             * @var string
      * @memberof BchTxScriptSig
      */
-    hex: string;
+    public $hex;
     /**
      *
             * @var string
      * @memberof BchTxScriptSig
      */
-    asm: string;
+    public $asm;
 }
 
 /**
@@ -108,31 +108,31 @@ class BchTxVin extends Model {
             * @var string
      * @memberof BchTxVin
      */
-    txid: string;
+    public $txid;
     /**
      *
             * @var number
      * @memberof BchTxVin
      */
-    vout: number;
+    public $vout;
     /**
      *
             * @var BchTxScriptSig
      * @memberof BchTxVin
      */
-    scriptSig: BchTxScriptSig;
+public $scriptSig;
     /**
      *
             * @var string
      * @memberof BchTxVin
      */
-    coinbase: string;
+    public $coinbase;
     /**
      *
             * @var number
      * @memberof BchTxVin
      */
-    sequence: number;
+    public $sequence;
 }
 
 /**
@@ -146,17 +146,17 @@ class BchTxVout extends Model {
             * @var string
      * @memberof BchTxVout
      */
-    value: string;
+    public $value;
     /**
      *
             * @var number
      * @memberof BchTxVout
      */
-    n: number;
+    public $n;
     /**
      *
             * @var BchTxScriptPubKey
      * @memberof BchTxVout
      */
-    scriptPubKey: BchTxScriptPubKey;
+public $scriptPubKey;
 }

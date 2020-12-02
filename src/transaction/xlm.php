@@ -1,7 +1,7 @@
-import {validateOrReject} from 'class-validator';
-import {Account, Asset, Keypair, Memo, Networks, Operation, TransactionBuilder} from 'stellar-sdk';
-import {xlmBroadcast, xlmGetAccountInfo} from '../blockchain';
-import {Currency, TransactionKMS, TransferXlm} from '../model';
+
+
+
+
 
 /**
  * Send Stellar transaction to the blockchain. This method broadcasts signed transaction to the blockchain.
@@ -10,9 +10,9 @@ import {Currency, TransactionKMS, TransferXlm} from '../model';
  * @param body content of the transaction to broadcast
  * @returns transaction id of the transaction in the blockchain
  */
-export const sendXlmTransaction = async (testnet: boolean, body: TransferXlm) => {
+function sendXlmTransaction(testnet: boolean, body: TransferXlm) {
     return xlmBroadcast(await prepareXlmSignedTransaction(testnet, body));
-};
+}
 
 /**
  * Sign Stellar pending transaction from Tatum KMS
@@ -21,14 +21,14 @@ export const sendXlmTransaction = async (testnet: boolean, body: TransferXlm) =>
  * @param testnet mainnet or testnet version
  * @returns transaction data to be broadcast to blockchain.
  */
-export const signXlmKMSTransaction = async (tx: TransactionKMS, secret: string, testnet: boolean) => {
+function signXlmKMSTransaction(tx: TransactionKMS, $secret, testnet: boolean) {
     if (tx.chain !== Currency.XLM) {
         throw Error('Unsupported chain.');
     }
     const transaction = TransactionBuilder.fromXDR(tx.serializedTransaction, testnet ? Networks.TESTNET : Networks.PUBLIC);
     transaction.sign(Keypair.fromSecret(secret));
     return transaction.toEnvelope().toXDR().toString('base64');
-};
+}
 
 /**
  * Sign Stellar transaction with private keys locally. Nothing is broadcast to the blockchain.
@@ -36,7 +36,7 @@ export const signXlmKMSTransaction = async (tx: TransactionKMS, secret: string, 
  * @param body content of the transaction to broadcast
  * @returns transaction data to be broadcast to blockchain.
  */
-export const prepareXlmSignedTransaction = async (testnet: boolean, body: TransferXlm) => {
+function prepareXlmSignedTransaction(testnet: boolean, body: TransferXlm) {
     await validateOrReject(body);
     const {
         fromSecret,
@@ -67,6 +67,6 @@ export const prepareXlmSignedTransaction = async (testnet: boolean, body: Transf
             .build();
     tx.sign(Keypair.fromSecret(fromSecret));
     return tx.toEnvelope().toXDR().toString('base64');
-};
+}
 
 // TODO: add support for TrustLine

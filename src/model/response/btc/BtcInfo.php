@@ -4,40 +4,42 @@ namespace Tatum\model\response\btc;
 
 
 use Tatum\model\Model;
+
 /**
  *
  * @export
  * @interface BtcInfo
  */
-class BtcInfo extends Model {
+class BtcInfo extends Model
+{
     /**
      * Chain of the blockchain, main or test.
-* @var string
+     * @var string
      * @memberof BtcInfo
      */
-    chain: string;
+    public $chain;
     /**
      * Last block.
-* @var number
+     * @var number
      * @memberof BtcInfo
      */
-    blocks: number;
+    public $blocks;
     /**
      * Last headers.
-* @var number
+     * @var number
      * @memberof BtcInfo
      */
-    headers: number;
+    public $headers;
     /**
      * Hash of the last block.
-* @var string
+     * @var string
      * @memberof BtcInfo
      */
-    bestblockhash: string;
+    public $bestblockhash;
     /**
      * Difficulty of the algorithm.
-* @var number
+     * @var number
      * @memberof BtcInfo
      */
-    difficulty: number;
+    public $difficulty;
 }

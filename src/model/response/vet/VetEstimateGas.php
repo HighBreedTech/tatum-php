@@ -16,29 +16,29 @@ class VetEstimateGas extends Model {
 * @var string
      * @memberof VetEstimateGas
      */
-    from: string;
+    public $from;
     /**
      * Recipient
 * @var string
      * @memberof VetEstimateGas
      */
-    to: string;
+    public $to;
     /**
      * Amount to send
 * @var string
      * @memberof VetEstimateGas
      */
-    value: string;
+    public $value;
     /**
      * Data to send to Smart Contract
 * @var string
      * @memberof VetEstimateGas
      */
-    data: string;
+    public $data;
     /**
      * Nonce
 * @var number
      * @memberof VetEstimateGas
      */
-    nonce: number;
+    public $nonce;
 }

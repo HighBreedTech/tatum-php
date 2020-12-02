@@ -31,6 +31,14 @@ class Model
         /** @var ConstraintViolationListInterface $errors */
         $errors = $validator->validate($this);
 
+
+        foreach (get_object_vars($this) as $var) {
+            if($var instanceof Model) {
+               $varErrors = $validator->validate($var);
+               $errors = array_merge($errors, $varErrors);
+            }
+        }
+
         if (count($errors)) {
             if ($exception) {
                 throw new ValidationFailedException(self::class, $errors);

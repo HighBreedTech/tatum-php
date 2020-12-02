@@ -16,90 +16,90 @@ class VetBlock extends Model {
 * @var number
      * @memberof VetBlock
      */
-    number: number;
+    public $number;
     /**
      * block identifier
 * @var string
      * @memberof VetBlock
      */
-    id: string;
+    public $id;
     /**
      * RLP encoded block size in bytes
 * @var number
      * @memberof VetBlock
      */
-    size: number;
+    public $size;
     /**
      * parent block ID
 * @var string
      * @memberof VetBlock
      */
-    parentID: string;
+    public $parentID;
     /**
      * block unix timestamp
 * @var number
      * @memberof VetBlock
      */
-    timestamp: number;
+    public $timestamp;
     /**
      * block gas limit (max allowed accumulative gas usage of transactions)
 * @var number
      * @memberof VetBlock
      */
-    gasLimit: number;
+    public $gasLimit;
     /**
      * Address of account to receive block reward
 * @var string
      * @memberof VetBlock
      */
-    beneficiary: string;
+    public $beneficiary;
     /**
      * accumulative gas usage of transactions
 * @var number
      * @memberof VetBlock
      */
-    gasUsed: number;
+    public $gasUsed;
     /**
      * sum of all ancestral blocks' score
 * @var number
      * @memberof VetBlock
      */
-    totalScore: number;
+    public $totalScore;
     /**
      * root hash of transactions in the block
 * @var string
      * @memberof VetBlock
      */
-    txsRoot: string;
+    public $txsRoot;
     /**
      * supported txs features bitset
 * @var number
      * @memberof VetBlock
      */
-    txsFeatures: number;
+    public $txsFeatures;
     /**
      * root hash of accounts state
 * @var string
      * @memberof VetBlock
      */
-    stateRoot: string;
+    public $stateRoot;
     /**
      * root hash of transaction receipts
 * @var string
      * @memberof VetBlock
      */
-    receiptsRoot: string;
+    public $receiptsRoot;
     /**
      * the one who signed this block
 * @var string
      * @memberof VetBlock
      */
-    signer: string;
+    public $signer;
     /**
      * transactions IDs
 * @var Array
 <string>
      * @memberof VetBlock
      */
-    transactions: string[];
+public $transactions;
 }

@@ -5,19 +5,12 @@ namespace Tatum\model\response\common;
 
 use Tatum\model\Model;
 
+class Rate extends Model
+{
 
-import {Currency} from '../../request';
-import {Fiat} from '../ledger/Fiat';
-
-export class Rate extends Model {
-
-    public id: Fiat | Currency;
-
-public $value;
-
-    public basePair: Fiat;
-
-    public timestamp: number;
-
-public $source;
+    public $id;
+    public $value;
+    public $basePair;
+    public $timestamp;
+    public $source;
 }

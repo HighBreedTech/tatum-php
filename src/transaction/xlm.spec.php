@@ -1,11 +1,11 @@
-import * as blockchain from '../blockchain';
-import {TransferXlm} from '../model';
-import {prepareXlmSignedTransaction} from './xlm';
+
+
+
 
 jest.mock('../blockchain');
 
 describe('XLM transactions', () => {
-    it('should test XLM transaction data', async () => {
+    it('should test XLM transaction data', () => {
         jest.spyOn(blockchain, 'xlmGetAccountInfo').mockResolvedValue({sequence: '123'});
         const body = new TransferXlm();
         body.fromSecret = 'SCFCTIS5326CRI3XFFBEWGXFWZK3HTUFI2AOI5IJUZAX2W5KM2PXIFIQ';
@@ -15,7 +15,7 @@ describe('XLM transactions', () => {
         expect(txData).toContain('AAAAAgAAAAA0EqaLPO0bvBPvzGz4wucBtxmNXs');
     });
 
-    it('should not test XLM transaction data, missing amount', async () => {
+    it('should not test XLM transaction data, missing amount', () => {
         jest.spyOn(blockchain, 'xlmGetAccountInfo').mockResolvedValue({sequence: '123'});
         const body = new TransferXlm();
         body.fromSecret = 'SCFCTIS5326CRI3XFFBEWGXFWZK3HTUFI2AOI5IJUZAX2W5KM2PXIFIQ';

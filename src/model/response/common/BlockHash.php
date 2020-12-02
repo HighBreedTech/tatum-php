@@ -7,5 +7,5 @@ use Tatum\model\Model;
 
 
 class BlockHash extends Model {
-    hash: string;
+    public $hash;
 }
