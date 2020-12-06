@@ -1,99 +1,115 @@
 <?php
 
+namespace Tatum\ledger;
 
+use Tatum\ApiRequest;
+use Tatum\Constants;
+use Tatum\model\request\BlockAmount;
+use Tatum\model\request\CreateAccount;
+use Tatum\model\response\ledger\Account;
+use Tatum\model\response\ledger\Blockage;
 
 
 /**
  * For more details, see <a href="https://tatum.io/apidoc.html#operation/getAccountByAccountId" target="_blank">Tatum API documentation</a>
  */
-function getAccountById(id: string):Account {
-    return Axios::get(Constants::TATUM_API_URL . "/v3/ledger/account/${id}", [], [ 'x-api-key' => getenv('TATUM_API_KEY') ])->data;
+function getAccountById($id):Account {
+    return ApiRequest::get(Constants::TATUM_API_URL . "/v3/ledger/account/{$id}", [], [ 'x-api-key' => getenv('TATUM_API_KEY') ])->data;
 }
 
 /**
  * For more details, see <a href="https://tatum.io/apidoc.html#operation/createAccount" target="_blank">Tatum API documentation</a>
+ * @param $account CreateAccount
+ * @return Account
  */
-function createAccount(account: CreateAccount):Account {
-    await validateOrReject(account);
-    return Axios::post(Constants::TATUM_API_URL . "/v3/ledger/account", account, [], [ 'x-api-key' => getenv('TATUM_API_KEY') ])->data;
+function createAccount($account):Account {
+    $account->__validate(true);
+    return ApiRequest::post(Constants::TATUM_API_URL . "/v3/ledger/account", account, [], [ 'x-api-key' => getenv('TATUM_API_KEY') ])->data;
 }
 
 /**
  * For more details, see <a href="https://tatum.io/apidoc.html#operation/getBlockAmount" target="_blank">Tatum API documentation</a>
+ * @param $id
+ * @param int $pageSize
+ * @param int $offset
+ * @return Blockage[]
  */
-function getBlockedAmountsByAccountId($id, pageSize: number = 50, offset = 0):Blockage[] {
-    return Axios::get(Constants::TATUM_API_URL . "/v3/ledger/account/block/${id}?pageSize=${pageSize}&offset=${offset}", [], [ 'x-api-key' => getenv('TATUM_API_KEY') ])->data;
+function getBlockedAmountsByAccountId($id, $pageSize = 50, $offset = 0) {
+    return ApiRequest::get(Constants::TATUM_API_URL . "/v3/ledger/account/block/{$id}?pageSize=${pageSize}&offset=${offset}", [], [ 'x-api-key' => getenv('TATUM_API_KEY') ])->data;
 }
 
 /**
  * For more details, see <a href="https://tatum.io/apidoc.html#operation/blockAmount" target="_blank">Tatum API documentation</a>
+ * @param $id
+ * @param $block BlockAmount
+ * @return object
  */
-function blockAmount($id, block: BlockAmount):{ id: string } {
-    await validateOrReject(block);
-    return Axios::post(Constants::TATUM_API_URL . "/v3/ledger/account/block/${id}", block, [], [ 'x-api-key' => getenv('TATUM_API_KEY') ])->data;
+function blockAmount($id, $block) {
+    $block->__validate(true);
+    return ApiRequest::post(Constants::TATUM_API_URL . "/v3/ledger/account/block/{$id}", $block, [], [ 'x-api-key' => getenv('TATUM_API_KEY') ])->data;
 }
 
 /**
  * For more details, see <a href="https://tatum.io/apidoc.html#operation/deleteBlockAmount" target="_blank">Tatum API documentation</a>
  */
-function deleteBlockedAmount(id: string) {
-    await axios.delete("${process.env.TATUM_API_URL || TATUM_API_URL}/v3/ledger/account/block/${id}", [], [ 'x-api-key' => getenv('TATUM_API_KEY') ];
+function deleteBlockedAmount($id) {
+    return ApiRequest::delete(Constants::TATUM_API_URL . "/v3/ledger/account/block/{$id}", [], [ 'x-api-key' => getenv('TATUM_API_KEY') ];
 }
 
 /**
  * For more details, see <a href="https://tatum.io/apidoc.html#operation/deleteAllBlockAmount" target="_blank">Tatum API documentation</a>
  */
-function deleteBlockedAmountForAccount(id: string) {
-    await axios.delete("${process.env.TATUM_API_URL || TATUM_API_URL}/v3/ledger/account/block/account/${id}", [], [ 'x-api-key' => getenv('TATUM_API_KEY') ];
+function deleteBlockedAmountForAccount($id) {
+    return ApiRequest::delete(Constants::TATUM_API_URL . "/v3/ledger/account/block/account/{$id}", [], [ 'x-api-key' => getenv('TATUM_API_KEY') ];
 }
 
 /**
  * For more details, see <a href="https://tatum.io/apidoc.html#operation/activateAccount" target="_blank">Tatum API documentation</a>
  */
-function activateAccount(id: string) {
-    await axios.put("${process.env.TATUM_API_URL || TATUM_API_URL}/v3/ledger/account/${id}/activate", undefined, [], [ 'x-api-key' => getenv('TATUM_API_KEY') ];
+function activateAccount($id) {
+    return ApiRequest::put(Constants::TATUM_API_URL . "/v3/ledger/account/{$id}/activate", undefined, [], [ 'x-api-key' => getenv('TATUM_API_KEY') ];
 }
 
 /**
  * For more details, see <a href="https://tatum.io/apidoc.html#operation/deactivateAccount" target="_blank">Tatum API documentation</a>
  */
-function deactivateAccount(id: string) {
-    await axios.put("${process.env.TATUM_API_URL || TATUM_API_URL}/v3/ledger/account/${id}/deactivate", undefined, [], [ 'x-api-key' => getenv('TATUM_API_KEY') ];
+function deactivateAccount($id) {
+    return ApiRequest::put(Constants::TATUM_API_URL . "/v3/ledger/account/{$id}/deactivate", undefined, [], [ 'x-api-key' => getenv('TATUM_API_KEY') ];
 }
 
 /**
  * For more details, see <a href="https://tatum.io/apidoc.html#operation/freezeAccount" target="_blank">Tatum API documentation</a>
  */
-function freezeAccount(id: string) {
-    await axios.put("${process.env.TATUM_API_URL || TATUM_API_URL}/v3/ledger/account/${id}/freeze", undefined, [], [ 'x-api-key' => getenv('TATUM_API_KEY') ];
+function freezeAccount($id) {
+    return ApiRequest::put(Constants::TATUM_API_URL . "/v3/ledger/account/{$id}/freeze", undefined, [], [ 'x-api-key' => getenv('TATUM_API_KEY') ];
 }
 
 /**
  * For more details, see <a href="https://tatum.io/apidoc.html#operation/unfreezeAccount" target="_blank">Tatum API documentation</a>
  */
-function unfreezeAccount(id: string) {
-    await axios.put("${process.env.TATUM_API_URL || TATUM_API_URL}/v3/ledger/account/${id}/unfreeze", undefined, [], [ 'x-api-key' => getenv('TATUM_API_KEY') ];
+function unfreezeAccount($id) {
+    return ApiRequest::put(Constants::TATUM_API_URL . "/v3/ledger/account/{$id}/unfreeze", undefined, [], [ 'x-api-key' => getenv('TATUM_API_KEY') ];
 }
 
 /**
  * For more details, see <a href="https://tatum.io/apidoc.html#operation/getAccountsByCustomerId" target="_blank">Tatum API documentation</a>
  */
-function getAccountsByCustomerId($id, pageSize: number = 50, offset = 0):Account[] {
-    return Axios::get(Constants::TATUM_API_URL . "/v3/ledger/account/customer/${id}?pageSize=${pageSize}&offset=${offset}",
+function getAccountsByCustomerId($id, $pageSize = 50, $offset = 0):Account[] {
+    return ApiRequest::get(Constants::TATUM_API_URL . "/v3/ledger/account/customer/{$id}?pageSize=${pageSize}&offset=${offset}",
         [], [ 'x-api-key' => getenv('TATUM_API_KEY') ])->data;
 }
 
 /**
  * For more details, see <a href="https://tatum.io/apidoc.html#operation/getAllAccounts" target="_blank">Tatum API documentation</a>
  */
-function getAllAccounts(pageSize: number = 50, offset = 0):Account[] {
-    return Axios::get(Constants::TATUM_API_URL . "/v3/ledger/account?pageSize=${pageSize}&offset=${offset}",
+function getAllAccounts($pageSize = 50, $offset = 0):Account[] {
+    return ApiRequest::get(Constants::TATUM_API_URL . "/v3/ledger/account?pageSize=${pageSize}&offset=${offset}",
         [], [ 'x-api-key' => getenv('TATUM_API_KEY') ])->data;
 }
 
 /**
  * For more details, see <a href="https://tatum.io/apidoc.html#operation/getAccountBalance" target="_blank">Tatum API documentation</a>
  */
-function getAccountBalance(id: string):AccountBalance {
-    return Axios::get(Constants::TATUM_API_URL . "/v3/ledger/account/${id}/balance", [], [ 'x-api-key' => getenv('TATUM_API_KEY') ])->data;
+function getAccountBalance($id):AccountBalance {
+    return ApiRequest::get(Constants::TATUM_API_URL . "/v3/ledger/account/{$id}/balance", [], [ 'x-api-key' => getenv('TATUM_API_KEY') ])->data;
 }

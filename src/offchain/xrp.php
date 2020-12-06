@@ -70,7 +70,7 @@ function signXrpOffchainKMSTransaction(tx: TransactionKMS, secret: string) {
  * @returns transaction data to be broadcast to blockchain.
  */
 export const prepareXrpSignedOffchainTransaction =
-(testnet: boolean, $amount, $address, $secret, account: any, $fee, sourceTag?: number, destinationTag?: string) {
+(testnet: boolean, $amount, $address, $secret, account: any, $fee, sourceTag?, destinationTag?: string) {
         const currency = 'XRP';
         const payment: any = {
             source: {

@@ -23,7 +23,7 @@ import {
  * @param i derivation index of address to generate. Up to 2^32 addresses can be generated.
  * @returns blockchain address
  */
-const generateBtcAddress = (testnet: boolean, $xpub, i: number) => {
+const generateBtcAddress = (testnet: boolean, $xpub, $i) => {
     const network = testnet ? networks.testnet : networks.bitcoin;
     const w = fromBase58(xpub, network).derivePath(String(i));
     return payments.p2pkh({pubkey: w.publicKey, network}).address as string;
@@ -36,7 +36,7 @@ const generateBtcAddress = (testnet: boolean, $xpub, i: number) => {
  * @param i derivation index of address to generate. Up to 2^32 addresses can be generated.
  * @returns blockchain address
  */
-const generateLtcAddress = (testnet: boolean, $xpub, i: number) => {
+const generateLtcAddress = (testnet: boolean, $xpub, $i) => {
     const network = testnet ? LTC_TEST_NETWORK : LTC_NETWORK;
     const w = fromBase58(xpub, network).derivePath(String(i));
     return payments.p2pkh({pubkey: w.publicKey, network}).address as string;
@@ -49,7 +49,7 @@ const generateLtcAddress = (testnet: boolean, $xpub, i: number) => {
  * @param i derivation index of address to generate. Up to 2^32 addresses can be generated.
  * @returns blockchain address
  */
-const generateBchAddress = (testnet: boolean, $xpub, i: number) => {
+const generateBchAddress = (testnet: boolean, $xpub, $i) => {
     const node = new HDNode();
     const hdNode = node.fromXPub(xpub).derive(i);
     return node.toCashAddress(hdNode);
@@ -62,7 +62,7 @@ const generateBchAddress = (testnet: boolean, $xpub, i: number) => {
  * @param i derivation index of address to generate. Up to 2^32 addresses can be generated.
  * @returns blockchain address
  */
-const generateEthAddress = (testnet: boolean, $xpub, i: number) => {
+const generateEthAddress = (testnet: boolean, $xpub, $i) => {
     const w = ethHdKey.fromExtendedKey(xpub);
     const wallet = w.deriveChild(i).getWallet();
     return '0x' + wallet.getAddress().toString('hex').toLowerCase();
@@ -75,7 +75,7 @@ const generateEthAddress = (testnet: boolean, $xpub, i: number) => {
  * @param i derivation index of address to generate. Up to 2^32 addresses can be generated.
  * @returns blockchain address
  */
-const generateVetAddress = (testnet: boolean, $xpub, i: number) => {
+const generateVetAddress = (testnet: boolean, $xpub, $i) => {
     const w = ethHdKey.fromExtendedKey(xpub);
     const wallet = w.deriveChild(i).getWallet();
     return '0x' + wallet.getAddress().toString('hex').toLowerCase();
@@ -88,7 +88,7 @@ const generateVetAddress = (testnet: boolean, $xpub, i: number) => {
  * @param i derivation index of private key to generate.
  * @returns blockchain private key to the address
  */
-const generateBtcPrivateKey = (testnet: boolean, $mnemonic, i: number) => {
+const generateBtcPrivateKey = (testnet: boolean, $mnemonic, $i) => {
     const network = testnet ? networks.testnet : networks.bitcoin;
     return fromSeed(await mnemonicToSeed(mnemonic), network)
         .derivePath(testnet ? TESTNET_DERIVATION_PATH : BTC_DERIVATION_PATH)
@@ -103,7 +103,7 @@ const generateBtcPrivateKey = (testnet: boolean, $mnemonic, i: number) => {
  * @param i derivation index of private key to generate.
  * @returns blockchain private key to the address
  */
-const generateLtcPrivateKey = (testnet: boolean, $mnemonic, i: number) => {
+const generateLtcPrivateKey = (testnet: boolean, $mnemonic, $i) => {
     const network = testnet ? LTC_TEST_NETWORK : LTC_NETWORK;
     return fromSeed(await mnemonicToSeed(mnemonic), network)
         .derivePath(testnet ? TESTNET_DERIVATION_PATH : LTC_DERIVATION_PATH)
@@ -118,11 +118,11 @@ const generateLtcPrivateKey = (testnet: boolean, $mnemonic, i: number) => {
  * @param i derivation index of private key to generate.
  * @returns blockchain private key to the address
  */
-const generateBchPrivateKey = (testnet: boolean, $mnemonic, i: number) => {
+const generateBchPrivateKey = (testnet: boolean, $mnemonic, $i) => {
     const m = new Mnemonic();
     const node = new HDNode();
     const hdNode = node.fromSeed(m.toSeed(mnemonic), testnet ? 'testnet' : 'mainnet')
-        .derivePath("${BCH_DERIVATION_PATH}/${i}");
+.derivePath("${BCH_DERIVATION_PATH}/{$i}");
     return node.toWIF(hdNode);
 }
 
@@ -133,7 +133,8 @@ const generateBchPrivateKey = (testnet: boolean, $mnemonic, i: number) => {
  * @param i derivation index of private key to generate.
  * @returns blockchain private key to the address
  */
-const generateEthPrivateKey = (testnet: boolean, $mnemonic, i: number): Promise<string> => {
+const generateEthPrivateKey = (testnet: boolean, $mnemonic, $i): Promise
+<string> => {
     const path = testnet ? TESTNET_DERIVATION_PATH : ETH_DERIVATION_PATH;
     const hdwallet = ethHdKey.fromMasterSeed(await mnemonicToSeed(mnemonic));
     const derivePath = hdwallet.derivePath(path).deriveChild(i);
@@ -147,7 +148,8 @@ const generateEthPrivateKey = (testnet: boolean, $mnemonic, i: number): Promise<
  * @param i derivation index of private key to generate.
  * @returns blockchain private key to the address
  */
-const generateVetPrivateKey = (testnet: boolean, $mnemonic, i: number): Promise<string> => {
+    const generateVetPrivateKey = (testnet: boolean, $mnemonic, $i): Promise
+    <string> => {
     const path = testnet ? TESTNET_DERIVATION_PATH : VET_DERIVATION_PATH;
     const hdwallet = ethHdKey.fromMasterSeed(await mnemonicToSeed(mnemonic));
     const derivePath = hdwallet.derivePath(path).deriveChild(i);
@@ -162,7 +164,7 @@ const generateVetPrivateKey = (testnet: boolean, $mnemonic, i: number): Promise<
  * @param i derivation index of address to generate. Up to 2^32 addresses can be generated.
  * @returns blockchain address
  */
-function generateAddressFromXPub(currency: Currency, testnet: boolean, $xpub, i: number) {
+        function generateAddressFromXPub(currency: Currency, testnet: boolean, $xpub, $i) {
     switch (currency) {
         case Currency.BTC:
             return generateBtcAddress(testnet, xpub, i);
@@ -201,7 +203,7 @@ function generateAddressFromXPub(currency: Currency, testnet: boolean, $xpub, i:
  * @param i derivation index of private key to generate.
  * @returns blockchain private key to the address
  */
-function generatePrivateKeyFromMnemonic(currency: Currency, testnet: boolean, $mnemonic, i: number) {
+        function generatePrivateKeyFromMnemonic(currency: Currency, testnet: boolean, $mnemonic, $i) {
     switch (currency) {
         case Currency.BTC:
             return generateBtcPrivateKey(testnet, mnemonic, i);

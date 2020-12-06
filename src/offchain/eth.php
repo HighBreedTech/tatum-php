@@ -131,7 +131,7 @@ function signEthOffchainKMSTransaction(tx: TransactionKMS, $fromPrivateKey, test
  * @returns transaction data to be broadcast to blockchain.
  */
 export const prepareEthSignedOffchainTransaction =
-($amount, $privateKey, $address, $currency, web3: Web3, $gasPrice, nonce?: number) {
+($amount, $privateKey, $address, $currency, web3: Web3, $gasPrice, nonce?) {
         let tx: TransactionConfig;
         if (currency === 'ETH') {
             tx = {
@@ -175,7 +175,7 @@ export const prepareEthSignedOffchainTransaction =
  * @returns transaction data to be broadcast to blockchain.
  */
 export const prepareEthErc20SignedOffchainTransaction =
-($amount, $privateKey, $address, web3: Web3, $tokenAddress, $gasPrice, nonce?: number) {
+($amount, $privateKey, $address, web3: Web3, $tokenAddress, $gasPrice, nonce?) {
         // @ts-ignore
         const contract = new web3.eth.Contract(tokenAbi, tokenAddress);
         let tx: TransactionConfig;

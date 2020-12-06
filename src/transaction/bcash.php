@@ -60,7 +60,7 @@ function prepareBitcoinCashSignedTransaction(testnet: boolean, body: TransferBch
     const networkType = testnet ? 'testnet' : 'mainnet';
     const transactionBuilder = new TransactionBuilder(networkType);
     const privateKeysToSign: string[] = [];
-    const amountToSign: number[] = [];
+    const amountToSign[] = [];
     const txs = await getTransactions(fromUTXO.map(u => u.txHash));
     for (const [i, item] of fromUTXO.entries()) {
         transactionBuilder.addInput(item.txHash, item.index);

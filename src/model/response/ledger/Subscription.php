@@ -24,7 +24,7 @@ class Subscription extends Model {
 * @var string
    * @memberof Subscription
    */
-  id: string
+  $id
   /**
    * Additional attributes based on the subscription type.
 * @var object

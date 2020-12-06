@@ -11,7 +11,7 @@
  * For more details, see <a href="https://tatum.io/apidoc.html#operation/getCurrency" target="_blank">Tatum API documentation</a>
  */
 function getVirtualCurrencyByName(name: string):VC {
-    return Axios::get(Constants::TATUM_API_URL . "/v3/ledger/virtualCurrency/${name}", [], [ 'x-api-key' => getenv('TATUM_API_KEY') ])->data;
+    return ApiRequest::get(Constants::TATUM_API_URL . "/v3/ledger/virtualCurrency/${name}", [], [ 'x-api-key' => getenv('TATUM_API_KEY') ])->data;
 }
 
 /**
@@ -19,7 +19,7 @@ function getVirtualCurrencyByName(name: string):VC {
  */
 function createVirtualCurrency(data: CreateCurrency):Account {
     await validateOrReject(data);
-    return Axios::post(Constants::TATUM_API_URL . "/v3/ledger/virtualCurrency", data,[], [ 'x-api-key' => getenv('TATUM_API_KEY') ])->data;
+    return ApiRequest::post(Constants::TATUM_API_URL . "/v3/ledger/virtualCurrency", data,[], [ 'x-api-key' => getenv('TATUM_API_KEY') ])->data;
 }
 
 /**
@@ -27,7 +27,7 @@ function createVirtualCurrency(data: CreateCurrency):Account {
  */
 function updateVirtualCurrency(data: UpdateCurrency) {
     await validateOrReject(data);
-    await axios.put("${process.env.TATUM_API_URL || TATUM_API_URL}/v3/ledger/virtualCurrency/", data, [], [ 'x-api-key' => getenv('TATUM_API_KEY') ];
+    return ApiRequest::put(Constants::TATUM_API_URL . "/v3/ledger/virtualCurrency/", data, [], [ 'x-api-key' => getenv('TATUM_API_KEY') ];
 }
 
 /**
@@ -35,7 +35,7 @@ function updateVirtualCurrency(data: UpdateCurrency) {
  */
 function mintVirtualCurrency(data: CurrencyOperation):{ reference: string } {
     await validateOrReject(data);
-    return (await axios.put("${process.env.TATUM_API_URL || TATUM_API_URL}/v3/ledger/virtualCurrency/mint", data, [], [ 'x-api-key' => getenv('TATUM_API_KEY') ])->data;
+    return (return ApiRequest::put(Constants::TATUM_API_URL . "/v3/ledger/virtualCurrency/mint", data, [], [ 'x-api-key' => getenv('TATUM_API_KEY') ])->data;
 }
 
 /**
@@ -43,5 +43,5 @@ function mintVirtualCurrency(data: CurrencyOperation):{ reference: string } {
  */
 function revokeVirtualCurrency(data: CurrencyOperation):{ reference: string } {
     await validateOrReject(data);
-    return (await axios.put("${process.env.TATUM_API_URL || TATUM_API_URL}/v3/ledger/virtualCurrency/revoke", data, [], [ 'x-api-key' => getenv('TATUM_API_KEY') ])->data;
+    return (return ApiRequest::put(Constants::TATUM_API_URL . "/v3/ledger/virtualCurrency/revoke", data, [], [ 'x-api-key' => getenv('TATUM_API_KEY') ])->data;
 }

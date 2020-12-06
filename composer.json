@@ -9,7 +9,8 @@
         "symfony/validator": "^5.1",
         "symfony/dotenv": "^5.1",
         "doctrine/annotations": "^1.11",
-        "doctrine/cache": "^1.10"
+        "doctrine/cache": "^1.10",
+        "baba/php-object-copy": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.4"

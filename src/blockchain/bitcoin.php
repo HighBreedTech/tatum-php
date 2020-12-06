@@ -1,6 +1,7 @@
 <?php
+namespace Tatum\blockchain;
 
-use Tatum\Axios;
+use Tatum\ApiRequest;
 use Tatum\Constants;
 use Tatum\model\response\btc\BtcBlock;
 use Tatum\model\response\btc\BtcInfo;
@@ -15,7 +16,7 @@ use Tatum\model\response\common\TransactionHash;
  */
 function btcBroadcast($txData, $signatureId): TransactionHash
 {
-    return Axios::post(Constants::TATUM_API_URL . "/v3/bitcoin/broadcast",
+    return ApiRequest::post(Constants::TATUM_API_URL . "/v3/bitcoin/broadcast",
         func_get_args(),
         [], ['x-api-key' => getenv('TATUM_API_KEY')])->data;
 }
@@ -25,7 +26,7 @@ function btcBroadcast($txData, $signatureId): TransactionHash
  */
 function btcGetCurrentBlock(): BtcInfo
 {
-    return Axios::get(Constants::TATUM_API_URL . "/v3/bitcoin/info", [], ['x-api-key' => getenv('TATUM_API_KEY')])->data;
+    return ApiRequest::get(Constants::TATUM_API_URL . "/v3/bitcoin/info", [], ['x-api-key' => getenv('TATUM_API_KEY')])->data;
 }
 
 /**
@@ -33,7 +34,7 @@ function btcGetCurrentBlock(): BtcInfo
  */
 function btcGetBlock($hash): BtcBlock
 {
-    return Axios::get(Constants::TATUM_API_URL . "/v3/bitcoin/block/${hash}", [], ['x-api-key' => getenv('TATUM_API_KEY')])->data;
+    return ApiRequest::get(Constants::TATUM_API_URL . "/v3/bitcoin/block/{$hash}", [], ['x-api-key' => getenv('TATUM_API_KEY')])->data;
 }
 
 /**
@@ -41,7 +42,7 @@ function btcGetBlock($hash): BtcBlock
  */
 function btcGetBlockHash($i): BlockHash
 {
-    return Axios::get(Constants::TATUM_API_URL . "/v3/bitcoin/block/hash/${i}", [], ['x-api-key' => getenv('TATUM_API_KEY')])->data;
+    return ApiRequest::get(Constants::TATUM_API_URL . "/v3/bitcoin/block/hash/{$i}", [], ['x-api-key' => getenv('TATUM_API_KEY')])->data;
 }
 
 /**
@@ -49,7 +50,7 @@ function btcGetBlockHash($i): BlockHash
  */
 function btcGetUTXO($hash, $i): BtcUTXO
 {
-    return Axios::get(Constants::TATUM_API_URL . "/v3/bitcoin/utxo/${hash}/${i}", [], ['x-api-key' => getenv('TATUM_API_KEY')])->data;
+    return ApiRequest::get(Constants::TATUM_API_URL . "/v3/bitcoin/utxo/{$hash}/{$i}", [], ['x-api-key' => getenv('TATUM_API_KEY')])->data;
 }
 
 /**
@@ -58,7 +59,7 @@ function btcGetUTXO($hash, $i): BtcUTXO
  */
 function btcGetTxForAccount($address, $pageSize = 50, $offset = 0)
 {
-    return Axios::get(Constants::TATUM_API_URL . "/v3/bitcoin/transaction/address/${address}?pageSize=${pageSize}&offset=${offset}",
+    return ApiRequest::get(Constants::TATUM_API_URL . "/v3/bitcoin/transaction/address/{$address}?pageSize=${pageSize}&offset=${offset}",
         [], ['x-api-key' => getenv('TATUM_API_KEY')])->data;
 }
 
@@ -67,5 +68,5 @@ function btcGetTxForAccount($address, $pageSize = 50, $offset = 0)
  */
 function btcGetTransaction($hash): BtcTx
 {
-    return Axios::get(Constants::TATUM_API_URL . "/v3/bitcoin/transaction/${hash}", [], ['x-api-key' => getenv('TATUM_API_KEY')])->data;
+    return ApiRequest::get(Constants::TATUM_API_URL . "/v3/bitcoin/transaction/{$hash}", [], ['x-api-key' => getenv('TATUM_API_KEY')])->data;
 }

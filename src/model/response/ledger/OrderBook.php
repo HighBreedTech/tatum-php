@@ -70,5 +70,5 @@ public $currency2AccountId;
 * @var string
      * @memberof OrderBook
      */
-    created: number,
+    created,
 }
