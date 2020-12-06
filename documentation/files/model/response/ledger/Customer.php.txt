@@ -1,17 +1,24 @@
-import {Country} from '../../request/Country';
-import {Fiat} from './Fiat';
+<?php
 
-export class Customer {
+namespace Tatum\model\response\ledger;
 
-    public id: string;
 
-    public externalId: string;
+use Tatum\model\Model;
 
-    public customerCountry?: Country;
 
-    public accountingCurrency?: Fiat;
 
-    public providerCountry?: Country;
+
+export class Customer extends Model {
+
+public $id;
+
+public $externalId;
+
+public $customerCountry;
+
+public $accountingCurrency;
+
+public $providerCountry;
 
     public active: boolean;
 

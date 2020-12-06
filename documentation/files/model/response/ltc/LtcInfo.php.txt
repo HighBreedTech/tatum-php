@@ -1,37 +1,44 @@
+<?php
+
+namespace Tatum\model\response\ltc;
+
+
+use Tatum\model\Model;
+
 /**
  *
  * @export
  * @interface LtcInfo
  */
-export interface LtcInfo {
+class LtcInfo extends Model {
     /**
      * Chain of the blockchain, main or test.
-     * @type {string}
+* @var string
      * @memberof LtcInfo
      */
-    chain: string;
+    public $chain;
     /**
      * Last block.
-     * @type {number}
+* @var number
      * @memberof LtcInfo
      */
-    blocks: number;
+    public $blocks;
     /**
      * Last headers.
-     * @type {number}
+* @var number
      * @memberof LtcInfo
      */
-    headers: number;
+    public $headers;
     /**
      * Hash of the last block.
-     * @type {string}
+* @var string
      * @memberof LtcInfo
      */
-    bestblockhash: string;
+    public $bestblockhash;
     /**
      * Difficulty of the PoW algorithm.
-     * @type {number}
+* @var number
      * @memberof LtcInfo
      */
-    difficulty: number;
+    public $difficulty;
 }

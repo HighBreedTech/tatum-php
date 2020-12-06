@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/Tatum.html">\Tatum</a></li>
+                                                    </ul>
+                    </li>
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">396</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">2</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-83753803"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-83753803" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-442714760"></a>
+                                <a href="../namespaces/Tatum.html" style="margin-left: 30px; padding-left: 0">Tatum</a>
+            </div>
+            <div id="namespace-442714760" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                <a href="../namespaces/Tatum.blockchain.html" style="margin-left: 30px; padding-left: 0">blockchain</a>
+            </div>
+            <div id="namespace-216701564" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1584294836"></a>
+                                <a href="../namespaces/Tatum.model.html" style="margin-left: 30px; padding-left: 0">model</a>
+            </div>
+            <div id="namespace-1584294836" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1132270189"></a>
+                                <a href="../namespaces/Tatum.model.request.html" style="margin-left: 30px; padding-left: 0">request</a>
+            </div>
+            <div id="namespace-1132270189" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Tatum.model.request.Currency.html">Currency</a></li>
+                                                    <li class="interface"><a href="../classes/Tatum.model.request.TradeType.html">TradeType</a></li>
+                                                                                                    <li class="class"><a href="../classes/Tatum.model.request.BlockAmount.html">BlockAmount</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.BroadcastWithdrawal.html">BroadcastWithdrawal</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.CreateAccount.html">CreateAccount</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.CreateCurrency.html">CreateCurrency</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.CreateRecord.html">CreateRecord</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.CreateTransaction.html">CreateTransaction</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.CreateWithdrawal.html">CreateWithdrawal</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.CurrencyOperation.html">CurrencyOperation</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.CustomerUpdate.html">CustomerUpdate</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.DeployEthErc20.html">DeployEthErc20</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.EstimateGasVet.html">EstimateGasVet</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.Fee.html">Fee</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.FromAddress.html">FromAddress</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.FromUTXO.html">FromUTXO</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.FromUTXOBcash.html">FromUTXOBcash</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.KeyPair.html">KeyPair</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.OrderBookRequest.html">OrderBookRequest</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.To.html">To</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.TransactionFilter.html">TransactionFilter</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.TransferBchBlockchain.html">TransferBchBlockchain</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.TransferBtcBasedBlockchain.html">TransferBtcBasedBlockchain</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.TransferBtcBasedOffchain.html">TransferBtcBasedOffchain</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1213514159"></a>
+                                <a href="../namespaces/Tatum.model.response.html" style="margin-left: 30px; padding-left: 0">response</a>
+            </div>
+            <div id="namespace-1213514159" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1882222160"></a>
+                                <a href="../namespaces/Tatum.model.response.bch.html" style="margin-left: 30px; padding-left: 0">bch</a>
+            </div>
+            <div id="namespace-1882222160" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Tatum.model.response.bch.BchBlock.html">BchBlock</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.bch.BchInfo.html">BchInfo</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.bch.BchTx.html">BchTx</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.bch.BchTxScriptPubKey.html">BchTxScriptPubKey</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.bch.BchTxScriptSig.html">BchTxScriptSig</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.bch.BchTxVin.html">BchTxVin</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.bch.BchTxVout.html">BchTxVout</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1896532073"></a>
+                                <a href="../namespaces/Tatum.model.response.btc.html" style="margin-left: 30px; padding-left: 0">btc</a>
+            </div>
+            <div id="namespace-1896532073" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Tatum.model.response.btc.BtcBlock.html">BtcBlock</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.btc.BtcInfo.html">BtcInfo</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.btc.BtcTx.html">BtcTx</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.btc.BtcTxCoin.html">BtcTxCoin</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.btc.BtcTxInputs.html">BtcTxInputs</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.btc.BtcTxOutputs.html">BtcTxOutputs</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.btc.BtcTxPrevout.html">BtcTxPrevout</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.btc.BtcUTXO.html">BtcUTXO</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-919918206"></a>
+                                <a href="../namespaces/Tatum.model.response.common.html" style="margin-left: 30px; padding-left: 0">common</a>
+            </div>
+            <div id="namespace-919918206" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Tatum.model.response.common.BlockHash.html">BlockHash</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.common.Rate.html">Rate</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.common.TransactionHash.html">TransactionHash</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.common.TxHash.html">TxHash</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-333340777"></a>
+                                <a href="../namespaces/Tatum.model.response.eth.html" style="margin-left: 30px; padding-left: 0">eth</a>
+            </div>
+            <div id="namespace-333340777" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Tatum.model.response.eth.EthBlock.html">EthBlock</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.eth.EthTx.html">EthTx</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.eth.EthTxLogs.html">EthTxLogs</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1689454621"></a>
+                                <a href="../namespaces/Tatum.model.response.ledger.html" style="margin-left: 30px; padding-left: 0">ledger</a>
+            </div>
+            <div id="namespace-1689454621" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Tatum.model.response.ledger.TransactionType.html">TransactionType</a></li>
+                                                                                                    <li class="class"><a href="../classes/Tatum.model.response.ledger.Account.html">Account</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.ledger.AccountBalance.html">AccountBalance</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.ledger.Blockage.html">Blockage</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.ledger.MarketValue.html">MarketValue</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.ledger.Transaction.html">Transaction</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1110663423"></a>
+                                <a href="../namespaces/Tatum.model.response.ltc.html" style="margin-left: 30px; padding-left: 0">ltc</a>
+            </div>
+            <div id="namespace-1110663423" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Tatum.model.response.ltc.LtcBlock.html">LtcBlock</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.ltc.LtcInfo.html">LtcInfo</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.ltc.LtcTx.html">LtcTx</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.ltc.LtcTxCoin.html">LtcTxCoin</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.ltc.LtcTxInputs.html">LtcTxInputs</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.ltc.LtcTxOutputs.html">LtcTxOutputs</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.ltc.LtcTxPrevout.html">LtcTxPrevout</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.ltc.LtcUTXO.html">LtcUTXO</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2022076195"></a>
+                                <a href="../namespaces/Tatum.model.response.offchain.html" style="margin-left: 30px; padding-left: 0">offchain</a>
+            </div>
+            <div id="namespace-2022076195" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Tatum.model.response.offchain.Address.html">Address</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.offchain.WithdrawalResponse.html">WithdrawalResponse</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.offchain.WithdrawalResponseData.html">WithdrawalResponseData</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-267866695"></a>
+                                <a href="../namespaces/Tatum.model.response.vet.html" style="margin-left: 30px; padding-left: 0">vet</a>
+            </div>
+            <div id="namespace-267866695" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Tatum.model.response.vet.VetBlock.html">VetBlock</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.vet.VetEstimateGas.html">VetEstimateGas</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.vet.VetTx.html">VetTx</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.vet.VetTxClauses.html">VetTxClauses</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.vet.VetTxMeta.html">VetTxMeta</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.vet.VetTxReceipt.html">VetTxReceipt</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.vet.VetTxReceiptMeta.html">VetTxReceiptMeta</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.vet.VetTxReceiptOutputs.html">VetTxReceiptOutputs</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.vet.VetTxReceiptTransfers.html">VetTxReceiptTransfers</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Tatum.model.Model.html">Model</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Tatum.Constants.html">Constants</a></li>
+                                                                                                    <li class="class"><a href="../classes/Tatum.ApiRequest.html">ApiRequest</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/Tatum.model.response.eth.html">\Tatum\model\response\eth</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\Tatum\model\response\eth</small>EthBlock</h1>
+                    <p><em></em></p>
+                    
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/Tatum.model.Model.html#method___toString" class="">__toString()</a><br />
+                                                                    <a href="../classes/Tatum.model.Model.html#method___serialize" class="">__serialize()</a><br />
+                                                                    <a href="../classes/Tatum.model.Model.html#method___validate" class="">__validate()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/Tatum.model.response.eth.EthBlock.html#property_difficulty" class="">$difficulty</a><br />
+                                                                    <a href="../classes/Tatum.model.response.eth.EthBlock.html#property_extraData" class="">$extraData</a><br />
+                                                                    <a href="../classes/Tatum.model.response.eth.EthBlock.html#property_gasLimit" class="">$gasLimit</a><br />
+                                                                    <a href="../classes/Tatum.model.response.eth.EthBlock.html#property_gasUsed" class="">$gasUsed</a><br />
+                                                                    <a href="../classes/Tatum.model.response.eth.EthBlock.html#property_hash" class="">$hash</a><br />
+                                                                    <a href="../classes/Tatum.model.response.eth.EthBlock.html#property_logsBloom" class="">$logsBloom</a><br />
+                                                                    <a href="../classes/Tatum.model.response.eth.EthBlock.html#property_miner" class="">$miner</a><br />
+                                                                    <a href="../classes/Tatum.model.response.eth.EthBlock.html#property_mixHash" class="">$mixHash</a><br />
+                                                                    <a href="../classes/Tatum.model.response.eth.EthBlock.html#property_nonce" class="">$nonce</a><br />
+                                                                    <a href="../classes/Tatum.model.response.eth.EthBlock.html#property_number" class="">$number</a><br />
+                                                                    <a href="../classes/Tatum.model.response.eth.EthBlock.html#property_parentHash" class="">$parentHash</a><br />
+                                                                    <a href="../classes/Tatum.model.response.eth.EthBlock.html#property_receiptsRoot" class="">$receiptsRoot</a><br />
+                                                                    <a href="../classes/Tatum.model.response.eth.EthBlock.html#property_sha3Uncles" class="">$sha3Uncles</a><br />
+                                                                    <a href="../classes/Tatum.model.response.eth.EthBlock.html#property_size" class="">$size</a><br />
+                                                                    <a href="../classes/Tatum.model.response.eth.EthBlock.html#property_stateRoot" class="">$stateRoot</a><br />
+                                                                    <a href="../classes/Tatum.model.response.eth.EthBlock.html#property_timestamp" class="">$timestamp</a><br />
+                                                                    <a href="../classes/Tatum.model.response.eth.EthBlock.html#property_totalDifficulty" class="">$totalDifficulty</a><br />
+                                                                    <a href="../classes/Tatum.model.response.eth.EthBlock.html#property_transactions" class="">$transactions</a><br />
+                                                                    <a href="../classes/Tatum.model.response.eth.EthBlock.html#property_transactionsRoot" class="">$transactionsRoot</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <em>No protected methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No protected properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <em>No private methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No private properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/model.response.eth.EthBlock.html"><div class="path-wrapper">model/response/eth/EthBlock.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">Default</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                                                                                                                                                
+                                        <div class="namespace-wrapper"><a href="../classes/Tatum.model.Model.html">\Tatum\model\Model</a></div>
+                                                                                                    <div class="namespace-wrapper">\Tatum\model\response\eth\EthBlock</div>
+                            </dd>
+
+                        
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr>
+                            <th>
+                                export
+                            </th>
+                            <td>
+                                                                    
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                interface
+                            </th>
+                            <td>
+                                                                    <p>EthBlock</p>
+                                                            </td>
+                        </tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_difficulty" name="property_difficulty" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$difficulty</h3>
+                <pre class="signature">$difficulty : string</pre>
+                <p><em>Difficulty for this block.</em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            memberof
+                        </th>
+                        <td>
+                                                            <p>EthBlock</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_extraData" name="property_extraData" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$extraData</h3>
+                <pre class="signature">$extraData : string</pre>
+                <p><em>The &#039;extra data&#039; field of this block.</em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            memberof
+                        </th>
+                        <td>
+                                                            <p>EthBlock</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_gasLimit" name="property_gasLimit" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$gasLimit</h3>
+                <pre class="signature">$gasLimit : \Tatum\model\response\eth\number</pre>
+                <p><em>The maximum gas allowed in this block.</em></p>
+                
+
+                                <h4>Type</h4>
+                \Tatum\model\response\eth\number
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            memberof
+                        </th>
+                        <td>
+                                                            <p>EthBlock</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_gasUsed" name="property_gasUsed" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$gasUsed</h3>
+                <pre class="signature">$gasUsed : \Tatum\model\response\eth\number</pre>
+                <p><em>The total used gas by all transactions in this block.</em></p>
+                
+
+                                <h4>Type</h4>
+                \Tatum\model\response\eth\number
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            memberof
+                        </th>
+                        <td>
+                                                            <p>EthBlock</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_hash" name="property_hash" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$hash</h3>
+                <pre class="signature">$hash : string</pre>
+                <p><em>Hash of the block. &#039;null&#039; when its pending block.</em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            memberof
+                        </th>
+                        <td>
+                                                            <p>EthBlock</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_logsBloom" name="property_logsBloom" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$logsBloom</h3>
+                <pre class="signature">$logsBloom : string</pre>
+                <p><em>The bloom filter for the logs of the block. &#039;null&#039; when its pending block.</em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            memberof
+                        </th>
+                        <td>
+                                                            <p>EthBlock</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_miner" name="property_miner" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$miner</h3>
+                <pre class="signature">$miner : string</pre>
+                <p><em>The address of the beneficiary to whom the mining rewards were given.</em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            memberof
+                        </th>
+                        <td>
+                                                            <p>EthBlock</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_mixHash" name="property_mixHash" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$mixHash</h3>
+                <pre class="signature">$mixHash : string</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            memberof
+                        </th>
+                        <td>
+                                                            <p>EthBlock</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_nonce" name="property_nonce" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$nonce</h3>
+                <pre class="signature">$nonce : string</pre>
+                <p><em>Hash of the generated proof-of-work. &#039;null&#039; when its pending block.</em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            memberof
+                        </th>
+                        <td>
+                                                            <p>EthBlock</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_number" name="property_number" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$number</h3>
+                <pre class="signature">$number : \Tatum\model\response\eth\number</pre>
+                <p><em>The block number. &#039;null&#039; when its pending block.</em></p>
+                
+
+                                <h4>Type</h4>
+                \Tatum\model\response\eth\number
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            memberof
+                        </th>
+                        <td>
+                                                            <p>EthBlock</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_parentHash" name="property_parentHash" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$parentHash</h3>
+                <pre class="signature">$parentHash : string</pre>
+                <p><em>Hash of the parent block.</em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            memberof
+                        </th>
+                        <td>
+                                                            <p>EthBlock</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_receiptsRoot" name="property_receiptsRoot" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$receiptsRoot</h3>
+                <pre class="signature">$receiptsRoot : string</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            memberof
+                        </th>
+                        <td>
+                                                            <p>EthBlock</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_sha3Uncles" name="property_sha3Uncles" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$sha3Uncles</h3>
+                <pre class="signature">$sha3Uncles : string</pre>
+                <p><em>SHA3 of the uncles data in the block.</em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            memberof
+                        </th>
+                        <td>
+                                                            <p>EthBlock</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_size" name="property_size" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$size</h3>
+                <pre class="signature">$size : \Tatum\model\response\eth\number</pre>
+                <p><em>The size of this block in bytes.</em></p>
+                
+
+                                <h4>Type</h4>
+                \Tatum\model\response\eth\number
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            memberof
+                        </th>
+                        <td>
+                                                            <p>EthBlock</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_stateRoot" name="property_stateRoot" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$stateRoot</h3>
+                <pre class="signature">$stateRoot : string</pre>
+                <p><em>The root of the final state trie of the block.</em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            memberof
+                        </th>
+                        <td>
+                                                            <p>EthBlock</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_timestamp" name="property_timestamp" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$timestamp</h3>
+                <pre class="signature">$timestamp : \Tatum\model\response\eth\number</pre>
+                <p><em>The unix timestamp for when the block was collated.</em></p>
+                
+
+                                <h4>Type</h4>
+                \Tatum\model\response\eth\number
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            memberof
+                        </th>
+                        <td>
+                                                            <p>EthBlock</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_totalDifficulty" name="property_totalDifficulty" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$totalDifficulty</h3>
+                <pre class="signature">$totalDifficulty : string</pre>
+                <p><em>Total difficulty of the chain until this block.</em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            memberof
+                        </th>
+                        <td>
+                                                            <p>EthBlock</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_transactions" name="property_transactions" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$transactions</h3>
+                <pre class="signature">$transactions : Array</pre>
+                <p><em>Array of transactions.</em></p>
+                
+
+                                <h4>Type</h4>
+                Array
+                &mdash; &lt;EthTx&gt;                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            memberof
+                        </th>
+                        <td>
+                                                            <p>EthBlock</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_transactionsRoot" name="property_transactionsRoot" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$transactionsRoot</h3>
+                <pre class="signature">$transactionsRoot : string</pre>
+                <p><em>The root of the transaction trie of the block.</em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            memberof
+                        </th>
+                        <td>
+                                                            <p>EthBlock</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___toString" name="method___toString" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__toString()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__toString() </pre>
+                <p><em></em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Tatum.model.Model.html"><div class="path-wrapper">\Tatum\model\Model</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___serialize" name="method___serialize" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__serialize()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__serialize() </pre>
+                <p><em></em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Tatum.model.Model.html"><div class="path-wrapper">\Tatum\model\Model</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___validate" name="method___validate" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__validate()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__validate(  <span class="argument">$exception = false</span>) </pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$exception </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Tatum.model.Model.html"><div class="path-wrapper">\Tatum\model\Model</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">EthBlock.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/model/response/eth/EthBlock.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/Tatum.html">\Tatum</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on December 6th, 2020 at 21:32.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>

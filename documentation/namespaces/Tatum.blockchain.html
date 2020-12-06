@@ -1,0 +1,2823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/Tatum.html">\Tatum</a></li>
+                                                    </ul>
+                    </li>
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">396</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">2</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-598058611"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-598058611" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-330095552"></a>
+                                <a href="../namespaces/Tatum.html" style="margin-left: 30px; padding-left: 0">Tatum</a>
+            </div>
+            <div id="namespace-330095552" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                <a href="../namespaces/Tatum.blockchain.html" style="margin-left: 30px; padding-left: 0">blockchain</a>
+            </div>
+            <div id="namespace-1916972767" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2142929587"></a>
+                                <a href="../namespaces/Tatum.model.html" style="margin-left: 30px; padding-left: 0">model</a>
+            </div>
+            <div id="namespace-2142929587" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1720403079"></a>
+                                <a href="../namespaces/Tatum.model.request.html" style="margin-left: 30px; padding-left: 0">request</a>
+            </div>
+            <div id="namespace-1720403079" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Tatum.model.request.Currency.html">Currency</a></li>
+                                                    <li class="interface"><a href="../classes/Tatum.model.request.TradeType.html">TradeType</a></li>
+                                                                                                    <li class="class"><a href="../classes/Tatum.model.request.BlockAmount.html">BlockAmount</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.BroadcastWithdrawal.html">BroadcastWithdrawal</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.CreateAccount.html">CreateAccount</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.CreateCurrency.html">CreateCurrency</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.CreateRecord.html">CreateRecord</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.CreateTransaction.html">CreateTransaction</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.CreateWithdrawal.html">CreateWithdrawal</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.CurrencyOperation.html">CurrencyOperation</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.CustomerUpdate.html">CustomerUpdate</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.DeployEthErc20.html">DeployEthErc20</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.EstimateGasVet.html">EstimateGasVet</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.Fee.html">Fee</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.FromAddress.html">FromAddress</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.FromUTXO.html">FromUTXO</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.FromUTXOBcash.html">FromUTXOBcash</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.KeyPair.html">KeyPair</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.OrderBookRequest.html">OrderBookRequest</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.To.html">To</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.TransactionFilter.html">TransactionFilter</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.TransferBchBlockchain.html">TransferBchBlockchain</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.TransferBtcBasedBlockchain.html">TransferBtcBasedBlockchain</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.request.TransferBtcBasedOffchain.html">TransferBtcBasedOffchain</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-761445539"></a>
+                                <a href="../namespaces/Tatum.model.response.html" style="margin-left: 30px; padding-left: 0">response</a>
+            </div>
+            <div id="namespace-761445539" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1171742940"></a>
+                                <a href="../namespaces/Tatum.model.response.bch.html" style="margin-left: 30px; padding-left: 0">bch</a>
+            </div>
+            <div id="namespace-1171742940" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Tatum.model.response.bch.BchBlock.html">BchBlock</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.bch.BchInfo.html">BchInfo</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.bch.BchTx.html">BchTx</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.bch.BchTxScriptPubKey.html">BchTxScriptPubKey</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.bch.BchTxScriptSig.html">BchTxScriptSig</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.bch.BchTxVin.html">BchTxVin</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.bch.BchTxVout.html">BchTxVout</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-442604613"></a>
+                                <a href="../namespaces/Tatum.model.response.btc.html" style="margin-left: 30px; padding-left: 0">btc</a>
+            </div>
+            <div id="namespace-442604613" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Tatum.model.response.btc.BtcBlock.html">BtcBlock</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.btc.BtcInfo.html">BtcInfo</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.btc.BtcTx.html">BtcTx</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.btc.BtcTxCoin.html">BtcTxCoin</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.btc.BtcTxInputs.html">BtcTxInputs</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.btc.BtcTxOutputs.html">BtcTxOutputs</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.btc.BtcTxPrevout.html">BtcTxPrevout</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.btc.BtcUTXO.html">BtcUTXO</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-777118286"></a>
+                                <a href="../namespaces/Tatum.model.response.common.html" style="margin-left: 30px; padding-left: 0">common</a>
+            </div>
+            <div id="namespace-777118286" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Tatum.model.response.common.BlockHash.html">BlockHash</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.common.Rate.html">Rate</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.common.TransactionHash.html">TransactionHash</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.common.TxHash.html">TxHash</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-626971657"></a>
+                                <a href="../namespaces/Tatum.model.response.eth.html" style="margin-left: 30px; padding-left: 0">eth</a>
+            </div>
+            <div id="namespace-626971657" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Tatum.model.response.eth.EthBlock.html">EthBlock</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.eth.EthTx.html">EthTx</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.eth.EthTxLogs.html">EthTxLogs</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1706535276"></a>
+                                <a href="../namespaces/Tatum.model.response.ledger.html" style="margin-left: 30px; padding-left: 0">ledger</a>
+            </div>
+            <div id="namespace-1706535276" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Tatum.model.response.ledger.TransactionType.html">TransactionType</a></li>
+                                                                                                    <li class="class"><a href="../classes/Tatum.model.response.ledger.Account.html">Account</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.ledger.AccountBalance.html">AccountBalance</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.ledger.Blockage.html">Blockage</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.ledger.MarketValue.html">MarketValue</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.ledger.Transaction.html">Transaction</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1267782063"></a>
+                                <a href="../namespaces/Tatum.model.response.ltc.html" style="margin-left: 30px; padding-left: 0">ltc</a>
+            </div>
+            <div id="namespace-1267782063" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Tatum.model.response.ltc.LtcBlock.html">LtcBlock</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.ltc.LtcInfo.html">LtcInfo</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.ltc.LtcTx.html">LtcTx</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.ltc.LtcTxCoin.html">LtcTxCoin</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.ltc.LtcTxInputs.html">LtcTxInputs</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.ltc.LtcTxOutputs.html">LtcTxOutputs</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.ltc.LtcTxPrevout.html">LtcTxPrevout</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.ltc.LtcUTXO.html">LtcUTXO</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-288933090"></a>
+                                <a href="../namespaces/Tatum.model.response.offchain.html" style="margin-left: 30px; padding-left: 0">offchain</a>
+            </div>
+            <div id="namespace-288933090" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Tatum.model.response.offchain.Address.html">Address</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.offchain.WithdrawalResponse.html">WithdrawalResponse</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.offchain.WithdrawalResponseData.html">WithdrawalResponseData</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1273361167"></a>
+                                <a href="../namespaces/Tatum.model.response.vet.html" style="margin-left: 30px; padding-left: 0">vet</a>
+            </div>
+            <div id="namespace-1273361167" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Tatum.model.response.vet.VetBlock.html">VetBlock</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.vet.VetEstimateGas.html">VetEstimateGas</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.vet.VetTx.html">VetTx</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.vet.VetTxClauses.html">VetTxClauses</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.vet.VetTxMeta.html">VetTxMeta</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.vet.VetTxReceipt.html">VetTxReceipt</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.vet.VetTxReceiptMeta.html">VetTxReceiptMeta</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.vet.VetTxReceiptOutputs.html">VetTxReceiptOutputs</a></li>
+                                                    <li class="class"><a href="../classes/Tatum.model.response.vet.VetTxReceiptTransfers.html">VetTxReceiptTransfers</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Tatum.model.Model.html">Model</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Tatum.Constants.html">Constants</a></li>
+                                                                                                    <li class="class"><a href="../classes/Tatum.ApiRequest.html">ApiRequest</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content namespace">
+                    <nav>
+                                                <a href="../namespaces/Tatum.html">\Tatum</a>
+                                            </nav>
+                    <h1><small>\Tatum</small>blockchain</h1>
+
+                    
+                    
+                    
+                                    </div>
+
+                <aside class="span4 detailsbar">
+                    <dl>
+                        <dt>Namespace hierarchy</dt>
+                        <dd class="hierarchy">
+                                                                                                                                                                                                                                                                                                                                                                                                            
+                                    <div class="namespace-wrapper"><a href="../namespaces/default.html">\</a></div>
+                                                            
+                                    <div class="namespace-wrapper"><a href="../namespaces/Tatum.html">\Tatum</a></div>
+                                                                                        <div class="namespace-wrapper">\Tatum\blockchain</div>
+                        </dd>
+                    </dl>
+                </aside>
+            </div>
+
+            
+                        <div class="row-fluid">
+                <section class="span8 content namespace">
+                    <h2>Functions</h2>
+                </section>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_bcashBroadcast" name="method_bcashBroadcast" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">bcashBroadcast()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">bcashBroadcast(  <span class="argument">$txData</span>,   <span class="argument">$signatureId</span>) : \Tatum\model\response\common\TransactionHash</pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/BchBroadcast&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$txData </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$signatureId </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\ReflectionException</dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Tatum.model.response.common.TransactionHash.html">\Tatum\model\response\common\TransactionHash</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_bcashGetBlock" name="method_bcashGetBlock" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">bcashGetBlock()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">bcashGetBlock(  <span class="argument">$hash</span>) : \Tatum\model\response\bch\BchBlock</pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/BchGetBlock&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$hash </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Tatum.model.response.bch.BchBlock.html">\Tatum\model\response\bch\BchBlock</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_bcashGetBlockHash" name="method_bcashGetBlockHash" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">bcashGetBlockHash()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">bcashGetBlockHash(  <span class="argument">$i</span>) : \Tatum\model\response\common\BlockHash</pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/BchGetBlockHash&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$i </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Tatum.model.response.common.BlockHash.html">\Tatum\model\response\common\BlockHash</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_bcashGetCurrentBlock" name="method_bcashGetCurrentBlock" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">bcashGetCurrentBlock()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">bcashGetCurrentBlock() </pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/BchGetBlockChainInfo&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_bcashGetTransaction" name="method_bcashGetTransaction" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">bcashGetTransaction()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">bcashGetTransaction(  <span class="argument">$hash</span>) : \Tatum\model\response\bch\BchTx</pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/BchGetRawTransaction&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$hash </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Tatum.model.response.bch.BchTx.html">\Tatum\model\response\bch\BchTx</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_bcashGetTxForAccount" name="method_bcashGetTxForAccount" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">bcashGetTxForAccount()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">bcashGetTxForAccount(  <span class="argument">$address</span>, integer  <span class="argument">$skip</span>) : array&lt;mixed,\Tatum\model\response\bch\BchTx&gt;</pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/BchGetTxByAddress&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$address </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$skip </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array&lt;mixed,<a href="../classes/Tatum.model.response.bch.BchTx.html">\Tatum\model\response\bch\BchTx</a>&gt;
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_btcBroadcast" name="method_btcBroadcast" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">btcBroadcast()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">btcBroadcast(  <span class="argument">$txData</span>,   <span class="argument">$signatureId</span>) </pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/BtcBroadcast&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$txData </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$signatureId </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_btcGetBlock" name="method_btcGetBlock" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">btcGetBlock()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">btcGetBlock(  <span class="argument">$hash</span>) </pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/BtcGetBlock&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$hash </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_btcGetBlockHash" name="method_btcGetBlockHash" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">btcGetBlockHash()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">btcGetBlockHash(  <span class="argument">$i</span>) </pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/BtcGetBlockHash&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$i </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_btcGetCurrentBlock" name="method_btcGetCurrentBlock" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">btcGetCurrentBlock()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">btcGetCurrentBlock() </pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/BtcGetBlockChainInfo&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_btcGetTransaction" name="method_btcGetTransaction" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">btcGetTransaction()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">btcGetTransaction(  <span class="argument">$hash</span>) </pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/BtcGetRawTransaction&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$hash </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_btcGetTxForAccount" name="method_btcGetTxForAccount" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">btcGetTxForAccount()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">btcGetTxForAccount(  <span class="argument">$address</span>,   <span class="argument">$pageSize = 50</span>,   <span class="argument">$offset</span>) : array&lt;mixed,\Tatum\model\response\btc\BtcTx&gt;</pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/BtcGetTxByAddress&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$address </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$pageSize </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$offset </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array&lt;mixed,<a href="../classes/Tatum.model.response.btc.BtcTx.html">\Tatum\model\response\btc\BtcTx</a>&gt;
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_btcGetUTXO" name="method_btcGetUTXO" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">btcGetUTXO()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">btcGetUTXO(  <span class="argument">$hash</span>,   <span class="argument">$i</span>) </pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/BtcGetUTXO&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$hash </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$i </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_ethBroadcast" name="method_ethBroadcast" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">ethBroadcast()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">ethBroadcast(  <span class="argument">$txData</span>, null  <span class="argument">$signatureId = null</span>) : \Tatum\model\response\common\TransactionHash</pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/EthBroadcast&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$txData </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>null</td>
+                                <td>$signatureId </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Tatum.model.response.common.TransactionHash.html">\Tatum\model\response\common\TransactionHash</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_ethGetAccountBalance" name="method_ethGetAccountBalance" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">ethGetAccountBalance()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">ethGetAccountBalance(  <span class="argument">$address</span>) : \Tatum\blockchain\number</pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/EthGetBalance&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$address </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \Tatum\blockchain\number
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_ethGetAccountErc20Address" name="method_ethGetAccountErc20Address" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">ethGetAccountErc20Address()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">ethGetAccountErc20Address(  <span class="argument">$address</span>,   <span class="argument">$contractAddress</span>) </pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/EthErc20GetBalance&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$address </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$contractAddress </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_ethGetAccountTransactions" name="method_ethGetAccountTransactions" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">ethGetAccountTransactions()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">ethGetAccountTransactions(  <span class="argument">$address</span>, integer  <span class="argument">$pageSize = 50</span>, integer  <span class="argument">$offset</span>) : \Tatum\model\response\eth\EthTx</pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/EthGetTransactionByAddress&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$address </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$pageSize </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$offset </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Tatum.model.response.eth.EthTx.html">\Tatum\model\response\eth\EthTx</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_ethGetBlock" name="method_ethGetBlock" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">ethGetBlock()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">ethGetBlock(  <span class="argument">$hash</span>) : \Tatum\model\response\eth\EthBlock</pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/EthGetBlock&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$hash </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Tatum.model.response.eth.EthBlock.html">\Tatum\model\response\eth\EthBlock</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_ethGetCurrentBlock" name="method_ethGetCurrentBlock" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">ethGetCurrentBlock()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">ethGetCurrentBlock() </pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/EthGetCurrentBlock&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_ethGetTransaction" name="method_ethGetTransaction" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">ethGetTransaction()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">ethGetTransaction(  <span class="argument">$hash</span>) </pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/EthGetTransaction&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$hash </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_ethGetTransactionsCount" name="method_ethGetTransactionsCount" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">ethGetTransactionsCount()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">ethGetTransactionsCount(  <span class="argument">$address</span>) : </pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/EthGetTransactionCount&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$address </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_ltcBroadcast" name="method_ltcBroadcast" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">ltcBroadcast()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">ltcBroadcast(  <span class="argument">$txData</span>, null  <span class="argument">$signatureId = null</span>) : \Tatum\model\response\common\TransactionHash</pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/LtcBroadcast&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$txData </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>null</td>
+                                <td>$signatureId </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Tatum.model.response.common.TransactionHash.html">\Tatum\model\response\common\TransactionHash</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_ltcGetBlock" name="method_ltcGetBlock" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">ltcGetBlock()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">ltcGetBlock(  <span class="argument">$hash</span>) : \Tatum\model\response\ltc\LtcBlock</pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/LtcGetBlock&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$hash </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Tatum.model.response.ltc.LtcBlock.html">\Tatum\model\response\ltc\LtcBlock</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_ltcGetBlockHash" name="method_ltcGetBlockHash" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">ltcGetBlockHash()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">ltcGetBlockHash(  <span class="argument">$i</span>) </pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/LtcGetBlockHash&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$i </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_ltcGetCurrentBlock" name="method_ltcGetCurrentBlock" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">ltcGetCurrentBlock()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">ltcGetCurrentBlock() </pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/LtcGetBlockChainInfo&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_ltcGetTransaction" name="method_ltcGetTransaction" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">ltcGetTransaction()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">ltcGetTransaction(  <span class="argument">$hash</span>) </pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/LtcGetRawTransaction&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$hash </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_ltcGetTxForAccount" name="method_ltcGetTxForAccount" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">ltcGetTxForAccount()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">ltcGetTxForAccount(  <span class="argument">$address</span>, integer  <span class="argument">$pageSize = 50</span>, integer  <span class="argument">$offset</span>) : </pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/LtcGetTxByAddress&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$address </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$pageSize </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$offset </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_ltcGetUTXO" name="method_ltcGetUTXO" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">ltcGetUTXO()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">ltcGetUTXO(  <span class="argument">$hash</span>,   <span class="argument">$i</span>) : \Tatum\model\response\ltc\LtcUTXO</pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/LtcGetUTXO&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$hash </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$i </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Tatum.model.response.ltc.LtcUTXO.html">\Tatum\model\response\ltc\LtcUTXO</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_vetBroadcast" name="method_vetBroadcast" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">vetBroadcast()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">vetBroadcast(  <span class="argument">$txData</span>, null  <span class="argument">$signatureId = null</span>) : \Tatum\model\response\common\TransactionHash</pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/VetBroadcast&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$txData </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>null</td>
+                                <td>$signatureId </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Tatum.model.response.common.TransactionHash.html">\Tatum\model\response\common\TransactionHash</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_vetEstimateGas" name="method_vetEstimateGas" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">vetEstimateGas()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">vetEstimateGas(  <span class="argument">$body</span>) : \Tatum\model\request\EstimateGasVet</pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/VetEstimateGas&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$body </td>
+                                <td><p>EstimateGasVet</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Tatum.model.request.EstimateGasVet.html">\Tatum\model\request\EstimateGasVet</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_vetGetAccountBalance" name="method_vetGetAccountBalance" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">vetGetAccountBalance()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">vetGetAccountBalance(  <span class="argument">$address</span>) : </pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/VetGetBalance&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$address </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_vetGetAccountEnergy" name="method_vetGetAccountEnergy" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">vetGetAccountEnergy()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">vetGetAccountEnergy(  <span class="argument">$address</span>) : </pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/VetGetEnergy&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$address </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_vetGetBlock" name="method_vetGetBlock" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">vetGetBlock()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">vetGetBlock(  <span class="argument">$hash</span>) : \Tatum\model\response\vet\VetBlock</pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/VetGetBlock&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$hash </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Tatum.model.response.vet.VetBlock.html">\Tatum\model\response\vet\VetBlock</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_vetGetCurrentBlock" name="method_vetGetCurrentBlock" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">vetGetCurrentBlock()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">vetGetCurrentBlock() </pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/VetGetCurrentBlock&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_vetGetTransaction" name="method_vetGetTransaction" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">vetGetTransaction()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">vetGetTransaction(  <span class="argument">$hash</span>) : \Tatum\model\response\vet\VetTx</pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/VetGetTransaction&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$hash </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Tatum.model.response.vet.VetTx.html">\Tatum\model\response\vet\VetTx</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_vetGetTransactionReceipt" name="method_vetGetTransactionReceipt" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">vetGetTransactionReceipt()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">vetGetTransactionReceipt(  <span class="argument">$hash</span>) : \Tatum\model\response\vet\VetTxReceipt</pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/VetGetTransactionReceipt&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$hash </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Tatum.model.response.vet.VetTxReceipt.html">\Tatum\model\response\vet\VetTxReceipt</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_xlmBroadcast" name="method_xlmBroadcast" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">xlmBroadcast()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">xlmBroadcast(  <span class="argument">$txData</span>, null  <span class="argument">$signatureId = null</span>) : \Tatum\model\response\common\TransactionHash</pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/XlmBroadcast&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$txData </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>null</td>
+                                <td>$signatureId </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Tatum.model.response.common.TransactionHash.html">\Tatum\model\response\common\TransactionHash</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_xlmGetAccountInfo" name="method_xlmGetAccountInfo" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">xlmGetAccountInfo()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">xlmGetAccountInfo(  <span class="argument">$account</span>) : object</pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/XlmGetAccountInfo&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$account </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    object
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_xlmGetAccountTransactions" name="method_xlmGetAccountTransactions" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">xlmGetAccountTransactions()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">xlmGetAccountTransactions(  <span class="argument">$address</span>) : </pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/XlmGetAccountTx&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$address </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_xlmGetCurrentLedger" name="method_xlmGetCurrentLedger" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">xlmGetCurrentLedger()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">xlmGetCurrentLedger() </pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/XlmGetLastClosedLedger&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_xlmGetFee" name="method_xlmGetFee" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">xlmGetFee()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">xlmGetFee() </pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/XlmGetFee&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_xlmGetLedger" name="method_xlmGetLedger" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">xlmGetLedger()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">xlmGetLedger(  <span class="argument">$i</span>) </pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/XlmGetLedger&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$i </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_xlmGetLedgerTx" name="method_xlmGetLedgerTx" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">xlmGetLedgerTx()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">xlmGetLedgerTx(  <span class="argument">$i</span>) </pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/XlmGetLedgerTx&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$i </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_xlmGetTransaction" name="method_xlmGetTransaction" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">xlmGetTransaction()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">xlmGetTransaction(  <span class="argument">$hash</span>) : </pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/XlmGetTransaction&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$hash </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_xrpBroadcast" name="method_xrpBroadcast" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">xrpBroadcast()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">xrpBroadcast(  <span class="argument">$txData</span>, null  <span class="argument">$signatureId = null</span>) : \Tatum\model\response\common\TransactionHash</pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/XrpBroadcast&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$txData </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>null</td>
+                                <td>$signatureId </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Tatum.model.response.common.TransactionHash.html">\Tatum\model\response\common\TransactionHash</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_xrpGetAccountBalance" name="method_xrpGetAccountBalance" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">xrpGetAccountBalance()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">xrpGetAccountBalance(  <span class="argument">$address</span>) : </pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/XrpGetAccountBalance&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$address </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_xrpGetAccountInfo" name="method_xrpGetAccountInfo" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">xrpGetAccountInfo()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">xrpGetAccountInfo(  <span class="argument">$account</span>) : </pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/XrpGetAccountInfo&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$account </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_xrpGetAccountTransactions" name="method_xrpGetAccountTransactions" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">xrpGetAccountTransactions()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">xrpGetAccountTransactions(  <span class="argument">$address</span>, null  <span class="argument">$min = null</span>, null  <span class="argument">$marker = null</span>) : </pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/XrpGetAccountTx&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$address </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>null</td>
+                                <td>$min </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>null</td>
+                                <td>$marker </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_xrpGetCurrentLedger" name="method_xrpGetCurrentLedger" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">xrpGetCurrentLedger()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">xrpGetCurrentLedger() </pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/XrpGetLastClosedLedger&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_xrpGetFee" name="method_xrpGetFee" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">xrpGetFee()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">xrpGetFee() </pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/XrpGetFee&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_xrpGetLedger" name="method_xrpGetLedger" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">xrpGetLedger()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">xrpGetLedger(  <span class="argument">$i</span>) : </pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/XrpGetLedger&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$i </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_xrpGetTransaction" name="method_xrpGetTransaction" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">xrpGetTransaction()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">xrpGetTransaction(  <span class="argument">$hash</span>) : </pre>
+                <p><em>For more details, see &lt;a href=&quot;https://tatum.io/apidoc.html#operation/XrpGetTransaction&quot; target=&quot;_blank&quot;&gt;Tatum API documentation&lt;/a&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$hash </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>Default</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                            
+        </div>
+    </section>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/Tatum.html">\Tatum</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on December 6th, 2020 at 21:32.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>

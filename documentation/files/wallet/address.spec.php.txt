@@ -1,5 +1,5 @@
-import {Currency} from '../model';
-import {generateAddressFromXPub, generatePrivateKeyFromMnemonic} from './address';
+
+
 
 describe('Address tests', () => {
 
@@ -53,52 +53,52 @@ describe('Address tests', () => {
         expect(address).toBe('0x8cb76aed9c5e336ef961265c6079c14e9cd3d2ea');
     });
 
-    it('should generate private key 1 for BTC mainnet', async () => {
+    it('should generate private key 1 for BTC mainnet', () => {
         const privateKey = await generatePrivateKeyFromMnemonic(Currency.BTC, false, 'quantum tobacco key they maid mean crime youth chief jungle mind design broken tilt bus shoulder leaf good forward erupt split divert bread kitten', 1);
         expect(privateKey).toBe('KwrYonf8pFfyQR87NTn124Ep9zoJsZMBCoVUi7mjMc1eTHDyLyBN');
     });
 
-    it('should generate private key 1 for BTC testnet', async () => {
+    it('should generate private key 1 for BTC testnet', () => {
         const privateKey = await generatePrivateKeyFromMnemonic(Currency.BTC, true, 'quantum tobacco key they maid mean crime youth chief jungle mind design broken tilt bus shoulder leaf good forward erupt split divert bread kitten', 1);
         expect(privateKey).toBe('cQ1YZMep3CiAnMTA9y62ha6BjGaaTFsTvtDuGmucGvpAVmS89khV');
     });
 
-    it('should generate private key 1 for LTC mainnet', async () => {
+    it('should generate private key 1 for LTC mainnet', () => {
         const privateKey = await generatePrivateKeyFromMnemonic(Currency.LTC, false, 'quantum tobacco key they maid mean crime youth chief jungle mind design broken tilt bus shoulder leaf good forward erupt split divert bread kitten', 1);
         expect(privateKey).toBe('T63MUovVt5GN5rmfwYMr4M6YqFmisjbrZrfZYZ53qWmCwiP6xCHa');
     });
 
-    it('should generate private key 1 for LTC testnet', async () => {
+    it('should generate private key 1 for LTC testnet', () => {
         const privateKey = await generatePrivateKeyFromMnemonic(Currency.LTC, true, 'quantum tobacco key they maid mean crime youth chief jungle mind design broken tilt bus shoulder leaf good forward erupt split divert bread kitten', 1);
         expect(privateKey).toBe('cQ1YZMep3CiAnMTA9y62ha6BjGaaTFsTvtDuGmucGvpAVmS89khV');
     });
 
-    it('should generate private key 1 for BCH mainnet', async () => {
+    it('should generate private key 1 for BCH mainnet', () => {
         const privateKey = await generatePrivateKeyFromMnemonic(Currency.BCH, false, 'quantum tobacco key they maid mean crime youth chief jungle mind design broken tilt bus shoulder leaf good forward erupt split divert bread kitten', 1);
         expect(privateKey).toBe('KzqM77kK7zqZGockuB2Tov1FXoH6BTMaT3ixeqTPXLAYp838W3KT');
     });
 
-    it('should generate private key 1 for BCH testnet', async () => {
+    it('should generate private key 1 for BCH testnet', () => {
         const privateKey = await generatePrivateKeyFromMnemonic(Currency.BCH, true, 'quantum tobacco key they maid mean crime youth chief jungle mind design broken tilt bus shoulder leaf good forward erupt split divert bread kitten', 1);
         expect(privateKey).toBe('cRCLa2kAZ4XpSF62HaqbBEWKA2aVquTGX5sRmFuu2SpZ4s72vi5Y');
     });
 
-    it('should generate private key 1 for ETH mainnet', async () => {
+    it('should generate private key 1 for ETH mainnet', () => {
         const privateKey = await generatePrivateKeyFromMnemonic(Currency.ETH, false, 'quantum tobacco key they maid mean crime youth chief jungle mind design broken tilt bus shoulder leaf good forward erupt split divert bread kitten', 1);
         expect(privateKey).toBe('0xbc93ab7d2dbad88e64879569a9e3ceaa12d119c70d6dda4d1fc6e73765794a8d');
     });
 
-    it('should generate private key 1 for ETH testnet', async () => {
+    it('should generate private key 1 for ETH testnet', () => {
         const privateKey = await generatePrivateKeyFromMnemonic(Currency.ETH, true, 'quantum tobacco key they maid mean crime youth chief jungle mind design broken tilt bus shoulder leaf good forward erupt split divert bread kitten', 1);
         expect(privateKey).toBe('0x4874827a55d87f2309c55b835af509e3427aa4d52321eeb49a2b93b5c0f8edfb');
     });
 
-    it('should generate private key 1 for VET mainnet', async () => {
+    it('should generate private key 1 for VET mainnet', () => {
         const privateKey = await generatePrivateKeyFromMnemonic(Currency.VET, false, 'quantum tobacco key they maid mean crime youth chief jungle mind design broken tilt bus shoulder leaf good forward erupt split divert bread kitten', 1);
         expect(privateKey).toBe('0xd2a4c2f89f58e50f2e29ed1e68552680417a0534c47bebf18f2f5f3a27817251');
     });
 
-    it('should generate private key 1 for VET testnet', async () => {
+    it('should generate private key 1 for VET testnet', () => {
         const privateKey = await generatePrivateKeyFromMnemonic(Currency.VET, true, 'quantum tobacco key they maid mean crime youth chief jungle mind design broken tilt bus shoulder leaf good forward erupt split divert bread kitten', 1);
         expect(privateKey).toBe('0x4874827a55d87f2309c55b835af509e3427aa4d52321eeb49a2b93b5c0f8edfb');
     });

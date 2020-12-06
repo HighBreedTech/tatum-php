@@ -1,10 +1,10 @@
-import {validateOrReject} from 'class-validator';
-import {thorify} from 'thorify';
-import Web3 from 'web3';
-import {TransactionConfig} from 'web3-core';
-import {vetBroadcast} from '../blockchain';
-import {TEST_VET_URL, VET_URL} from '../constants';
-import {Currency, TransactionKMS, TransferVet} from '../model';
+
+
+
+
+
+
+
 
 /**
  * Send VeChain transaction to the blockchain. This method broadcasts signed transaction to the blockchain.
@@ -14,9 +14,9 @@ import {Currency, TransactionKMS, TransferVet} from '../model';
  * @param provider url of the VeChain Server to connect to. If not set, default public server will be used.
  * @returns transaction id of the transaction in the blockchain
  */
-export const sendVetTransaction = async (testnet: boolean, body: TransferVet, provider?: string) => {
+function sendVetTransaction(testnet: boolean, body: TransferVet, provider?: string) {
     return vetBroadcast(await prepareVetSignedTransaction(testnet, body, provider));
-};
+}
 
 /**
  * Sign VeChain pending transaction from Tatum KMS
@@ -26,7 +26,7 @@ export const sendVetTransaction = async (testnet: boolean, body: TransferVet, pr
  * @param provider url of the VeChain Server to connect to. If not set, default public server will be used.
  * @returns transaction data to be broadcast to blockchain.
  */
-export const signVetKMSTransaction = async (tx: TransactionKMS, fromPrivateKey: string, testnet: boolean, provider?: string) => {
+function signVetKMSTransaction(tx: TransactionKMS, $fromPrivateKey, testnet: boolean, provider?: string) {
     if (tx.chain !== Currency.VET) {
         throw Error('Unsupported chain.');
     }
@@ -37,7 +37,7 @@ export const signVetKMSTransaction = async (tx: TransactionKMS, fromPrivateKey: 
     const transactionConfig = JSON.parse(tx.serializedTransaction);
     transactionConfig.gas = await client.eth.estimateGas(transactionConfig);
     return (await client.eth.accounts.signTransaction(transactionConfig, fromPrivateKey)).rawTransaction;
-};
+}
 
 /**
  * Sign VeChain transaction with private keys locally. Nothing is broadcast to the blockchain.
@@ -46,7 +46,7 @@ export const signVetKMSTransaction = async (tx: TransactionKMS, fromPrivateKey: 
  * @param provider url of the VeChain Server to connect to. If not set, default public server will be used.
  * @returns transaction data to be broadcast to blockchain.
  */
-export const prepareVetSignedTransaction = async (testnet: boolean, body: TransferVet, provider?: string) => {
+function prepareVetSignedTransaction(testnet: boolean, body: TransferVet, provider?: string) {
     await validateOrReject(body);
     const {
         fromPrivateKey,
@@ -65,8 +65,8 @@ export const prepareVetSignedTransaction = async (testnet: boolean, body: Transf
         from: 0,
         to: to.trim(),
         data: data ? client.utils.toHex(data) : undefined,
-        value: client.utils.toWei(`${amount}`, 'ether'),
-    };
+        value: client.utils.toWei("${amount}", 'ether'),
+    }
 
     if (fee) {
         tx.gas = fee.gasLimit;
@@ -74,4 +74,4 @@ export const prepareVetSignedTransaction = async (testnet: boolean, body: Transf
         tx.gas = await client.eth.estimateGas(tx);
     }
     return (await client.eth.accounts.signTransaction(tx, fromPrivateKey)).rawTransaction;
-};
+}

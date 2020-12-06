@@ -13,7 +13,7 @@ function createNewSubscription(data: CreateSubscription):{ $id } {
  * For more details, see <a href="https://tatum.io/apidoc.html#operation/getSubscriptions" target="_blank">Tatum API documentation</a>
  */
 function listActiveSubscriptions($pageSize = 50, $offset = 0): Subscription[] {
-    return ApiRequest::get(Constants::TATUM_API_URL . "/v3/subscription?pageSize=${pageSize}&offset=${offset}", { headers: { 'x-api-key': process.env.TATUM_API_KEY } })).data
+    return ApiRequest::get(Constants::TATUM_API_URL . "/v3/subscription?pageSize={$pageSize}&offset={$offset}", { headers: { 'x-api-key': process.env.TATUM_API_KEY } })).data
 }
 
 /**

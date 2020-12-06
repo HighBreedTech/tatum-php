@@ -1,33 +1,40 @@
+<?php
+
+namespace Tatum\model\response\ledger;
+
+
+use Tatum\model\Model;
+
 /**
  *
  * @export
  * @interface MarketValue
  */
-import {Fiat} from './Fiat';
 
-export interface MarketValue {
+
+class MarketValue extends Model {
     /**
      * Value of transaction in given base pair.
-     * @type {string}
+* @var string
      * @memberof MarketValue
      */
-    amount?: string;
+    public $amount;
     /**
      * Base pair.
-     * @type {string}
+* @var string
      * @memberof MarketValue
      */
-    currency?: Fiat;
+public $currency;
     /**
      * Date of validity of rate in UTC.
-     * @type {number}
+* @var number
      * @memberof MarketValue
      */
-    sourceDate?: number;
+    public $sourceDate;
     /**
      * Source of base pair.
-     * @type {string}
+* @var string
      * @memberof MarketValue
      */
-    source?: string;
+    public $source;
 }

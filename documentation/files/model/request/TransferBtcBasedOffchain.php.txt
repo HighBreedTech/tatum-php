@@ -1,48 +1,45 @@
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
-use Symfony\Component\Validator\Constraints as Assert; {Type} from 'class-transformer';
-<?php
 
-namespace Tatum\Model;
+use Tatum\model\Model;
 
-use Symfony\Component\Validator\Constraints as Assert; {IsNotEmpty, Length, Validate, ValidateIf, ValidateNested} from 'class-validator';
-<?php
+/**
+ * Class KeyPair
+ * @package Tatum\model\request
+ */
+class KeyPair extends Model
+{
 
-namespace Tatum\Model;
+    /**
+     * @Assert\NotBlank()
+     * @Assert\Length(min = 30, max = 50, maxmessage = "maximal length is 50", minmessage = "minimal length is 30")
+     */
+    public $address;
 
-use Symfony\Component\Validator\Constraints as Assert; {TransferBtcOffchainValidator} from '../validation/TransferBtcOffchainValidator';
-<?php
-
-namespace Tatum\Model;
-
-use Symfony\Component\Validator\Constraints as Assert; {CreateWithdrawal} from './CreateWithdrawal';
-
-class KeyPair {
-
-    @IsNotEmpty()
-    @Length(30, 50)
-    public address: string;
-
-    @IsNotEmpty()
-    @Length(52, 52)
-    public privateKey: string;
+    /**
+     * @Assert\NotBlank()
+     * @Assert\Length(min = 52, max = 52, maxmessage = "maximal length is 52", minmessage = "minimal length is 52")
+     */
+    public $privateKey;
 }
 
-class TransferBtcBasedOffchain extends CreateWithdrawal {
+class TransferBtcBasedOffchain extends CreateWithdrawal
+{
 
-    @Length(1, 500)
-    @Validate(TransferBtcOffchainValidator)
-    @ValidateIf(o => (o.mnemonic && o.keyPair) || !o.keyPair)
-    @IsNotEmpty()
-    public mnemonic?: string;
+    /**
+     * @Assert\Length(min = 1, max = 500, maxmessage = "maximal length is 500", minmessage = "minimal length is 1")
+     *
+     *
+     * @Assert\NotBlank()
+     */
+    public $mnemonic;
 
-    @ValidateIf(o => (o.mnemonic && o.keyPair) || !o.mnemonic)
-    @Validate(TransferBtcOffchainValidator)
-    @IsNotEmpty()
-    @Type(() => KeyPair)
-    @ValidateNested({each: true})
-    public keyPair?: KeyPair[];
+
+    /**
+     * @Assert\NotBlank()
+     */
+    public $keyPair;
 }
 

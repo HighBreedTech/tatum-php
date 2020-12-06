@@ -1,33 +1,40 @@
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
-use Symfony\Component\Validator\Constraints as Assert; {IsIn, IsNotEmpty, IsOptional, Length, Matches, Min} from 'class-validator';
+{
+    IsIn, IsNotEmpty, IsOptional, Length, Matches, Min}
+from 'class-validator';
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
-use Symfony\Component\Validator\Constraints as Assert; {Fiat} from '../response';
+{
+    Fiat}
+from '../response';
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
-use Symfony\Component\Validator\Constraints as Assert; {Currency} from './Currency';
+{
+    Currency}
+from './Currency';
 
-class UpdateCurrency {
+class UpdateCurrency extends Model
+{
 
-    @IsNotEmpty()
-    @Length(1, 30)
-    @Matches(/^VC_[a-zA-Z0-9_]+$/)
-    public name: string;
+@Assert\NotBlank()
+@Assert\Length(min = 1, max = 30, maxmessage = "maximal length is 30", minmessage = "minimal length is 1")
+@Assert\Regex(pattern = "/^VC_[a-zA-Z0-9_]+$/")
+    public $name;
 
-    @IsOptional()
-    @Length(3, 5)
-    @IsIn([...Object.keys(Currency), ...Object.keys(Fiat)])
-    public basePair?: Currency | Fiat;
 
-    @Min(0)
-    @IsOptional()
-    public baseRate?: number;
+@Assert\Length(min = 3, max = 5, maxmessage = "maximal length is 5", minmessage = "minimal length is 3")
+
+    public $basePair;
+
+@Assert\GreaterThanOrEqual(0)
+
+    public $baseRate;
 }
 

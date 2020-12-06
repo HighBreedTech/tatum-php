@@ -1,8 +1,8 @@
-import {validateOrReject} from 'class-validator';
-import {Account, Asset, Keypair, Memo, Networks, Operation, TransactionBuilder} from 'stellar-sdk';
-import {xlmGetAccountInfo} from '../blockchain';
-import {Currency, TransactionKMS, TransferXlmOffchain} from '../model';
-import {offchainBroadcast, offchainCancelWithdrawal, offchainStoreWithdrawal} from './common';
+
+
+
+
+
 
 /**
  * Send Stellar transaction from Tatum Ledger account to the blockchain. This method broadcasts signed transaction to the blockchain.
@@ -11,7 +11,7 @@ import {offchainBroadcast, offchainCancelWithdrawal, offchainStoreWithdrawal} fr
  * @param body content of the transaction to broadcast
  * @returns transaction id of the transaction in the blockchain
  */
-export const sendXlmOffchainTransaction = async (testnet: boolean, body: TransferXlmOffchain) => {
+function sendXlmOffchainTransaction(testnet: boolean, body: TransferXlmOffchain) {
     await validateOrReject(body);
     const {
         secret, ...withdrawal
@@ -35,13 +35,13 @@ export const sendXlmOffchainTransaction = async (testnet: boolean, body: Transfe
         throw e;
     }
     try {
-        return {...await offchainBroadcast({txData, withdrawalId: id, currency: Currency.XLM}), id};
+        return {...await offchainBroadcast({txData, withdrawalId: id, currency: Currency.XLM}), id}
     } catch (e) {
         console.error(e);
         await offchainCancelWithdrawal(id);
         throw e;
     }
-};
+}
 
 /**
  * Sign Stellar pending transaction from Tatum KMS
@@ -50,14 +50,14 @@ export const sendXlmOffchainTransaction = async (testnet: boolean, body: Transfe
  * @param testnet mainnet or testnet version
  * @returns transaction data to be broadcast to blockchain.
  */
-export const signXlmOffchainKMSTransaction = async (tx: TransactionKMS, secret: string, testnet: boolean) => {
+function signXlmOffchainKMSTransaction(tx: TransactionKMS, $secret, testnet: boolean) {
     if (tx.chain !== Currency.XLM) {
         throw Error('Unsupported chain.');
     }
     const transaction = TransactionBuilder.fromXDR(tx.serializedTransaction, testnet ? Networks.TESTNET : Networks.PUBLIC);
     transaction.sign(Keypair.fromSecret(secret));
     return transaction.toEnvelope().toXDR().toString('base64');
-};
+}
 
 /**
  * Sign Stellar transaction with private keys locally. Nothing is broadcast to the blockchain.
@@ -70,7 +70,7 @@ export const signXlmOffchainKMSTransaction = async (tx: TransactionKMS, secret: 
  * @returns transaction data to be broadcast to blockchain.
  */
 export const prepareXlmSignedOffchainTransaction =
-    async (testnet: boolean, account: any, amount: string, address: string, secret: string, memo?: Memo) => {
+(testnet: boolean, account: any, $amount, $address, $secret, memo?: Memo) {
         const builder = new TransactionBuilder(new Account(account.account_id, account.sequence), {
             fee: '100',
             networkPassphrase: testnet ? Networks.TESTNET : Networks.PUBLIC,
@@ -84,5 +84,5 @@ export const prepareXlmSignedOffchainTransaction =
         })).build();
         tx.sign(Keypair.fromSecret(secret));
         return tx.toEnvelope().toXDR().toString('base64');
-    };
+    }
 

@@ -1,39 +1,47 @@
+<?php
+
+namespace Tatum\model\response\bch;
+
+
+use Tatum\model\Model;
 /**
  *
  * @export
  * @interface BchTx
  */
-export interface BchTx {
+class BchTx extends Model {
     /**
      *
-     * @type {string}
+* @var string
      * @memberof BchTx
      */
-    txid: string;
+    public $txid;
     /**
      *
-     * @type {number}
+* @var number
      * @memberof BchTx
      */
-    version: number;
+    public $version;
     /**
      *
-     * @type {number}
+* @var number
      * @memberof BchTx
      */
-    locktime: number;
+    public $locktime;
     /**
      *
-     * @type {Array<BchTxVin>}
+* @var Array
+<BchTxVin>
      * @memberof BchTx
      */
-    vin: BchTxVin[];
+public $vin;
     /**
      *
-     * @type {Array<BchTxVout>}
+    * @var Array
+    <BchTxVout>
      * @memberof BchTx
      */
-    vout: BchTxVout[];
+public $vout;
 }
 
 /**
@@ -41,31 +49,32 @@ export interface BchTx {
  * @export
  * @interface BchTxScriptPubKey
  */
-export interface BchTxScriptPubKey {
+class BchTxScriptPubKey extends Model {
     /**
      *
-     * @type {string}
+        * @var string
      * @memberof BchTxScriptPubKey
      */
-    hex: string;
+    public $hex;
     /**
      *
-     * @type {string}
+        * @var string
      * @memberof BchTxScriptPubKey
      */
-    asm: string;
+    public $asm;
     /**
      *
-     * @type {Array<string>}
+        * @var Array
+        <string>
      * @memberof BchTxScriptPubKey
      */
-    addresses: string[];
+public $addresses;
     /**
      *
-     * @type {string}
+            * @var string
      * @memberof BchTxScriptPubKey
      */
-    type: string;
+    public $type;
 }
 
 /**
@@ -73,19 +82,19 @@ export interface BchTxScriptPubKey {
  * @export
  * @interface BchTxScriptSig
  */
-export interface BchTxScriptSig {
+class BchTxScriptSig extends Model {
     /**
      *
-     * @type {string}
+            * @var string
      * @memberof BchTxScriptSig
      */
-    hex: string;
+    public $hex;
     /**
      *
-     * @type {string}
+            * @var string
      * @memberof BchTxScriptSig
      */
-    asm: string;
+    public $asm;
 }
 
 /**
@@ -93,37 +102,37 @@ export interface BchTxScriptSig {
  * @export
  * @interface BchTxVin
  */
-export interface BchTxVin {
+class BchTxVin extends Model {
     /**
      *
-     * @type {string}
+            * @var string
      * @memberof BchTxVin
      */
-    txid: string;
+    public $txid;
     /**
      *
-     * @type {number}
+            * @var number
      * @memberof BchTxVin
      */
-    vout: number;
+    public $vout;
     /**
      *
-     * @type {BchTxScriptSig}
+            * @var BchTxScriptSig
      * @memberof BchTxVin
      */
-    scriptSig: BchTxScriptSig;
+public $scriptSig;
     /**
      *
-     * @type {string}
+            * @var string
      * @memberof BchTxVin
      */
-    coinbase: string;
+    public $coinbase;
     /**
      *
-     * @type {number}
+            * @var number
      * @memberof BchTxVin
      */
-    sequence: number;
+    public $sequence;
 }
 
 /**
@@ -131,23 +140,23 @@ export interface BchTxVin {
  * @export
  * @interface BchTxVout
  */
-export interface BchTxVout {
+class BchTxVout extends Model {
     /**
      *
-     * @type {string}
+            * @var string
      * @memberof BchTxVout
      */
-    value: string;
+    public $value;
     /**
      *
-     * @type {number}
+            * @var number
      * @memberof BchTxVout
      */
-    n: number;
+    public $n;
     /**
      *
-     * @type {BchTxScriptPubKey}
+            * @var BchTxScriptPubKey
      * @memberof BchTxVout
      */
-    scriptPubKey: BchTxScriptPubKey;
+public $scriptPubKey;
 }

@@ -1,4 +1,8 @@
 <?php
+/**
+ * @author Juraj Puchký <puchky@scenario.cz>
+ */
+
 namespace Tatum\blockchain;
 
 use Tatum\ApiRequest;
@@ -59,7 +63,7 @@ function btcGetUTXO($hash, $i): BtcUTXO
  */
 function btcGetTxForAccount($address, $pageSize = 50, $offset = 0)
 {
-    return ApiRequest::get(Constants::TATUM_API_URL . "/v3/bitcoin/transaction/address/{$address}?pageSize=${pageSize}&offset=${offset}",
+    return ApiRequest::get(Constants::TATUM_API_URL . "/v3/bitcoin/transaction/address/{$address}?pageSize={$pageSize}&offset={$offset}",
         [], ['x-api-key' => getenv('TATUM_API_KEY')])->data;
 }
 

@@ -1,60 +1,63 @@
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
-use Symfony\Component\Validator\Constraints as Assert; {IsIn, IsNotEmpty, IsNumberString, IsOptional, Length, Matches, MaxLength, Min} from 'class-validator';
-<?php
+use Tatum\model\Model;
 
-namespace Tatum\Model;
+class CreateCurrency extends Model
+{
 
-use Symfony\Component\Validator\Constraints as Assert; {Fiat} from '../response';
-<?php
+    /**
+     * @Assert\NotBlank()
+     * @Assert\Length(min=1, max=30,maxmessage="maximal length is 30",minmessage="minimal length is 1")
+     * @Assert\Regex(pattern="/^VC_[a-zA-Z0-9_]+$/")
+     */
+    public $name;
 
-namespace Tatum\Model;
+    /**
+     * @Assert\NotBlank()
+     * @Assert\Type(type="numeric")
+     * @Assert\Length(min=0, max=38,maxmessage="maximal length is 38")
+     * @Assert\Regex(pattern="/^[+]?((\d+(\.\d*)?)|(\.\d+))$/")
+     */
+    public $supply;
 
-use Symfony\Component\Validator\Constraints as Assert; {Currency} from './Currency';
-<?php
+    /**
+     * @Assert\Length(min=1, max=100,maxmessage="maximal length is 100",minmessage="minimal length is 1")
+     *
+     */
+    public $description;
 
-namespace Tatum\Model;
+    /**
+     * @Assert\Length(min=1, max=50,maxmessage="maximal length is 50",minmessage="minimal length is 1")
+     *
+     */
+    public $accountCode;
 
-use Symfony\Component\Validator\Constraints as Assert; { CustomerUpdate } from './CustomerUpdate';
+    /**
+     * @Assert\NotBlank()
+     *
+     * @Assert\Length(min=3, max=5,maxmessage="maximal length is 5",minmessage="minimal length is 3")
+     */
+    public $basePair;
 
-class CreateCurrency {
+    /**
+     * @Assert\GreaterThanOrEqual(0)
+     *
+     */
+    public $baseRate;
 
-    @IsNotEmpty()
-    @Length(1, 30)
-    @Matches(/^VC_[a-zA-Z0-9_]+$/)
-    public name: string;
+    /**
+     * @Assert\Length(min=3, max=3,maxmessage="maximal length is 3",minmessage="minimal length is 3")
+     *
+     *
+     */
+    public $accountingCurrency;
 
-    @IsNotEmpty()
-    @IsNumberString()
-    @MaxLength(38)
-    @Matches(/^[+]?((\d+(\.\d*)?)|(\.\d+))$/)
-    public supply: string;
-
-    @Length(1, 100)
-    @IsOptional()
-    public description?: string;
-
-    @Length(1, 50)
-    @IsOptional()
-    public accountCode?: string;
-
-    @IsNotEmpty()
-    @IsIn([...Object.keys(Currency), ...Object.keys(Fiat)])
-    @Length(3, 5)
-    public basePair: Currency | Fiat;
-
-    @Min(0)
-    @IsOptional()
-    public baseRate?: number;
-
-    @Length(3, 3)
-    @IsOptional()
-    @IsIn(Object.keys(Fiat))
-    public accountingCurrency?: Fiat;
-
-    @IsOptional()
-    public customer?: CustomerUpdate;
+    /**
+     *
+     *
+     */
+    public $customer;
 }
 

@@ -1,43 +1,47 @@
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
-use Symfony\Component\Validator\Constraints as Assert;
+use Tatum\model\Model;
 
-class CurrencyOperation {
+class CurrencyOperation extends Model
+{
 
-    @IsNotEmpty()
-    @Length(24, 24)
-    public accountId: string;
-
-    @IsNotEmpty()
-    @IsNumberString()
-    @MaxLength(38)
-    @Matches(/^[+]?((\d+(\.\d*)?)|(\.\d+))$/)
-    public amount: string;
-
-    @Length(1, 100)
-    @IsOptional()
-    public paymentId?: string;
-
-    @Length(1, 100)
-    @IsOptional()
-    public transactionCode?: string;
-
-    @Length(1, 500)
-    @IsOptional()
-    public senderNote?: string;
-
-    @Length(1, 500)
-    @IsOptional()
-    public recipientNote?: string;
-
-    @Length(24, 24)
-    @IsOptional()
-    public counterAccount?: string;
-
-    @Length(1, 50)
-    @IsOptional()
-    public reference?: string;
+    /**
+     * @Assert\NotBlank()
+     * @Assert\Length(min = 24, max = 24, maxmessage = "maximal length is 24", minmessage = "minimal length is 24")
+     */
+    public $accountId;
+    /**
+     * @Assert\NotBlank()
+     * @Assert\Type(type = "numeric")
+     * @Assert\Length(min = 0, max = 38, maxmessage = "maximal length is 38")
+     * @Assert\Regex(pattern = "/^[+]?((\d+(\.\d*)?)|(\.\d+))$/")
+     */
+    public $amount;
+    /**
+     * @Assert\Length(min = 1, max = 100, maxmessage = "maximal length is 100", minmessage = "minimal length is 1")
+     */
+    public $paymentId;
+    /**
+     * @Assert\Length(min = 1, max = 100, maxmessage = "maximal length is 100", minmessage = "minimal length is 1")
+     */
+    public $transactionCode;
+    /**
+     * @Assert\Length(min = 1, max = 500, maxmessage = "maximal length is 500", minmessage = "minimal length is 1")
+     */
+    public $senderNote;
+    /**
+     * @Assert\Length(min = 1, max = 500, maxmessage = "maximal length is 500", minmessage = "minimal length is 1")
+     */
+    public $recipientNote;
+    /**
+     * @Assert\Length(min = 24, max = 24, maxmessage = "maximal length is 24", minmessage = "minimal length is 24")
+     */
+    public $counterAccount;
+    /**
+     * @Assert\Length(min = 1, max = 50, maxmessage = "maximal length is 50", minmessage = "minimal length is 1")
+     */
+    public $reference;
 }
 

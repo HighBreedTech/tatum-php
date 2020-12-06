@@ -1,31 +1,41 @@
+<?php
+
+namespace Tatum\model\request;
+
+use Tatum\model\Model;
+
 /**
  *
  * @export
  * @interface BroadcastWithdrawal
  */
-export interface BroadcastWithdrawal {
+class BroadcastWithdrawal extends Model
+{
     /**
      * Currency of signed transaction to be broadcast, BTC, LTC, BCH, ETH, XRP, ERC20
-     * @type {string}
+     * @var string
      * @memberof BroadcastWithdrawal
      */
-    currency: string;
+    public $currency;
     /**
      * Raw signed transaction to be published to network.
-     * @type {string}
+     * @var string
      * @memberof BroadcastWithdrawal
      */
-    txData: string;
+    public $txData;
     /**
      * Withdrawal ID to be completed by transaction broadcast
-     * @type {string}
+     * @var string|null
      * @memberof BroadcastWithdrawal
      */
-    withdrawalId?: string;
+    public $withdrawalId;
     /**
      * Signature ID to be completed by transaction broadcast
-     * @type {string}
+     * @var string|null
      * @memberof BroadcastWithdrawal
      */
-    signatureId?: string;
+    public $signatureId;
+
 }
+
+

@@ -1,4 +1,8 @@
 <?php
+/**
+ * @author Juraj Puchký <puchky@scenario.cz>
+ */
+
 namespace Tatum\blockchain;
 
 use Tatum\ApiRequest;
@@ -84,6 +88,6 @@ function ethGetTransaction($hash):EthTx {
  */
 function ethGetAccountTransactions($address, $pageSize = 50, $offset = 0)
 {
-    return ApiRequest::get(Constants::TATUM_API_URL . "/v3/ethereum/account/transaction/{$address}?pageSize=${pageSize}&offset=${offset}",
+    return ApiRequest::get(Constants::TATUM_API_URL . "/v3/ethereum/account/transaction/{$address}?pageSize={$pageSize}&offset={$offset}",
         [], [ 'x-api-key' => getenv('TATUM_API_KEY') ])->data;
 }

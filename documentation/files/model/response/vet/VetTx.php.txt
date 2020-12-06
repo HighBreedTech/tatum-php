@@ -1,81 +1,89 @@
+<?php
+
+namespace Tatum\model\response\vet;
+
+
+use Tatum\model\Model;
+
 /**
  *
  * @export
  * @interface VetTx
  */
-export interface VetTx {
+class VetTx extends Model {
     /**
      *
-     * @type {string}
+* @var string
      * @memberof VetTx
      */
-    id: string;
+    public $id;
     /**
      *
-     * @type {string}
+* @var string
      * @memberof VetTx
      */
-    chainTag: string;
+    public $chainTag;
     /**
      *
-     * @type {string}
+* @var string
      * @memberof VetTx
      */
-    blockRef: string;
+    public $blockRef;
     /**
      *
-     * @type {number}
+* @var number
      * @memberof VetTx
      */
-    expiration: number;
+    public $expiration;
     /**
      *
-     * @type {Array<VetTxClauses>}
+* @var Array
+<VetTxClauses>
      * @memberof VetTx
      */
-    clauses: VetTxClauses[];
+public $clauses;
     /**
      *
-     * @type {number}
+    * @var number
      * @memberof VetTx
      */
-    gasPriceCoef: number;
+    public $gasPriceCoef;
     /**
      *
-     * @type {number}
+    * @var number
      * @memberof VetTx
      */
-    gas: number;
+    public $gas;
     /**
      *
-     * @type {string}
+    * @var string
      * @memberof VetTx
      */
-    origin: string;
+    public $origin;
     /**
      *
-     * @type {string}
+    * @var string
      * @memberof VetTx
      */
-    nonce: string;
+    public $nonce;
     /**
      *
-     * @type {number}
+    * @var number
      * @memberof VetTx
      */
-    size: number;
+    public $size;
     /**
      *
-     * @type {VetTxMeta}
+    * @var VetTxMeta
      * @memberof VetTx
      */
-    meta: VetTxMeta;
+public $meta;
     /**
      *
-     * @type {number}
+    * @var number
      * @memberof VetTx
      */
-    blockNumber: number;
+    public $blockNumber;
 }
 
 /**
@@ -83,25 +91,25 @@ export interface VetTx {
  * @export
  * @interface VetTxClauses
  */
-export interface VetTxClauses {
+class VetTxClauses extends Model {
     /**
      *
-     * @type {string}
+    * @var string
      * @memberof VetTxClauses
      */
-    to: string;
+    public $to;
     /**
      *
-     * @type {string}
+    * @var string
      * @memberof VetTxClauses
      */
-    value: string;
+    public $value;
     /**
      *
-     * @type {string}
+    * @var string
      * @memberof VetTxClauses
      */
-    data: string;
+    public $data;
 }
 
 /**
@@ -109,23 +117,23 @@ export interface VetTxClauses {
  * @export
  * @interface VetTxMeta
  */
-export interface VetTxMeta {
+class VetTxMeta extends Model {
     /**
      *
-     * @type {string}
+    * @var string
      * @memberof VetTxMeta
      */
-    blockID: string;
+    public $blockID;
     /**
      *
-     * @type {number}
+    * @var number
      * @memberof VetTxMeta
      */
-    blockNumber: number;
+    public $blockNumber;
     /**
      *
-     * @type {number}
+    * @var number
      * @memberof VetTxMeta
      */
-    blockTimestamp: number;
+    public $blockTimestamp;
 }

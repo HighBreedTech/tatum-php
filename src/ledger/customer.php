@@ -15,7 +15,7 @@ function getCustomer($id):Customer {
  * For more details, see <a href="https://tatum.io/apidoc.html#operation/findAllCustomers" target="_blank">Tatum API documentation</a>
  */
 function getAllCustomers($pageSize = 50, $offset = 0):Customer[] {
-    return ApiRequest::get(Constants::TATUM_API_URL . "/v3/ledger/customer?pageSize=${pageSize}&offset=${offset}", [], [ 'x-api-key' => getenv('TATUM_API_KEY') ])->data;
+    return ApiRequest::get(Constants::TATUM_API_URL . "/v3/ledger/customer?pageSize={$pageSize}&offset={$offset}", [], [ 'x-api-key' => getenv('TATUM_API_KEY') ])->data;
 }
 
 /**

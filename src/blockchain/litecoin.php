@@ -1,4 +1,7 @@
 <?php
+/**
+ * @author Juraj Puchký <puchky@scenario.cz>
+ */
 
 namespace Tatum\blockchain;
 
@@ -67,7 +70,7 @@ function ltcGetUTXO($hash, $i): LtcUTXO
  */
 function ltcGetTxForAccount($address, $pageSize = 50, $offset = 0)
 {
-    return ApiRequest::get(Constants::TATUM_API_URL . "/v3/litecoin/transaction/address/{$address}?pageSize=${pageSize}&offset=${offset}",
+    return ApiRequest::get(Constants::TATUM_API_URL . "/v3/litecoin/transaction/address/{$address}?pageSize={$pageSize}&offset={$offset}",
         [], [ 'x-api-key' => getenv('TATUM_API_KEY') ])->data;
 }
 

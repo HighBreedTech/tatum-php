@@ -1,37 +1,44 @@
+<?php
+
+namespace Tatum\model\response\vet;
+
+
+use Tatum\model\Model;
+
 /**
  *
  * @export
  * @interface VetEstimateGas
  */
-export interface VetEstimateGas {
+class VetEstimateGas extends Model {
     /**
      * Sender
-     * @type {string}
+* @var string
      * @memberof VetEstimateGas
      */
-    from: string;
+    public $from;
     /**
      * Recipient
-     * @type {string}
+* @var string
      * @memberof VetEstimateGas
      */
-    to: string;
+    public $to;
     /**
      * Amount to send
-     * @type {string}
+* @var string
      * @memberof VetEstimateGas
      */
-    value: string;
+    public $value;
     /**
      * Data to send to Smart Contract
-     * @type {string}
+* @var string
      * @memberof VetEstimateGas
      */
-    data: string;
+    public $data;
     /**
      * Nonce
-     * @type {number}
+* @var number
      * @memberof VetEstimateGas
      */
-    nonce: number;
+    public $nonce;
 }

@@ -1,18 +1,22 @@
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
-use Symfony\Component\Validator\Constraints as Assert; {IsNotEmpty, Length} from 'class-validator';
+{
+    IsNotEmpty, Length}
+from 'class-validator';
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
-use Symfony\Component\Validator\Constraints as Assert; {CreateWithdrawal} from './CreateWithdrawal';
+{
+    CreateWithdrawal}
+from './CreateWithdrawal';
 
-class TransferXlmOffchain extends CreateWithdrawal {
+class TransferXlmOffchain extends CreateWithdrawal extends Model {
 
-    @IsNotEmpty()
-    @Length(56, 56)
-    public secret: string;
+    @Assert\NotBlank()
+@Assert\Length(min = 56, max = 56, maxmessage = "maximal length is 56", minmessage = "minimal length is 56")
+    public $secret;
 }
 

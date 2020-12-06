@@ -1,31 +1,37 @@
+<?php
+
+namespace Tatum\model\response\bch;
+
+
+use Tatum\model\Model;
 /**
  *
  * @export
  * @interface BchInfo
  */
-export interface BchInfo {
+class BchInfo extends Model {
     /**
      * Chain of the blockchain, main or test.
-     * @type {string}
+* @var string
      * @memberof BchInfo
      */
-    chain: string;
+    public $chain;
     /**
      * Last block.
-     * @type {number}
+* @var number
      * @memberof BchInfo
      */
-    blocks: number;
+    public $blocks;
     /**
      * Hash of the last block.
-     * @type {string}
+* @var string
      * @memberof BchInfo
      */
-    bestblockhash: string;
+    public $bestblockhash;
     /**
      * Difficulty of the PoW algorithm.
-     * @type {number}
+* @var number
      * @memberof BchInfo
      */
-    difficulty: number;
+    public $difficulty;
 }

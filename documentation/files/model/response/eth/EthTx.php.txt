@@ -1,105 +1,112 @@
+<?php
+
+namespace Tatum\model\response\eth;
+
+
+use Tatum\model\Model;
 /**
  *
  * @export
  * @interface EthTx
  */
-export interface EthTx {
+class EthTx extends Model {
     /**
      * Hash of the block where this transaction was in.
-     * @type {string}
+* @var string
      * @memberof EthTx
      */
-    blockHash: string;
+    public $blockHash;
     /**
      * TRUE if the transaction was successful, FALSE, if the EVM reverted the transaction.
-     * @type {boolean}
+* @var boolean
      * @memberof EthTx
      */
-    status: boolean;
+public $status;
     /**
      * Block number where this transaction was in.
-     * @type {number}
+* @var number
      * @memberof EthTx
      */
-    blockNumber: number;
+    public $blockNumber;
     /**
      * Address of the sender.
-     * @type {string}
+* @var string
      * @memberof EthTx
      */
-    from: string;
+    public $from;
     /**
      * Gas provided by the sender.
-     * @type {number}
+* @var number
      * @memberof EthTx
      */
-    gas: number;
+    public $gas;
     /**
      * Gas price provided by the sender in wei.
-     * @type {string}
+* @var string
      * @memberof EthTx
      */
-    gasPrice: string;
+    public $gasPrice;
     /**
      * Hash of the transaction.
-     * @type {string}
+* @var string
      * @memberof EthTx
      */
-    transactionHash: string;
+    public $transactionHash;
     /**
      * The data sent along with the transaction.
-     * @type {string}
+* @var string
      * @memberof EthTx
      */
-    input: string;
+    public $input;
     /**
      * The number of transactions made by the sender prior to this one.
-     * @type {number}
+* @var number
      * @memberof EthTx
      */
-    nonce: number;
+    public $nonce;
     /**
      * Address of the receiver. 'null' when its a contract creation transaction.
-     * @type {string}
+* @var string
      * @memberof EthTx
      */
-    to: string;
+    public $to;
     /**
      * Integer of the transactions index position in the block.
-     * @type {number}
+* @var number
      * @memberof EthTx
      */
-    transactionIndex: number;
+    public $transactionIndex;
     /**
      * Value transferred in wei.
-     * @type {string}
+* @var string
      * @memberof EthTx
      */
-    value: string;
+    public $value;
     /**
      * The amount of gas used by this specific transaction alone.
-     * @type {number}
+* @var number
      * @memberof EthTx
      */
-    gasUsed: number;
+    public $gasUsed;
     /**
      * The total amount of gas used when this transaction was executed in the block.
-     * @type {number}
+* @var number
      * @memberof EthTx
      */
-    cumulativeGasUsed: number;
+    public $cumulativeGasUsed;
     /**
      * The contract address created, if the transaction was a contract creation, otherwise null.
-     * @type {string}
+* @var string
      * @memberof EthTx
      */
-    contractAddress: string;
+    public $contractAddress;
     /**
      * Log events, that happened in this transaction.
-     * @type {Array<EthTxLogs>}
+* @var Array
+<EthTxLogs>
      * @memberof EthTx
      */
-    logs: EthTxLogs[];
+public $logs;
 }
 
 /**
@@ -107,41 +114,42 @@ export interface EthTx {
  * @export
  * @interface EthTxLogs
  */
-export interface EthTxLogs {
+class EthTxLogs extends Model {
     /**
      * From which this event originated from.
-     * @type {string}
+    * @var string
      * @memberof EthTxLogs
      */
-    address: string;
+    public $address;
     /**
      * An array with max 4 32 Byte topics, topic 1-3 contains indexed parameters of the log.
-     * @type {Array<string>}
+    * @var Array
+    <string>
      * @memberof EthTxLogs
      */
-    topic: string[];
+public $topic;
     /**
      * The data containing non-indexed log parameter.
-     * @type {string}
+        * @var string
      * @memberof EthTxLogs
      */
-    data: string;
+    public $data;
     /**
      * Integer of the event index position in the block.
-     * @type {number}
+        * @var number
      * @memberof EthTxLogs
      */
-    logIndex: number;
+    public $logIndex;
     /**
      * Integer of the transaction’s index position, the event was created in.
-     * @type {number}
+        * @var number
      * @memberof EthTxLogs
      */
-    transactionIndex: number;
+    public $transactionIndex;
     /**
      * Hash of the transaction this event was created in.
-     * @type {string}
+        * @var string
      * @memberof EthTxLogs
      */
-    transactionHash: string;
+    public $transactionHash;
 }

@@ -1,4 +1,7 @@
 <?php
+/**
+ * @author Juraj Puchký <puchky@scenario.cz>
+ */
 
 namespace Tatum\blockchain;
 

@@ -1,36 +1,36 @@
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
-use Symfony\Component\Validator\Constraints as Assert;
-
-class VetFee {
-    @IsNotEmpty()
-    @IsNumberString()
-    @Matches(/^[+]?((\d+(\.\d*)?)|(\.\d+))$/)
-    public gasLimit: string;
+class VetFee extends Model
+{
+@Assert\NotBlank()
+@Assert\Type(type = "numeric")
+@Assert\Regex(pattern = "/^[+]?((\d+(\.\d*)?)|(\.\d+))$/")
+    public $gasLimit;
 }
 
-class TransferVet {
+class TransferVet extends Model
+{
 
-    @IsNotEmpty()
-    @Length(66, 66)
-    public fromPrivateKey: string;
+@Assert\NotBlank()
+@Assert\Length(min = 66, max = 66, maxmessage = "maximal length is 66", minmessage = "minimal length is 66")
+    public $fromPrivateKey;
 
-    @IsNotEmpty()
-    @Length(42, 42)
-    public to: string;
+@Assert\NotBlank()
+@Assert\Length(min = 42, max = 42, maxmessage = "maximal length is 42", minmessage = "minimal length is 42")
+    public $to;
 
-    @IsNotEmpty()
-    @IsNumberString()
-    @Matches(/^[+]?((\d+(\.\d*)?)|(\.\d+))$/)
-    public amount: string;
+@Assert\NotBlank()
+@Assert\Type(type = "numeric")
+@Assert\Regex(pattern = "/^[+]?((\d+(\.\d*)?)|(\.\d+))$/")
+    public $amount;
 
-    @MaxLength(10000)
-    @IsOptional()
-    public data?: string;
+@Assert\Length(min = 0, max = 10000, maxmessage = "maximal length is 10000")
 
-    @IsOptional()
-    public fee?: VetFee;
+    public $data;
+
+
+    public $fee;
 }
 

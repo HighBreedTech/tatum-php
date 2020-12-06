@@ -1,16 +1,25 @@
-import {ValidationArguments, ValidatorConstraint, ValidatorConstraintInterface} from 'class-validator';
-import {TransferBtcBasedOffchain} from '../index';
+<?php
 
-@ValidatorConstraint({name: 'mnemonicKeypair', async: false})
-export class TransferBtcOffchainValidator implements ValidatorConstraintInterface {
-    public defaultMessage(validationArguments?: ValidationArguments) {
-        return 'Either mnemonic, or keyPair must be present.';
-    }
+namespace Tatum\model\response\validation;
 
-    public validate(value: any, validationArguments?: ValidationArguments) {
-        const data = validationArguments?.object as TransferBtcBasedOffchain;
-        return !(data.mnemonic && data.keyPair);
-    }
 
-}
+use Tatum\model\Model;
+
+
+
+//
+//
+//
+//@ValidatorConstraint({name: 'mnemonicKeypair', async: false})
+//export class TransferBtcOffchainValidator implements ValidatorConstraintInterface extends Model {
+//    public defaultMessage(validationArguments?: ValidationArguments) {
+//        return 'Either mnemonic, or keyPair must be present.';
+//    }
+//
+//    public validate(value: any, validationArguments?: ValidationArguments) {
+//        const data = validationArguments?.object as TransferBtcBasedOffchain;
+//        return !(data.mnemonic && data.keyPair);
+//    }
+//
+//}
 

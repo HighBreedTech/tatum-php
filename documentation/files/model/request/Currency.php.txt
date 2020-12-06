@@ -1,13 +1,13 @@
 <?php
 
-namespace Tatum\Model\Request;
+namespace Tatum\model\request;
 
 /**
  * Interface Currency
  * 
  * Currencies
- * 
- * @package Tatum\Model\Request
+ *
+ * @package Tatum\model\request
  * 
  */
 interface Currency

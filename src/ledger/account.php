@@ -7,6 +7,7 @@ use Tatum\Constants;
 use Tatum\model\request\BlockAmount;
 use Tatum\model\request\CreateAccount;
 use Tatum\model\response\ledger\Account;
+use Tatum\model\response\ledger\AccountBalance;
 use Tatum\model\response\ledger\Blockage;
 
 
@@ -35,7 +36,7 @@ function createAccount($account):Account {
  * @return Blockage[]
  */
 function getBlockedAmountsByAccountId($id, $pageSize = 50, $offset = 0) {
-    return ApiRequest::get(Constants::TATUM_API_URL . "/v3/ledger/account/block/{$id}?pageSize=${pageSize}&offset=${offset}", [], [ 'x-api-key' => getenv('TATUM_API_KEY') ])->data;
+    return ApiRequest::get(Constants::TATUM_API_URL . "/v3/ledger/account/block/{$id}?pageSize={$pageSize}&offset={$offset}", [], [ 'x-api-key' => getenv('TATUM_API_KEY') ])->data;
 }
 
 /**
@@ -93,17 +94,24 @@ function unfreezeAccount($id) {
 
 /**
  * For more details, see <a href="https://tatum.io/apidoc.html#operation/getAccountsByCustomerId" target="_blank">Tatum API documentation</a>
+ * @param $id
+ * @param int $pageSize
+ * @param int $offset
+ * @return Account[]
  */
-function getAccountsByCustomerId($id, $pageSize = 50, $offset = 0):Account[] {
-    return ApiRequest::get(Constants::TATUM_API_URL . "/v3/ledger/account/customer/{$id}?pageSize=${pageSize}&offset=${offset}",
+function getAccountsByCustomerId($id, $pageSize = 50, $offset = 0) {
+    return ApiRequest::get(Constants::TATUM_API_URL . "/v3/ledger/account/customer/{$id}?pageSize={$pageSize}&offset={$offset}",
         [], [ 'x-api-key' => getenv('TATUM_API_KEY') ])->data;
 }
 
 /**
  * For more details, see <a href="https://tatum.io/apidoc.html#operation/getAllAccounts" target="_blank">Tatum API documentation</a>
+ * @param int $pageSize
+ * @param int $offset
+ * @return Account[]
  */
-function getAllAccounts($pageSize = 50, $offset = 0):Account[] {
-    return ApiRequest::get(Constants::TATUM_API_URL . "/v3/ledger/account?pageSize=${pageSize}&offset=${offset}",
+function getAllAccounts($pageSize = 50, $offset = 0) {
+    return ApiRequest::get(Constants::TATUM_API_URL . "/v3/ledger/account?pageSize={$pageSize}&offset={$offset}",
         [], [ 'x-api-key' => getenv('TATUM_API_KEY') ])->data;
 }
 

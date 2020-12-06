@@ -1,6 +1,6 @@
-import BigNumber from 'bignumber.js';
-import {ECPair, Network, networks, Transaction, TransactionBuilder} from 'bitcoinjs-lib';
-import {validateOrReject} from 'class-validator';
+
+
+
 import {
     btcBroadcast,
     btcGetTxForAccount,
@@ -9,10 +9,10 @@ import {
     ltcGetTxForAccount,
     ltcGetUTXO
 } from '../blockchain';
-import {LTC_NETWORK, LTC_TEST_NETWORK} from '../constants';
-import {Currency, TransactionKMS, TransferBtcBasedBlockchain} from '../model';
 
-const prepareSignedTransaction = async (network: Network, body: TransferBtcBasedBlockchain, curency: Currency) => {
+
+
+const prepareSignedTransaction = (network: Network, body: TransferBtcBasedBlockchain, curency: Currency) => {
     await validateOrReject(body);
     const {fromUTXO, fromAddress, to} = body;
     const tx = new TransactionBuilder(network);
@@ -53,7 +53,7 @@ const prepareSignedTransaction = async (network: Network, body: TransferBtcBased
         tx.sign(i, ecPair);
     }
     return tx.build().toHex();
-};
+}
 
 /**
  * Sign Bitcoin pending transaction from Tatum KMS
@@ -62,7 +62,7 @@ const prepareSignedTransaction = async (network: Network, body: TransferBtcBased
  * @param testnet mainnet or testnet version
  * @returns transaction data to be broadcast to blockchain.
  */
-export const signBitcoinKMSTransaction = async (tx: TransactionKMS, privateKeys: string[], testnet: boolean) => {
+function signBitcoinKMSTransaction(tx: TransactionKMS, privateKeys: string[], testnet: boolean) {
     if (tx.chain !== Currency.BTC) {
         throw Error('Unsupported chain.');
     }
@@ -73,7 +73,7 @@ export const signBitcoinKMSTransaction = async (tx: TransactionKMS, privateKeys:
         builder.sign(i, ecPair);
     }
     return builder.build().toHex();
-};
+}
 
 /**
  * Sign Litecoin pending transaction from Tatum KMS
@@ -82,7 +82,7 @@ export const signBitcoinKMSTransaction = async (tx: TransactionKMS, privateKeys:
  * @param testnet mainnet or testnet version
  * @returns transaction data to be broadcast to blockchain.
  */
-export const signLitecoinKMSTransaction = async (tx: TransactionKMS, privateKeys: string[], testnet: boolean) => {
+function signLitecoinKMSTransaction(tx: TransactionKMS, privateKeys: string[], testnet: boolean) {
     if (tx.chain !== Currency.LTC) {
         throw Error('Unsupported chain.');
     }
@@ -93,7 +93,7 @@ export const signLitecoinKMSTransaction = async (tx: TransactionKMS, privateKeys
         builder.sign(i, ecPair);
     }
     return builder.build().toHex();
-};
+}
 
 /**
  * Sign Bitcoin transaction with private keys locally. Nothing is broadcast to the blockchain.
@@ -101,9 +101,9 @@ export const signLitecoinKMSTransaction = async (tx: TransactionKMS, privateKeys
  * @param body content of the transaction to broadcast
  * @returns transaction data to be broadcast to blockchain.
  */
-export const prepareBitcoinSignedTransaction = async (testnet: boolean, body: TransferBtcBasedBlockchain) => {
+function prepareBitcoinSignedTransaction(testnet: boolean, body: TransferBtcBasedBlockchain) {
     return prepareSignedTransaction(testnet ? networks.testnet : networks.bitcoin, body, Currency.BTC);
-};
+}
 
 /**
  * Sign Litcoin transaction with private keys locally. Nothing is broadcast to the blockchain.
@@ -111,9 +111,9 @@ export const prepareBitcoinSignedTransaction = async (testnet: boolean, body: Tr
  * @param body content of the transaction to broadcast
  * @returns transaction data to be broadcast to blockchain.
  */
-export const prepareLitecoinSignedTransaction = async (testnet: boolean, body: TransferBtcBasedBlockchain) => {
+function prepareLitecoinSignedTransaction(testnet: boolean, body: TransferBtcBasedBlockchain) {
     return prepareSignedTransaction(testnet ? LTC_TEST_NETWORK : LTC_NETWORK, body, Currency.LTC);
-};
+}
 
 /**
  * Send Bitcoin transaction to the blockchain. This method broadcasts signed transaction to the blockchain.
@@ -122,9 +122,9 @@ export const prepareLitecoinSignedTransaction = async (testnet: boolean, body: T
  * @param body content of the transaction to broadcast
  * @returns transaction id of the transaction in the blockchain
  */
-export const sendBitcoinTransaction = async (testnet: boolean, body: TransferBtcBasedBlockchain) => {
+function sendBitcoinTransaction(testnet: boolean, body: TransferBtcBasedBlockchain) {
     return btcBroadcast(await prepareBitcoinSignedTransaction(testnet, body));
-};
+}
 
 /**
  * Send Litecoin transaction to the blockchain. This method broadcasts signed transaction to the blockchain.
@@ -133,6 +133,6 @@ export const sendBitcoinTransaction = async (testnet: boolean, body: TransferBtc
  * @param body content of the transaction to broadcast
  * @returns transaction id of the transaction in the blockchain
  */
-export const sendLitecoinTransaction = async (testnet: boolean, body: TransferBtcBasedBlockchain) => {
+function sendLitecoinTransaction(testnet: boolean, body: TransferBtcBasedBlockchain) {
     return ltcBroadcast(await prepareLitecoinSignedTransaction(testnet, body));
-};
+}

@@ -1,37 +1,28 @@
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
-use Symfony\Component\Validator\Constraints as Assert; {IsIn, IsOptional, Length} from 'class-validator';
-<?php
 
-namespace Tatum\Model;
+use Tatum\model\Model;
 
-use Symfony\Component\Validator\Constraints as Assert; {Fiat} from '../response';
-<?php
+class CustomerUpdate extends Model
+{
 
-namespace Tatum\Model;
-
-use Symfony\Component\Validator\Constraints as Assert; {Country} from './Country';
-
-class CustomerUpdate {
-
-    @Length(2, 2)
-    @IsOptional()
-    @IsIn(Object.keys(Country))
-    public customerCountry?: Country;
-
-    @Length(3, 3)
-    @IsOptional()
-    @IsIn(Object.keys(Fiat))
-    public accountingCurrency?: Fiat;
-
-    @Length(2, 2)
-    @IsOptional()
-    @IsIn(Object.keys(Country))
-    public providerCountry?: Country;
-
-    @Length(1, 100)
-    public externalId: string;
+    /**
+     * @Assert\Length(min = 2, max = 2, maxmessage = "maximal length is 2", minmessage = "minimal length is 2")
+     */
+    public $customerCountry;
+    /**
+     * @Assert\Length(min = 3, max = 3, maxmessage = "maximal length is 3", minmessage = "minimal length is 3")
+     */
+    public $accountingCurrency;
+    /**
+     * @Assert\Length(min = 2, max = 2, maxmessage = "maximal length is 2", minmessage = "minimal length is 2")
+     */
+    public $providerCountry;
+    /**
+     * @Assert\Length(min = 1, max = 100, maxmessage = "maximal length is 100", minmessage = "minimal length is 1")
+     */
+    public $externalId;
 }
 

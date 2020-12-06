@@ -1,75 +1,83 @@
+<?php
+
+namespace Tatum\model\response\vet;
+
+
+use Tatum\model\Model;
+
 /**
  *
  * @export
  * @interface VetTxReceipt
  */
-export interface VetTxReceipt {
+class VetTxReceipt extends Model {
     /**
      *
-     * @type {number}
+* @var number
      * @memberof VetTxReceipt
      */
-    gasUsed: number;
+    public $gasUsed;
     /**
      *
-     * @type {string}
+* @var string
      * @memberof VetTxReceipt
      */
-    gasPayer: string;
+    public $gasPayer;
     /**
      *
-     * @type {string}
+* @var string
      * @memberof VetTxReceipt
      */
-    paid: string;
+    public $paid;
     /**
      *
-     * @type {string}
+* @var string
      * @memberof VetTxReceipt
      */
-    reward: string;
+    public $reward;
     /**
      *
-     * @type {boolean}
+* @var boolean
      * @memberof VetTxReceipt
      */
-    reverted: boolean;
+public $reverted;
     /**
      *
-     * @type {VetTxReceiptMeta}
+* @var VetTxReceiptMeta
      * @memberof VetTxReceipt
      */
-    meta: VetTxReceiptMeta;
+public $meta;
     /**
      *
-     * @type {Array<VetTxReceiptOutputs>}
+* @var Array
+<VetTxReceiptOutputs>
      * @memberof VetTxReceipt
      */
-    outputs: VetTxReceiptOutputs[];
+public $outputs;
     /**
      *
-     * @type {number}
+    * @var number
      * @memberof VetTxReceipt
      */
-    blockNumber: number;
+    public $blockNumber;
     /**
      *
-     * @type {string}
+    * @var string
      * @memberof VetTxReceipt
      */
-    blockHash: string;
+    public $blockHash;
     /**
      *
-     * @type {string}
+    * @var string
      * @memberof VetTxReceipt
      */
-    transactionHash: string;
+    public $transactionHash;
     /**
      *
-     * @type {string}
+    * @var string
      * @memberof VetTxReceipt
      */
-    status: string;
+    public $status;
 }
 
 /**
@@ -77,37 +85,37 @@ export interface VetTxReceipt {
  * @export
  * @interface VetTxReceiptMeta
  */
-export interface VetTxReceiptMeta {
+class VetTxReceiptMeta extends Model {
     /**
      *
-     * @type {string}
+    * @var string
      * @memberof VetTxReceiptMeta
      */
-    blockID: string;
+    public $blockID;
     /**
      *
-     * @type {number}
+    * @var number
      * @memberof VetTxReceiptMeta
      */
-    blockNumber: number;
+    public $blockNumber;
     /**
      *
-     * @type {number}
+    * @var number
      * @memberof VetTxReceiptMeta
      */
-    blockTimestamp: number;
+    public $blockTimestamp;
     /**
      *
-     * @type {string}
+    * @var string
      * @memberof VetTxReceiptMeta
      */
-    txID: string;
+    public $txID;
     /**
      *
-     * @type {string}
+    * @var string
      * @memberof VetTxReceiptMeta
      */
-    txOrigin: string;
+    public $txOrigin;
 }
 
 /**
@@ -115,19 +123,21 @@ export interface VetTxReceiptMeta {
  * @export
  * @interface VetTxReceiptOutputs
  */
-export interface VetTxReceiptOutputs {
+class VetTxReceiptOutputs extends Model {
     /**
      *
-     * @type {Array<any>}
+    * @var Array
+    <any>
      * @memberof VetTxReceiptOutputs
      */
-    events: any[];
+public $events;
     /**
      *
-     * @type {Array<VetTxReceiptTransfers>}
+        * @var Array
+        <VetTxReceiptTransfers>
      * @memberof VetTxReceiptOutputs
      */
-    transfers: VetTxReceiptTransfers[];
+public $transfers;
 }
 
 /**
@@ -135,23 +145,23 @@ export interface VetTxReceiptOutputs {
  * @export
  * @interface VetTxReceiptTransfers
  */
-export interface VetTxReceiptTransfers {
+class VetTxReceiptTransfers extends Model {
     /**
      *
-     * @type {string}
+            * @var string
      * @memberof VetTxReceiptTransfers
      */
-    sender: string;
+    public $sender;
     /**
      *
-     * @type {string}
+            * @var string
      * @memberof VetTxReceiptTransfers
      */
-    recipient: string;
+    public $recipient;
     /**
      *
-     * @type {string}
+            * @var string
      * @memberof VetTxReceiptTransfers
      */
-    amount: string;
+    public $amount;
 }

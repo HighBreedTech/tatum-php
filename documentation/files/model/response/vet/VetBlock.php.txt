@@ -1,97 +1,105 @@
+<?php
+
+namespace Tatum\model\response\vet;
+
+
+use Tatum\model\Model;
+
 /**
  *
  * @export
  * @interface VetBlock
  */
-export interface VetBlock {
+class VetBlock extends Model {
     /**
      * block number (height)
-     * @type {number}
+* @var number
      * @memberof VetBlock
      */
-    number: number;
+    public $number;
     /**
      * block identifier
-     * @type {string}
+* @var string
      * @memberof VetBlock
      */
-    id: string;
+    public $id;
     /**
      * RLP encoded block size in bytes
-     * @type {number}
+* @var number
      * @memberof VetBlock
      */
-    size: number;
+    public $size;
     /**
      * parent block ID
-     * @type {string}
+* @var string
      * @memberof VetBlock
      */
-    parentID: string;
+    public $parentID;
     /**
      * block unix timestamp
-     * @type {number}
+* @var number
      * @memberof VetBlock
      */
-    timestamp: number;
+    public $timestamp;
     /**
      * block gas limit (max allowed accumulative gas usage of transactions)
-     * @type {number}
+* @var number
      * @memberof VetBlock
      */
-    gasLimit: number;
+    public $gasLimit;
     /**
      * Address of account to receive block reward
-     * @type {string}
+* @var string
      * @memberof VetBlock
      */
-    beneficiary: string;
+    public $beneficiary;
     /**
      * accumulative gas usage of transactions
-     * @type {number}
+* @var number
      * @memberof VetBlock
      */
-    gasUsed: number;
+    public $gasUsed;
     /**
      * sum of all ancestral blocks' score
-     * @type {number}
+* @var number
      * @memberof VetBlock
      */
-    totalScore: number;
+    public $totalScore;
     /**
      * root hash of transactions in the block
-     * @type {string}
+* @var string
      * @memberof VetBlock
      */
-    txsRoot: string;
+    public $txsRoot;
     /**
      * supported txs features bitset
-     * @type {number}
+* @var number
      * @memberof VetBlock
      */
-    txsFeatures: number;
+    public $txsFeatures;
     /**
      * root hash of accounts state
-     * @type {string}
+* @var string
      * @memberof VetBlock
      */
-    stateRoot: string;
+    public $stateRoot;
     /**
      * root hash of transaction receipts
-     * @type {string}
+* @var string
      * @memberof VetBlock
      */
-    receiptsRoot: string;
+    public $receiptsRoot;
     /**
      * the one who signed this block
-     * @type {string}
+* @var string
      * @memberof VetBlock
      */
-    signer: string;
+    public $signer;
     /**
      * transactions IDs
-     * @type {Array<string>}
+* @var Array
+<string>
      * @memberof VetBlock
      */
-    transactions: string[];
+public $transactions;
 }

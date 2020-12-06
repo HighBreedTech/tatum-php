@@ -23,7 +23,7 @@ function storeTransaction(transaction: CreateTransaction):{ reference: string } 
  */
 function getTransactionsByAccount(filter: TransactionFilter, $pageSize = 50, $offset = 0):Transaction[] {
     await validateOrReject(filter);
-    return ApiRequest::post(Constants::TATUM_API_URL . "/v3/ledger/transaction/account?pageSize=${pageSize}&offset=${offset}",
+    return ApiRequest::post(Constants::TATUM_API_URL . "/v3/ledger/transaction/account?pageSize={$pageSize}&offset={$offset}",
         filter, [], [ 'x-api-key' => getenv('TATUM_API_KEY') ])->data;
 }
 
@@ -32,7 +32,7 @@ function getTransactionsByAccount(filter: TransactionFilter, $pageSize = 50, $of
  */
 function getTransactionsByCustomer(filter: TransactionFilter, $pageSize = 50, $offset = 0):Transaction[] {
     await validateOrReject(filter);
-    return ApiRequest::post(Constants::TATUM_API_URL . "/v3/ledger/transaction/customer?pageSize=${pageSize}&offset=${offset}",
+    return ApiRequest::post(Constants::TATUM_API_URL . "/v3/ledger/transaction/customer?pageSize={$pageSize}&offset={$offset}",
         filter, [], [ 'x-api-key' => getenv('TATUM_API_KEY') ])->data;
 }
 
@@ -41,7 +41,7 @@ function getTransactionsByCustomer(filter: TransactionFilter, $pageSize = 50, $o
  */
 function getTransactionsByLedger(filter: TransactionFilter, $pageSize = 50, $offset = 0):Transaction[] {
     await validateOrReject(filter);
-    return ApiRequest::post(Constants::TATUM_API_URL . "/v3/ledger/transaction/ledger?pageSize=${pageSize}&offset=${offset}",
+    return ApiRequest::post(Constants::TATUM_API_URL . "/v3/ledger/transaction/ledger?pageSize={$pageSize}&offset={$offset}",
         filter, [], [ 'x-api-key' => getenv('TATUM_API_KEY') ])->data;
 }
 

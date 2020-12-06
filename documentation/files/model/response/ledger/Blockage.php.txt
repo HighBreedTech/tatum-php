@@ -1,37 +1,44 @@
+<?php
+
+namespace Tatum\model\response\ledger;
+
+
+use Tatum\model\Model;
+
 /**
  *
  * @export
  * @interface Blockage
  */
-export interface Blockage {
+class Blockage extends Model {
     /**
      * ID of the blockage.
-     * @type {string}
+* @var string
      * @memberof Blockage
      */
-    id: string;
+    public $id;
     /**
      * ID of the account this blockage is for.
-     * @type {string}
+* @var string
      * @memberof Blockage
      */
-    accountId: string;
+    public $accountId;
     /**
      * Amount blocked on account.
-     * @type {string}
+* @var string
      * @memberof Blockage
      */
-    amount: string;
+    public $amount;
     /**
      * Type of blockage.
-     * @type {string}
+* @var string
      * @memberof Blockage
      */
-    type: string;
+    public $type;
     /**
      * Description of blockage.
-     * @type {string}
+* @var string
      * @memberof Blockage
      */
-    description?: string;
+    public $description;
 }

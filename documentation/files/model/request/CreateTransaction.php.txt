@@ -1,62 +1,58 @@
 <?php
 
-namespace Tatum\Model;
+namespace Tatum\model\request;
 
-use Symfony\Component\Validator\Constraints as Assert; {
-    IsBoolean,
-    IsNotEmpty,
-    IsNumber,
-    IsNumberString,
-    IsOptional,
-    Length,
-    Matches,
-    MaxLength,
-    Min,
-} from 'class-validator';
 
-class CreateTransaction {
+class CreateTransaction extends Model
+{
 
-    @IsNotEmpty()
-    @Length(24, 24)
-    public senderAccountId: string;
+    /**
+     * @Assert\NotBlank()
+     * @Assert\Length(min = 24, max = 24, maxmessage = "maximal length is 24", minmessage = "minimal length is 24")
+     */
+    public $senderAccountId;
 
-    @IsNotEmpty()
-    @Length(24, 24)
-    public recipientAccountId: string;
+    /**
+     * @Assert\NotBlank()
+     * @Assert\Length(min = 24, max = 24, maxmessage = "maximal length is 24", minmessage = "minimal length is 24")
+     */
+    public $recipientAccountId;
 
-    @IsNotEmpty()
-    @IsNumberString()
-    @MaxLength(38)
-    @Matches(/^[+]?((\d+(\.\d*)?)|(\.\d+))$/)
-    public amount: string;
+    /**
+     * @Assert\NotBlank()
+     * @Assert\Type(type = "numeric")
+     * @Assert\Length(min = 0, max = 38, maxmessage = "maximal length is 38")
+     * @Assert\Regex(pattern = "/^[+]?((\d+(\.\d*)?)|(\.\d+))$/")
+     */
+    public $amount;
+    /**
+     * @Assert\Length(min = 1, max = 100, maxmessage = "maximal length is 100", minmessage = "minimal length is 1")
+     */
+    public $paymentId;
+    /**
+     * @Assert\Length(min = 1, max = 100, maxmessage = "maximal length is 100", minmessage = "minimal length is 1")
+     */
+    public $transactionCode;
+    /**
+     * @Assert\Length(min = 1, max = 500, maxmessage = "maximal length is 500", minmessage = "minimal length is 1")
+     */
+    public $senderNote;
+    /**
+     * @Assert\Length(min = 1, max = 500, maxmessage = "maximal length is 500", minmessage = "minimal length is 1")
+     */
 
-    @Length(1, 100)
-    @IsOptional()
-    public paymentId?: string;
+    public $recipientNote;
+    /**
+    @Assert\Type(type="numeric")
+    @Assert\GreaterThanOrEqual(0)
+     */
+    public $baseRate;
 
-    @Length(1, 100)
-    @IsOptional()
-    public transactionCode?: string;
+    /**
+     */
+    public $anonymous;
 
-    @Length(1, 500)
-    @IsOptional()
-    public senderNote?: string;
 
-    @Length(1, 500)
-    @IsOptional()
-    public recipientNote?: string;
-
-    @IsNumber()
-    @Min(0)
-    @IsOptional()
-    public baseRate?: number;
-
-    @IsOptional()
-    @IsBoolean()
-    public anonymous?: boolean;
-
-    @IsOptional()
-    @IsBoolean()
-    public compliant?: boolean;
+    public $compliant;
 }
 

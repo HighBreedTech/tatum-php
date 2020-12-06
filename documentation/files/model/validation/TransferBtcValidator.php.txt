@@ -1,16 +1,24 @@
-import {ValidationArguments, ValidatorConstraint, ValidatorConstraintInterface} from 'class-validator';
-import {TransferBtcBasedBlockchain} from '../index';
+<?php
 
-@ValidatorConstraint({name: 'fromAddressFromUTXO', async: false})
-export class TransferBtcValidator implements ValidatorConstraintInterface {
-    public defaultMessage(validationArguments?: ValidationArguments) {
-        return 'Either fromAddress, or fromUTXO must be present.';
-    }
+namespace Tatum\model\response\validation;
 
-    public validate(value: any, validationArguments?: ValidationArguments) {
-        const data = validationArguments?.object as TransferBtcBasedBlockchain;
-        return !(data.fromAddress && data.fromUTXO);
-    }
 
-}
+use Tatum\model\Model;
+
+
+//
+//
+//
+//@ValidatorConstraint({name: 'fromAddressFromUTXO', async: false})
+//export class TransferBtcValidator implements ValidatorConstraintInterface extends Model {
+//    public defaultMessage(validationArguments?: ValidationArguments) {
+//        return 'Either fromAddress, or fromUTXO must be present.';
+//    }
+//
+//    public validate(value: any, validationArguments?: ValidationArguments) {
+//        const data = validationArguments?.object as TransferBtcBasedBlockchain;
+//        return !(data.fromAddress && data.fromUTXO);
+//    }
+//
+//}
 

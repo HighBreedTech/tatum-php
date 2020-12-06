@@ -8,7 +8,7 @@ import {OrderBookResponse} from '../model/response/ledger/OrderBook'
  */
 function getHistoricalTrades($pageSize = 50, $offset = 0):OrderBookResponse[] {
     return (await axios.get(
-        Constants::TATUM_API_URL . "/v3/trade/history?pageSize=${pageSize}&offset=${offset}",
+        Constants::TATUM_API_URL . "/v3/trade/history?pageSize={$pageSize}&offset={$offset}",
         [], [ 'x-api-key' => getenv('TATUM_API_KEY') ]).data
 }
 
@@ -17,7 +17,7 @@ function getHistoricalTrades($pageSize = 50, $offset = 0):OrderBookResponse[] {
  */
 function getActiveBuyTrades($id, $pageSize = 50, $offset = 0):OrderBookResponse[] {
     return (await axios.get(
-        Constants::TATUM_API_URL . "/v3/trade/buy?id={$id}&pageSize=${pageSize}&offset=${offset}",
+        Constants::TATUM_API_URL . "/v3/trade/buy?id={$id}&pageSize={$pageSize}&offset={$offset}",
         [], [ 'x-api-key' => getenv('TATUM_API_KEY') ]).data
 }
 
@@ -26,7 +26,7 @@ function getActiveBuyTrades($id, $pageSize = 50, $offset = 0):OrderBookResponse[
  */
 function getActiveSellTrades($id, $pageSize = 50, $offset = 0):OrderBookResponse[] {
     return (await axios.get(
-        Constants::TATUM_API_URL . "/v3/trade/sell?id={$id}&pageSize=${pageSize}&offset=${offset}",
+        Constants::TATUM_API_URL . "/v3/trade/sell?id={$id}&pageSize={$pageSize}&offset={$offset}",
         [], [ 'x-api-key' => getenv('TATUM_API_KEY') ]).data
 }
 

@@ -1,4 +1,8 @@
 <?php
+/**
+ * @author Juraj Puchký <puchky@scenario.cz>
+ */
+
 namespace Tatum\blockchain;
 use Tatum\ApiRequest;
 use Tatum\Constants;
